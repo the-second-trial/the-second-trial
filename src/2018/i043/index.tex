@@ -104,6 +104,7 @@ The final assessment on the overall exam sets its difficulty to an average level
 
 %__________________________________________________________________
 \section{First problem}
+\label{sec:p1}
 
 %                                     Two column figure (place early!)
 %______________________________________________ Gamma_1 (lg rho, lg e)
@@ -129,8 +130,9 @@ a closed curve, we want to prove it first (just for fun, since this is not requi
 \label{lem:lclosed}
 Let $f:[0,a] \mapsto [0,a]$, with $a > 0$, be a continuous function also satisfying:
 \begin{equation}
+\label{eq:fconds}
 f(0)=a \wedge f(a)=0 \wedge 0 < f(x) < a, \forall x \in [0,a]
-\end{equation}[fconds]
+\end{equation}
 Then graph $\Lambda$, obtained by adjoining together $\Gamma$ ($f$'s graph) and
 its vertically, horizontally and centered symmetries, is a closed curve.
 \begin{proof}
@@ -172,16 +174,13 @@ successfully get back to our case \cite{exam1}.\\
 The same problem later requires to find the definition of $f$ and its symetrical
 copies $f_k$ ($k = 1 \dots 3$). This task is very simple because $f$ is a line
 crossing points $(1,0)$ and $(0,1)$, therefore:
-
 \begin{equation*}
 f: \frac{x-x_1}{y-y_1} = \frac{x_2-x_1}{y_2-y_1} \wedge (x_1,y_1) = (1,0), 
 (x_2,y_2) = (0,1)
 \end{equation*}
-
 Which quickly leads to: $y = 1-x$, therefore: $f(x) = 1-x$. The expressions of the
 copies of $f$ were found in equation \ref{eq:symms}, so by substituting $f(x)$
 in $f_1$, $f_2$ and $f_3$, we find:
-
 \begin{equation}\label{eq:exprs}
 \begin{array}{l|c}
 f(x) = 1 - x & \Gamma \\
@@ -190,8 +189,41 @@ f_2(x) = -f(-x) \implies f_2(x) = - 1 - x & \Gamma_2 \\
 f_3(x) = -f(x) \implies f_3(x) = x - 1 & \Gamma_3 \\
 \end{array}
 \end{equation}
+This completes the first part of the problem.
 
-df
+\subsection{Polynomial decorations and dimensioning}
+\label{sec:p1}
+
+The next part of the problem concerns a dimensioning task. The new requirements
+for tiles can be formalized as follows:
+\begin{equation}
+\label{eq:fconds2}
+\begin{cases}
+f^\prime(0) = 0\\
+S_{\Lambda} = \gamma \cdot S \implies 
+   4 \int^{0}_{1} f(x) \, \mathrm{d} x = \gamma \cdot S\\
+\end{cases}
+\end{equation}
+Having $\gamma = \frac{55}{100}$ represent the fraction, $S_{\Lambda}$ represent the surface 
+inside $\Lambda$ and $S \in \mathbb{R}$ the
+surface of the whole tile. The product of these two quantities is the final value 
+required by the problem. Note how we calculated the inner surface by taking four
+times the area below $f$ (hence $\Gamma$). Proving that $f_k$ (hence $\Gamma_k$) have the 
+same areas is trivial because they are constructed by symmetry which is 
+an isometry that is transformation preserving distances. It means that 
+all copies of $f$ have the same area. 
+The problem suggests the adoption of 2\textsuperscript{nd} or 3\textsuperscript{rd} 
+order polynomials as drawing function $f$.
+
+\begin{theorem}[2-degree polynomials aren't good]
+\label{the:2degpoly}
+Let $f:[0,1] \mapsto [0,1]$ be a continuous function meeting conditions as per
+equation \ref{eq:fconds}.
+\begin{proof}
+dfdfsis.
+$\square$
+\end{proof}
+\end{theorem}
 
    Baker (\cite{baker}) investigates the stability of thin layers in
    self-gravitating,
