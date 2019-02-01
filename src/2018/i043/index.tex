@@ -122,10 +122,11 @@ The final assessment on the overall exam sets its difficulty to an average level
 
 
 A single tile is decorated using a machine which is programmed using function 
-$f:[0,1] \mapsto [0,1]$. The \cite{exam1} claims the final graph $\Lambda$ is
+$f:[0,1] \mapsto [0,1]$. The problem \cite{exam1} claims the final graph $\Lambda$ is
 a closed curve, we want to prove it first (just for fun, since this is not required).
 
 \begin{lemma}[$\Lambda$ is a closed curve]
+\label{lem:lclosed}
 Let $f:[0,a] \mapsto [0,a]$, with $a > 0$, be a continuous function also satisfying:
 \begin{equation}
 f(0)=a \wedge f(a)=0 \wedge 0 < f(x) < a, \forall x \in [0,a]
@@ -150,19 +151,47 @@ copies of $\Gamma$:
 \text{IV (SE)} & [0,a] \times [-a,0] & \Gamma_3 & f_3 = -f(x) \\
 \end{array}
 \end{equation*}
-We can trivially all 4 connection points:
-\begin{equation*}
+The last column of the table shows the definitions of the symmetrical copies of $f$.
+Now we can check all 4 connection points:
+\begin{equation}\label{eq:symms}
 \begin{array}{l|c}
 f(0) = f_1(0) \implies f(0) = f(0) & ^{\Gamma}/_{\Gamma_1} \\
 f_1(-a) = f_2(-a) \implies f(a) = -f(a) \implies 0 = 0 & ^{\Gamma_1}/_{\Gamma_2} \\
 f_2(0) = f_3(0) \implies -f(0) = -f(0) & ^{\Gamma_2}/_{\Gamma_3} \\
 f(a) = f_3(a) \implies f(a) = -f(a) \implies 0 = 0 & ^{\Gamma_3}/_{\Gamma} \\
 \end{array}
-\end{equation*}
+\end{equation}
 And that proves the thesis.
 $\square$
 \end{proof}
 \end{lemma}
+
+Lemma \ref{lem:lclosed} takes a generic case, but if we consider $a=1$, we
+successfully get back to our case \cite{exam1}.\\
+
+The same problem later requires to find the definition of $f$ and its symetrical
+copies $f_k$ ($k = 1 \dots 3$). This task is very simple because $f$ is a line
+crossing points $(1,0)$ and $(0,1)$, therefore:
+
+\begin{equation*}
+f: \frac{x-x_1}{y-y_1} = \frac{x_2-x_1}{y_2-y_1} \wedge (x_1,y_1) = (1,0), 
+(x_2,y_2) = (0,1)
+\end{equation*}
+
+Which quickly leads to: $y = 1-x$, therefore: $f(x) = 1-x$. The expressions of the
+copies of $f$ were found in equation \ref{eq:symms}, so by substituting $f(x)$
+in $f_1$, $f_2$ and $f_3$, we find:
+
+\begin{equation}\label{eq:exprs}
+\begin{array}{l|c}
+f(x) = 1 - x & \Gamma \\
+f_1(x) = f(-x) \implies f_1(x) = 1 + x & \Gamma_1 \\
+f_2(x) = -f(-x) \implies f_2(x) = - 1 - x & \Gamma_2 \\
+f_3(x) = -f(x) \implies f_3(x) = x - 1 & \Gamma_3 \\
+\end{array}
+\end{equation}
+
+df
 
    Baker (\cite{baker}) investigates the stability of thin layers in
    self-gravitating,
