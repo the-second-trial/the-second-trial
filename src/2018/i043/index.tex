@@ -59,15 +59,16 @@
   \abstract
   % context heading (optional)
   % {} leave it empty if necessary  
-   {Solving the Italian exam for year 2018.}
+   {Analysis and resolution of the problems proposed in the Italian Mathematics national exam for year 2018.}
   % aims heading (mandatory)
-   {Learning the best and fastest techniques to get to solutions.}
+   {Learning the best and fastest techniques to get to the solutions to the proposed problems.}
   % methods heading (mandatory)
-   {Pen and paper approach will be used to solve the problems. At the end of each section, for
-    the sake of learning and knowledge, alternative processes will be shown by using language R
-    get to solutions using the computer.}
+   {Pen and paper approach will be used to solve the problems by employing common mathematical 
+    techniques accessible to high school students. At the end of each section, for
+    the sake of tutoring and learning, alternative processes will be shown by using language R to
+    get to the solutions by using computer-aided techniques.}
   % results heading (mandatory)
-   {Solutions are found.}
+   {The solutions are found and they are confirmed by computational calculus.}
   % conclusions heading (optional), leave it empty if necessary 
    {}
    \keywords{mathematics --
@@ -85,38 +86,24 @@
 
 \section{Introduction}
 
-   In the \emph{nucleated instability\/} (also called core
-   instability) hypothesis of giant planet
-   formation, a critical mass for static core  envelope
-   protoplanets has been found. Mizuno (\cite{mizuno}) determined
-   the critical mass of the core to be about $12 \,M_\oplus$
-   ($M_\oplus=5.975 \times 10^{27}\,\mathrm{g}$ is the Earth mass), which
-   is independent of the outer boundary
-   conditions and therefore independent of the location in the
-   solar nebula. This critical value for the core mass corresponds
-   closely to the cores of today's giant planets.
+The first problem, as usual, offers an applicative context very common and important
+nowadays in the field of \emph{Automation Factory}: here mathematical techniques
+can be used to automate certain processes. The problem also integrates elements of
+Probability Theory to provide a full real case analysis around process failure and how
+to efficiently fix issues in a production line. The mathematical skills required to solve
+this problem revolve around basic calculus, function symmetry, polynomials and
+basic concepts of probability.
 
-   Although no hydrodynamical study has been available many workers
-   conjectured that a collapse or rapid contraction will ensue
-   after accumulating the critical mass. The main motivation for
-   this article
-   is to investigate the stability of the static envelope at the
-   critical mass. With this aim the local, linear stability of static
-   radiative gas  spheres is investigated on the basis of Baker's
-   (\cite{baker}) standard one-zone model. 
+The second problem is more theoretical without any applicative scenarios. The
+mathematical skills required to solve it include polynomials and basic calculus.
 
-   Phenomena similar to the ones described above for giant planet
-   formation have been found in hydrodynamical models concerning
-   star formation where protostellar cores explode
-   (Tscharnuter \cite{tscharnuter}, Balluch \cite{balluch}),
-   whereas earlier studies found quasi-steady collapse flows. The
-   similarities in the (micro)physics, i.e., constitutive relations of
-   protostellar cores and protogiant planets serve as a further
-   motivation for this study.
+The questionnaire spans across different themes ranging from basic equations,
+simple integration, Geometry, Calculus, Probability and differential equations.
+
+The final assessment on the overall exam sets its difficulty to an average level.
 
 %__________________________________________________________________
-
-\section{Baker's standard one-zone model}
+\section{First problem}
 
 %                                     Two column figure (place early!)
 %______________________________________________ Gamma_1 (lg rho, lg e)
@@ -132,18 +119,50 @@
               \label{FigGam}%
     \end{figure*}
 %
-   In this section the one-zone model of Ba
-   originally used to study the Cephe{\"{\i}}d pulsation mechanism, will
-   be briefly reviewed. The resulting stability criteria will be
-   rewritten in terms of local state variables, local timescales and
-   constitu
 
-\begin{theorem}[Some]
+
+A single tile is decorated using a machine which is programmed using function 
+$f:[0,1] \mapsto [0,1]$. The \cite{exam1} claims the final graph $\Lambda$ is
+a closed curve, we want to prove it first (just for fun, since this is not required).
+
+\begin{lemma}[$\Lambda$ is a closed curve]
+Let $f:[0,a] \mapsto [0,a]$, with $a > 0$, be a continuous function also satisfying:
+\begin{equation}
+f(0)=a \wedge f(a)=0 \wedge 0 < f(x) < a, \forall x \in [0,a]
+\end{equation}[fconds]
+Then graph $\Lambda$, obtained by adjoining together $\Gamma$ ($f$'s graph) and
+its vertically, horizontally and centered symmetries, is a closed curve.
 \begin{proof}
-dfdfdf
+Since $\Lambda$ is constructed using $\Gamma$, given that symmentry is an 
+isometric\footnote{An isometry is a transformation that does not change distances and
+preserves shapes.} 
+transformation and that $f$ is continuous (therefore $\Gamma$ is a continuous curve
+with no interruptions), then the single thing to prove is that the points were
+the copies of $\Gamma$ connect with each other are continuous. We have 4
+copies of $\Gamma$:
+\begin{equation*}
+\begin{array}{c|c|c|c}
+\text{\# Quarter} & \text{\# Ranges} & \text{Graph} & \text{\# Function} \\
+\hline
+\text{I (NE)} & [0,a] \times [0,a] & \Gamma & f(x) \\
+\text{II (NW)} & [-a,0] \times [0,a] & \Gamma_1 & f_1 = f(-x) \\
+\text{III (SW)} & [-a,0] \times [-a,0] & \Gamma_2 & f_2 = -f(-x) \\
+\text{IV (SE)} & [0,a] \times [-a,0] & \Gamma_3 & f_3 = -f(x) \\
+\end{array}
+\end{equation*}
+We can trivially all 4 connection points:
+\begin{equation*}
+\begin{array}{l|c}
+f(0) = f_1(0) \implies f(0) = f(0) & ^{\Gamma}/_{\Gamma_1} \\
+f_1(-a) = f_2(-a) \implies f(a) = -f(a) \implies 0 = 0 & ^{\Gamma_1}/_{\Gamma_2} \\
+f_2(0) = f_3(0) \implies -f(0) = -f(0) & ^{\Gamma_2}/_{\Gamma_3} \\
+f(a) = f_3(a) \implies f(a) = -f(a) \implies 0 = 0 & ^{\Gamma_3}/_{\Gamma} \\
+\end{array}
+\end{equation*}
+And that proves the thesis.
 $\square$
 \end{proof}
-\end{theorem}
+\end{lemma}
 
    Baker (\cite{baker}) investigates the stability of thin layers in
    self-gravitating,
@@ -262,7 +281,12 @@ $\square$
    by definition. The signs of the left hand sides of the
    inequalities~(\ref{ZSDynSta}), (\ref{ZSSecSta}) and (\ref{ZSVibSta})
    therefore depend exclusively on the second factors containing
-   the constitutive relations. Since they depend only
+   the constitutive relations. 
+
+%__________________________________________________________________
+\section{Second problem}
+
+   Since they depend only
    on state variables, the stability criteria themselves are \emph{
    functions of the thermodynamic state in the local zone}. The
    one-zone stability can therefore be determined
@@ -343,11 +367,26 @@ $\square$
                                       > & 0\,.& \label{VibSta}
    \end{eqnarray}
    The constitutive relations are to be evaluated for the
-   unperturbed thermodynamic state (say $(\rho_0, T_0)$) of the zone.
+   unperturbed.
+
+%__________________________________________________________________
+\section{Questions}
+
+\subsection{First question}
+   Thermodynamic state (say $(\rho_0, T_0)$) of the zone.
    We see that the one-zone stability of the layer depends only on
    the constitutive relations $\Gamma_1$,
    $\nabla_{\mathrm{ad}}$, $\chi_T^{},\,\chi_\rho^{}$,
    $\kappa_P^{},\,\kappa_T^{}$.
+
+\subsection{Second question}
+   Thermodynamic state (say $(\rho_0, T_0)$) of the zone.
+   We see that the one-zone stability of the layer depends only on
+   the constitutive relations $\Gamma_1$,
+   $\nabla_{\mathrm{ad}}$, $\chi_T^{},\,\chi_\rho^{}$,
+   $\kappa_P^{},\,\kappa_T^{}$.
+
+\subsection{Third question}
    These depend only on the unperturbed
    thermodynamical state of the layer. Therefore the above relations
    define the one-zone-stability equations of state
@@ -403,6 +442,21 @@ $\square$
 %-------------------------------------------------------------------
 
 \begin{thebibliography}{}
+
+  \bibitem[First Problem]{exam1} MIUR 2018,
+      in Esame di Stato di Istruzione Secondaria Superiore anno 2018,
+      I043 sessione ordinaria,
+      Ministero dell'Istruzione, dell'Universit\a' e della Ricerca - Problema 1
+
+  \bibitem[First Problem]{exam2} MIUR 2018,
+      in Esame di Stato di Istruzione Secondaria Superiore anno 2018,
+      I043 sessione ordinaria,
+      Ministero dell'Istruzione, dell'Universit\a' e della Ricerca - Problema 2
+
+  \bibitem[First Problem]{examQ} MIUR 2018,
+      in Esame di Stato di Istruzione Secondaria Superiore anno 2018,
+      I043 sessione ordinaria,
+      Ministero dell'Istruzione, dell'Universit\a' e della Ricerca - Questionario
 
   \bibitem[1966]{baker} Baker, N. 1966,
       in Stellar Evolution,
