@@ -81,150 +81,18 @@
                }
 
    \maketitle
+
 %
 %________________________________________________________________
+% Chapter
+\input{ch-intro}
 
-\section{Introduction}
-
-The first problem, as usual, offers an applicative context very common and important
-nowadays in the field of \emph{Automation Factory}: here mathematical techniques
-can be used to automate certain processes. The problem also integrates elements of
-Probability Theory to provide a full real case analysis around process failure and how
-to efficiently fix issues in a production line. The mathematical skills required to solve
-this problem revolve around basic calculus, function symmetry, polynomials and
-basic concepts of probability.
-
-The second problem is more theoretical without any applicative scenarios. The
-mathematical skills required to solve it include polynomials and basic calculus.
-
-The questionnaire spans across different themes ranging from basic equations,
-simple integration, Geometry, Calculus, Probability and differential equations.
-
-The final assessment on the overall exam sets its difficulty to an average level.
+%
+%________________________________________________________________
+% Chapter
+\input{ch-p1}
 
 %__________________________________________________________________
-\section{First problem}
-\label{sec:p1}
-
-%                                     Two column figure (place early!)
-%______________________________________________ Gamma_1 (lg rho, lg e)
-   \begin{figure*}
-   \centering
-   %%%\includegraphics{empty.eps}
-   %%%\includegraphics{empty.eps}
-   %%%\includegraphics{empty.eps}
-   \caption{Adiabatic exponent $\Gamma_1$.
-               $\Gamma_1$ is plotted as a function of
-               $\lg$ internal energy $\mathrm{[erg\,g^{-1}]}$ and $\lg$
-               density $\mathrm{[g\,cm^{-3}]}$.}
-              \label{FigGam}%
-    \end{figure*}
-%
-
-
-A single tile is decorated using a machine which is programmed using function 
-$f:[0,1] \mapsto [0,1]$. The problem \cite{exam1} claims the final graph $\Lambda$ is
-a closed curve, we want to prove it first (just for fun, since this is not required).
-
-\begin{lemma}[$\Lambda$ is a closed curve]
-\label{lem:lclosed}
-Let $f:[0,a] \mapsto [0,a]$, with $a > 0$, be a continuous function also satisfying:
-\begin{equation}
-\label{eq:fconds}
-f(0)=a \wedge f(a)=0 \wedge 0 < f(x) < a, \forall x \in [0,a]
-\end{equation}
-Then graph $\Lambda$, obtained by adjoining together $\Gamma$ ($f$'s graph) and
-its vertically, horizontally and centered symmetries, is a closed curve.
-\begin{proof}
-Since $\Lambda$ is constructed using $\Gamma$, given that symmentry is an 
-isometric\footnote{An isometry is a transformation that does not change distances and
-preserves shapes.} 
-transformation and that $f$ is continuous (therefore $\Gamma$ is a continuous curve
-with no interruptions), then the single thing to prove is that the points were
-the copies of $\Gamma$ connect with each other are continuous. We have 4
-copies of $\Gamma$:
-\begin{equation*}
-\begin{array}{c|c|c|c}
-\text{\# Quarter} & \text{\# Ranges} & \text{Graph} & \text{\# Function} \\
-\hline
-\text{I (NE)} & [0,a] \times [0,a] & \Gamma & f(x) \\
-\text{II (NW)} & [-a,0] \times [0,a] & \Gamma_1 & f_1 = f(-x) \\
-\text{III (SW)} & [-a,0] \times [-a,0] & \Gamma_2 & f_2 = -f(-x) \\
-\text{IV (SE)} & [0,a] \times [-a,0] & \Gamma_3 & f_3 = -f(x) \\
-\end{array}
-\end{equation*}
-The last column of the table shows the definitions of the symmetrical copies of $f$.
-Now we can check all 4 connection points:
-\begin{equation}\label{eq:symms}
-\begin{array}{l|c}
-f(0) = f_1(0) \implies f(0) = f(0) & ^{\Gamma}/_{\Gamma_1} \\
-f_1(-a) = f_2(-a) \implies f(a) = -f(a) \implies 0 = 0 & ^{\Gamma_1}/_{\Gamma_2} \\
-f_2(0) = f_3(0) \implies -f(0) = -f(0) & ^{\Gamma_2}/_{\Gamma_3} \\
-f(a) = f_3(a) \implies f(a) = -f(a) \implies 0 = 0 & ^{\Gamma_3}/_{\Gamma} \\
-\end{array}
-\end{equation}
-And that proves the thesis.
-$\square$
-\end{proof}
-\end{lemma}
-
-Lemma \ref{lem:lclosed} takes a generic case, but if we consider $a=1$, we
-successfully get back to our case \cite{exam1}.\\
-
-The same problem later requires to find the definition of $f$ and its symetrical
-copies $f_k$ ($k = 1 \dots 3$). This task is very simple because $f$ is a line
-crossing points $(1,0)$ and $(0,1)$, therefore:
-\begin{equation*}
-f: \frac{x-x_1}{y-y_1} = \frac{x_2-x_1}{y_2-y_1} \wedge (x_1,y_1) = (1,0), 
-(x_2,y_2) = (0,1)
-\end{equation*}
-Which quickly leads to: $y = 1-x$, therefore: $f(x) = 1-x$. The expressions of the
-copies of $f$ were found in equation \ref{eq:symms}, so by substituting $f(x)$
-in $f_1$, $f_2$ and $f_3$, we find:
-\begin{equation}\label{eq:exprs}
-\begin{array}{l|c}
-f(x) = 1 - x & \Gamma \\
-f_1(x) = f(-x) \implies f_1(x) = 1 + x & \Gamma_1 \\
-f_2(x) = -f(-x) \implies f_2(x) = - 1 - x & \Gamma_2 \\
-f_3(x) = -f(x) \implies f_3(x) = x - 1 & \Gamma_3 \\
-\end{array}
-\end{equation}
-This completes the first part of the problem.
-
-\subsection{Polynomial decorations and dimensioning}
-\label{sec:p1}
-
-The next part of the problem concerns a dimensioning task. The new requirements
-for tiles can be formalized as follows:
-\begin{equation}
-\label{eq:fconds2}
-\begin{cases}
-f^\prime(0) = 0\\
-S_{\Lambda} = \gamma \cdot S \implies 
-   4 \int^{0}_{1} f(x) \, \mathrm{d} x = \gamma \cdot S\\
-\end{cases}
-\end{equation}
-Having $\gamma = \frac{55}{100}$ represent the fraction, $S_{\Lambda}$ represent the surface 
-inside $\Lambda$ and $S \in \mathbb{R}$ the
-surface of the whole tile. The product of these two quantities is the final value 
-required by the problem. Note how we calculated the inner surface by taking four
-times the area below $f$ (hence $\Gamma$). Proving that $f_k$ (hence $\Gamma_k$) have the 
-same areas is trivial because they are constructed by symmetry which is 
-an isometry that is transformation preserving distances. It means that 
-all copies of $f$ have the same area. 
-The problem suggests the adoption of 2\textsuperscript{nd} or 3\textsuperscript{rd} 
-order polynomials as drawing function $f$.
-
-\begin{theorem}[2-degree polynomials aren't good]
-\label{the:2degpoly}
-Let $f:[0,1] \mapsto [0,1]$ be a continuous function meeting conditions as per
-equation \ref{eq:fconds}.
-\begin{proof}
-dfdfsis.
-$\square$
-\end{proof}
-\end{theorem}
-
    Baker (\cite{baker}) investigates the stability of thin layers in
    self-gravitating,
    spherical gas clouds with the following properties:
@@ -457,17 +325,20 @@ $\square$
    listed in Table~1.
 
 %
-%                                                One column figure
-%----------------------------------------------------------- S_vib
-   \begin{figure}
+% Two column figure (place early!)
+%-----------------------------------------------------------
+   \begin{figure*}
    \centering
-   %%%\includegraphics[width=3cm]{empty.eps}
-      \caption{Vibrational stability equation of state
-               $S_{\mathrm{vib}}(\lg e, \lg \rho)$.
-               $>0$ means vibrational stability.
-              }
-         \label{FigVibStab}
-   \end{figure}
+   %%%\includegraphics{empty.eps}
+   %%%\includegraphics{empty.eps}
+   %%%\includegraphics{empty.eps}
+   \caption{Adiabatic exponent $\Gamma_1$.
+               $\Gamma_1$ is plotted as a function of
+               $\lg$ internal energy $\mathrm{[erg\,g^{-1}]}$ and $\lg$
+               density $\mathrm{[g\,cm^{-3}]}$.}
+              \label{FigGam}%
+    \end{figure*}
+%-----------------------------------------------------------
 %
 %______________________________________________________________
 
