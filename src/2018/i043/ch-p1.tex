@@ -14,7 +14,7 @@ of coordinates: $O \equiv (0,0)$.
 \input{fig-symms}
 %-----------------------------------------------------------
 %
-ddf
+Figure \ref{fig:symms} shows this simple calculation.
 
 \begin{lemma}[$\Lambda$ is a closed curve]
 \label{lem:lclosed}
@@ -84,8 +84,10 @@ This completes the first part of the problem.
 \subsection{Polynomial decorations and dimensioning}
 \label{sec:p1}
 
-The next part of the problem concerns a dimensioning task. The new requirements
-for tiles can be formalized as follows:
+The next part of the problem concerns a \emph{dimensioning}\footnote{The
+process of calculating the values of the parameters of a system
+to reach a specic goal.} task.
+The new requirements for tiles can be formalized as follows:
 \begin{equation}
 \label{eq:fconds2}
 \begin{cases}
@@ -94,18 +96,25 @@ S_{\Lambda} = \gamma \cdot S \implies
    4 \int^{0}_{1} f(x) \, \mathrm{d} x = \gamma \cdot S\\
 \end{cases}
 \end{equation}
-Having $\gamma = \frac{55}{100}$ represent the fraction, $S_{\Lambda}$ represent the surface 
+Having $\gamma = \frac{55}{100}$ represent the fraction of area inside $\Lambda$
+in relation to the whole tile, 
+$S_{\Lambda} \in \mathbb{R}$ represent the surface 
 inside $\Lambda$ and $S \in \mathbb{R}$ the
 surface of the whole tile. The product of these two quantities is the final value 
 required by the problem. Note how we calculated the inner surface by taking four
-times the area below $f$ (hence $\Gamma$). Proving that $f_k$ (hence $\Gamma_k$) have the 
+times the area below $f$ (that is $\Gamma$). Proving that the copies $f_k$
+have all the 
 same areas is trivial because they are constructed by symmetry which is 
 an isometry that is transformation preserving distances. It means that 
-all copies of $f$ have the same area. 
-The problem suggests the adoption of 2\textsuperscript{nd} or 3\textsuperscript{rd} 
-order polynomials as drawing function $f$.
+all $f_k$ have the same areas. 
 
-\begin{theorem}[2-degree polynomials aren't good]
+The problem asks to find a new function to decorate tiles and it must 
+satisfy both equations \ref{eq:fconds} and \ref{eq:fconds2}.
+We are suggested to use 2\textsuperscript{nd} or 3\textsuperscript{rd} 
+order polynomials as the new $f$.
+
+\begin{theorem}[2-degree polynomials don't meet conditions in equations 
+\ref{eq:fconds} and \ref{eq:fconds2}]
 \label{the:2degpoly}
 Let $f:[0,1] \mapsto [0,1]$ be a continuous function meeting conditions as per
 equation \ref{eq:fconds}.
