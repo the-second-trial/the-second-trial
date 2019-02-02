@@ -16,7 +16,7 @@ of coordinates: $O \equiv (0,0)$.
 %
 Figure \ref{fig:symms} shows this simple calculation.
 
-\begin{lemma}[$\Lambda$ is a closed curve]
+\begin{proposition}[$\Lambda$ is a closed curve]
 \label{lem:lclosed}
 Let $f:[0,a] \mapsto [0,a]$, with $a > 0$, be a continuous function also satisfying:
 \begin{equation}
@@ -56,9 +56,9 @@ f(a) = f_3(a) \implies f(a) = -f(a) \implies 0 = 0 & ^{\Gamma_3}/_{\Gamma} \\
 And that proves the thesis.
 $\square$
 \end{proof}
-\end{lemma}
+\end{proposition}
 
-Lemma \ref{lem:lclosed} takes a generic case, but if we consider $a=1$, we
+Proposition \ref{lem:lclosed} takes a generic case, but if we consider $a=1$, we
 successfully get back to our case \cite{exam1}.\\
 
 The same problem later requires to find the definition of $f$ and its symetrical
@@ -93,7 +93,7 @@ The new requirements for tiles can be formalized as follows:
 \begin{cases}
 f^\prime(0) = 0\\
 S_{\Lambda} = \gamma \cdot S \implies 
-   4 \int^{0}_{1} f(x) \, \mathrm{d} x = \gamma \cdot S\\
+   4 \int^{1}_{0} f(x) \, \mathrm{d} x = \gamma \cdot S\\
 \end{cases}
 \end{equation}
 Having $\gamma = \frac{55}{100}$ represent the fraction of area inside $\Lambda$
@@ -113,13 +113,89 @@ satisfy both equations \ref{eq:fconds} and \ref{eq:fconds2}.
 We are suggested to use 2\textsuperscript{nd} or 3\textsuperscript{rd} 
 order polynomials as the new $f$.
 
-\begin{theorem}[2-degree polynomials don't meet conditions in equations 
+\begin{proposition}[2-degree polynomials don't meet conditions in equations 
 \ref{eq:fconds} and \ref{eq:fconds2}]
 \label{the:2degpoly}
-Let $f:[0,1] \mapsto [0,1]$ be a continuous function meeting conditions as per
-equation \ref{eq:fconds}.
+Let $f:[0,1] \mapsto [0,1]$ be a continuous function in the form: 
+$f(x) \doteq ax^2+bx+c$ where $a,b,c \in \mathbb{R}$. 
+Then $f$ can never meet conditions as per both
+equations \ref{eq:fconds} and \ref{eq:fconds2}.
 \begin{proof}
-dfdfsis.
+To prove this, we need to plug $f$ inside equations \ref{eq:fconds} and 
+\ref{eq:fconds2} and generate a system of equations on parameters $a$, 
+$b$ and $c$:
+\begin{equation*}
+\begin{cases}
+f(0)=1 \implies \left. ax^2+bx+c \right|_{x=0} = 1 \implies c = 1 \\
+f(1)=0 \implies \left. ax^2+bx+c \right|_{x=1} = 0 \implies a+b+c=0\\
+f^\prime(0) = 0 \implies \left. 2ax + b \right|_{x=0} = 0 \implies b = 0 \\
+4 \int^{1}_{0} \left( ax^2+bx+c \right) \, \mathrm{d} x = \gamma S \\
+\end{cases}
+\end{equation*}
+And we must also guarantee that $0 < f(x) < 1, \forall x \in [0,1]. 
+$Note that the condition on continuity is observed because $f$ is a polynomial which
+is continuous always. 
+The first three equations define the values of the three parameters: 
+$a=-1$, $b=0$ and $c=1$; which means that $f(x) = -x^2 + 1$. Let's now
+verify that this function satisfies the fourth equation in the system:
+\begin{align*}
+&\int^{1}_{0} \left( -x^2+1 \right) \, \mathrm{d} x = \frac{\gamma}{4} S
+\implies
+-\int^{1}_{0} x^2 \, \mathrm{d} x + \int^{1}_{0} \mathrm{d} x = 
+        \frac{\gamma}{4} S \implies \notag\\
+&- \left[\frac{x^3}{3}\right]_0^1 + \left[x\right]_0^1 = \frac{\gamma}{4} S
+\implies -\frac{1}{3} + 1 = \frac{55}{100} \cdot \frac{1}{4} \cdot 1
+\implies \frac{2}{3} = \frac{11}{80}
+\end{align*}
+Note that the area of a whole tile is $S=1$ as stated in the problem at the beginning.
+The equation above proves that the fourth condition is the system is not met, which
+proves the thesis.
 $\square$
 \end{proof}
-\end{theorem}
+\end{proposition}
+Let's try with 3\textsuperscript{rd}-degree polynomials:
+\begin{proposition}[3-degree polynomials meet conditions in equations 
+\ref{eq:fconds} and \ref{eq:fconds2}]
+\label{the:3degpoly}
+Let $f:[0,1] \mapsto [0,1]$ be a continuous function in the form: 
+$f(x) \doteq ax^3+bx^2+cx+d$ where $a,b,c,d \in \mathbb{R}$. 
+Then $f$ meets conditions as per both
+equations \ref{eq:fconds} and \ref{eq:fconds2}.
+\begin{proof}
+To prove this, we do as in the proof for proposition \ref{the:2degpoly}:
+\begin{equation*}
+\begin{cases}
+f(0)=1 \implies \left. ax^3+bx^2+cx+d \right|_{x=0} = 1 \implies d = 1 \\
+f(1)=0 \implies \left. ax^3+bx^2+cx+d \right|_{x=1} = 0\\
+f^\prime(0) = 0 \implies \left. 3ax^2 + 2bx + c \right|_{x=0} = 0 \implies c = 0 \\
+4 \int^{1}_{0} \left( ax^3+bx^2+cx+d \right) \, \mathrm{d} x = \gamma S \\
+\end{cases}
+\end{equation*}
+Do not forget, we must also 
+guarantee that $0 < f(x) < 1, \forall x \in [0,1]$. We will do this later. 
+Finally, here as well the condition on continuity is observed because $f$ is 
+still a polynomial.
+Parameters $c$ and $d$ were found, so we can re-write the system:
+\begin{equation*}
+\begin{cases}
+\left. ax^3+bx^2+1 \right|_{x=1} = 0 \implies a+b+1=0\\
+4 \int^{1}_{0} \left( ax^3+bx^2+1 \right) \, \mathrm{d} x = \gamma S \\
+\end{cases}
+\end{equation*}
+Let's work on the last condition:
+\begin{align*}
+&\int^{1}_{0} \left( ax^3+bx^2+1 \right) \, \mathrm{d} x = \frac{\gamma}{4} S
+\implies
+-\int^{1}_{0} x^2 \, \mathrm{d} x + \int^{1}_{0} \mathrm{d} x = 
+        \frac{\gamma}{4} S \implies \notag\\
+&- \left[\frac{x^3}{3}\right]_0^1 + \left[x\right]_0^1 = \frac{\gamma}{4} S
+\implies -\frac{1}{3} + 1 = \frac{55}{100} \cdot \frac{1}{4} \cdot 1
+\implies \frac{2}{3} = \frac{11}{80}
+\end{align*}
+Note that the area of a whole tile is $S=1$ as stated in the problem at the beginning.
+The equation above proves that the fourth condition is the system is not met, which
+proves the thesis.
+$\square$
+\end{proof}
+\end{proposition}
+dsfsd
