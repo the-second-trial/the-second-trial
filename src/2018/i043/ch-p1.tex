@@ -21,7 +21,7 @@ Figure \ref{fig:symms} shows this simple calculation.
 Let $f:[0,a] \mapsto [0,a]$, with $a > 0$, be a continuous function also satisfying:
 \begin{equation}
 \label{eq:fconds}
-f(0)=a \wedge f(a)=0 \wedge 0 < f(x) < a, \forall x \in [0,a]
+f(0)=a \wedge f(a)=0 \wedge 0 \leq f(x) \leq a, \forall x \in [0,a]
 \end{equation}
 Then graph $\Lambda$, obtained by adjoining together $\Gamma$ ($f$'s graph) and
 its vertically, horizontally and centered symmetries, is a closed curve.
@@ -92,21 +92,20 @@ The new requirements for tiles can be formalized as follows:
 \label{eq:fconds2}
 \begin{cases}
 f^\prime(0) = 0\\
-S_{\Lambda} = \gamma \cdot S \implies 
-   4 \int^{1}_{0} f(x) \, \mathrm{d} x = \gamma \cdot S\\
+S_{\Gamma} = \gamma \cdot S \implies 
+   \int^{1}_{0} f(x) \, \mathrm{d} x = \gamma \cdot S\\
 \end{cases}
 \end{equation}
-Having $\gamma = \frac{55}{100}$ represent the fraction of area inside $\Lambda$
+Having $\gamma = \frac{55}{100}$ represent the fraction of area inside $\Gamma$
 in relation to the whole tile, 
-$S_{\Lambda} \in \mathbb{R}$ represent the surface 
-inside $\Lambda$ and $S \in \mathbb{R}$ the
+$S_{\Gamma} \in \mathbb{R}$ represent the surface 
+inside $\Gamma$ and $S \in \mathbb{R}$ the
 surface of the whole tile. The product of these two quantities is the final value 
-required by the problem. Note how we calculated the inner surface by taking four
-times the area below $f$ (that is $\Gamma$). Proving that the copies $f_k$
-have all the 
-same areas is trivial because they are constructed by symmetry which is 
-an isometry that is transformation preserving distances. It means that 
-all $f_k$ have the same areas. 
+required by the problem. 
+Be carefull not to misunderstand the problem: one single tile contains one $\Gamma$,
+the machine will print the other copies on 4 other different tiles. That's why the
+percentage $\gamma$ does not refer to the final decoration $\Lambda$, therefore
+$S = 1^2 = 1$ and $S \not\eq 2 ^ 2$. 
 
 The problem asks to find a new function to decorate tiles and it must 
 satisfy both equations \ref{eq:fconds} and \ref{eq:fconds2}.
@@ -129,7 +128,7 @@ $b$ and $c$:
 f(0)=1 \implies \left. ax^2+bx+c \right|_{x=0} = 1 \implies c = 1 \\
 f(1)=0 \implies \left. ax^2+bx+c \right|_{x=1} = 0 \implies a+b+c=0\\
 f^\prime(0) = 0 \implies \left. 2ax + b \right|_{x=0} = 0 \implies b = 0 \\
-4 \int^{1}_{0} \left( ax^2+bx+c \right) \, \mathrm{d} x = \gamma S \\
+\int^{1}_{0} \left( ax^2+bx+c \right) \, \mathrm{d} x = \gamma S \\
 \end{cases}
 \end{equation*}
 And we must also guarantee that $0 < f(x) < 1, \forall x \in [0,1]. 
@@ -139,15 +138,14 @@ The first three equations define the values of the three parameters:
 $a=-1$, $b=0$ and $c=1$; which means that $f(x) = -x^2 + 1$. Let's now
 verify that this function satisfies the fourth equation in the system:
 \begin{align*}
-&\int^{1}_{0} \left( -x^2+1 \right) \, \mathrm{d} x = \frac{\gamma}{4} S
+&\int^{1}_{0} \left( -x^2+1 \right) \, \mathrm{d} x = \gamma S
 \implies
 -\int^{1}_{0} x^2 \, \mathrm{d} x + \int^{1}_{0} \mathrm{d} x = 
-        \frac{\gamma}{4} S \implies \notag\\
-&- \left[\frac{x^3}{3}\right]_0^1 + \left[x\right]_0^1 = \frac{\gamma}{4} S
-\implies -\frac{1}{3} + 1 = \frac{55}{100} \cdot \frac{1}{4} \cdot 1
-\implies \frac{2}{3} = \frac{11}{80}
+        \gamma S \implies \notag\\
+&- \left[\frac{x^3}{3}\right]_0^1 + \left[x\right]_0^1 = \gamma S
+\implies -\frac{1}{3} + 1 = \frac{55}{100} \cdot 1
+\implies \frac{2}{3} = \frac{55}{100}
 \end{align*}
-Note that the area of a whole tile is $S=1$ as stated in the problem at the beginning.
 The equation above proves that the fourth condition is the system is not met, which
 proves the thesis.
 $\square$
@@ -168,36 +166,34 @@ To prove this, we do as in the proof for proposition \ref{the:2degpoly}:
 f(0)=1 \implies \left. ax^3+bx^2+cx+d \right|_{x=0} = 1 \implies d = 1 \\
 f(1)=0 \implies \left. ax^3+bx^2+cx+d \right|_{x=1} = 0\\
 f^\prime(0) = 0 \implies \left. 3ax^2 + 2bx + c \right|_{x=0} = 0 \implies c = 0 \\
-4 \int^{1}_{0} \left( ax^3+bx^2+cx+d \right) \, \mathrm{d} x = \gamma S \\
+\int^{1}_{0} \left( ax^3+bx^2+cx+d \right) \, \mathrm{d} x = \gamma S \\
 \end{cases}
 \end{equation*}
-Do not forget, we must also 
-guarantee that $0 < f(x) < 1, \forall x \in [0,1]$. We will do this later. 
-Finally, here as well the condition on continuity is observed because $f$ is 
+Here as well, the condition on continuity is observed because $f$ is 
 still a polynomial.
 Parameters $c$ and $d$ were found, so we can re-write the system:
 \begin{equation*}
 \begin{cases}
 \left. ax^3+bx^2+1 \right|_{x=1} = 0 \implies a+b+1=0\\
-4 \int^{1}_{0} \left( ax^3+bx^2+1 \right) \, \mathrm{d} x = \gamma S \\
+\int^{1}_{0} \left( ax^3+bx^2+1 \right) \, \mathrm{d} x = \gamma S \\
 \end{cases}
 \end{equation*}
 Let's work on the last condition:
 \begin{align*}
-&\int^{1}_{0} \left( ax^3+bx^2+1 \right) \, \mathrm{d} x = \frac{\gamma}{4} S
+&\int^{1}_{0} \left( ax^3+bx^2+1 \right) \, \mathrm{d} x = \gamma S
 \implies
 a\int^{1}_{0} x^3 \, \mathrm{d} x + b \int^{1}_{0} x^2 \, \mathrm{d} x \, + \notag\\ 
 &+ \int^{1}_{0} \mathrm{d} x= 
-        \frac{\gamma}{4} S \implies 
+        \gamma S \implies 
         a \left[\frac{x^4}{4}\right]_0^1 + b \left[\frac{x^3}{3}\right]_0^1 +
-        \left[x\right]_0^1 = \frac{\gamma}{4} S \implies \notag\\
-&\frac{a}{4} + \frac{b}{3} + 1 = \frac{\gamma}{4} S 
+        \left[x\right]_0^1 = \gamma S \implies \notag\\
+&\frac{a}{4} + \frac{b}{3} + 1 = \gamma S 
 \end{align*}
 The final system in $a$ and $b$ can be written now as:
 \begin{equation}\label{eq:3degsys}
 \begin{cases}
 a+b=-1\\
-3a + 4b = 3 \gamma S - 12 \\
+3a + 4b = 12 \gamma S - 12 \\
 \end{cases}
 \implies
 \begin{pmatrix}
@@ -212,7 +208,7 @@ b
 =
 \begin{pmatrix}
 -1 \\
-3 \gamma S - 12
+12 \gamma S - 12
 \end{pmatrix}
 \end{equation}
 To verify that 3\textsuperscript{rd}-degree polynomials meet the conditions, we
@@ -232,9 +228,31 @@ of the coefficient matrix:
 = 1 \cdot 4 - 3 \cdot 1 = 4 - 3 = 1 \not\eq 0
 \end{equation*}
 Since the determinant is not zero, the system has one single solution, which means
-that there exist values for $a$ and $b$, which together to those of $c$ and $d$ we
+that there exist values for $a$ and $b$, which together with those of $c$ and $d$ we
 found before, determine a function observing equations 
 \ref{eq:fconds} and \ref{eq:fconds2}.
+
+At this point, however, our proof is not 100\% complete. We still need to prove,
+as part of equation \ref{eq:fconds}, that 
+$0 \leq f(x) \leq 1, \forall x \in [0,1]$; we will do this now. We start from one
+important consideration: $f$ is a polynomial, it means that it is defined in all
+$\mathbb{R}$ with no discontinuities. It means that:
+\begin{equation*}
+\not\exists x_0 \in \mathbb{R} : \lim_{x \to x_0} f(x) = \infty \wedge
+\lim_{x \to \infty} f(x) = \infty
+\end{equation*}
+The function is a smooth curve which grows to infinity only when $x$ goes to
+infinity. Which means that in $x \in [0,1]$, because of Weierstrass'
+boundedness theorem, $f(x)$ has local max $M \in \mathbb{R}$ 
+and min $m \in \mathbb{R}$ values. However we already know by hypothesis that
+$f(0) = 1$ and $f(1) = 0$, and we want $0 \leq f(x) \leq 1$ for $0 \leq x \leq 1$:
+\begin{equation*}
+m \leq 0 \leq f(x) \leq 1 \leq M, \forall x : 0 \leq x \leq 1
+\end{equation*}
+This means that $m=0$ and $M = 1$. So in $x\in[0,1]$, there can only be one
+relative min and one relative max. We need to prove this. Together
+with the fact that $f$ is continuous, we basically need to prove that $f$ is
+monotonically decreasing inside $[0,1]$.
 $\square$
 \end{proof}
 \end{proposition}
@@ -266,7 +284,7 @@ b
 \cdot
 \begin{pmatrix}
 -1 \\
-3 \gamma S - 12
+12 \gamma S - 12
 \end{pmatrix}
 \implies \notag\\
 &\begin{pmatrix}
@@ -281,7 +299,7 @@ b
 \cdot
 \begin{pmatrix}
 -1 \\
-3 \gamma S - 12
+12 \gamma S - 12
 \end{pmatrix}
 \end{align*}
 Let's calculate the inverse of the coefficient matrix:
@@ -297,7 +315,7 @@ Let's calculate the inverse of the coefficient matrix:
 (-1)^{2+1}C_{2,1} & (-1)^{2+2}C_{2,2}
 \end{bmatrix}^\text{T}
 = \notag\\
-&\begin{bmatrix}
+&=\begin{bmatrix}
 (-1)^{1+1} \cdot 4 & (-1)^{1+2} \cdot 3 \\
 (-1)^{2+1} \cdot 1 & (-1)^{2+2} \cdot 1
 \end{bmatrix}^\text{T}
@@ -326,14 +344,14 @@ b
 \cdot
 \begin{pmatrix}
 -1 \\
-3 \gamma S - 12
+12 \gamma S - 12
 \end{pmatrix}
 =
 \begin{pmatrix}
--4 +12 -3 \gamma S \\
-3 - 12 + 3 \gamma S
+-4 +12 -12 \gamma S \\
+3 - 12 + 12 \gamma S
 \end{pmatrix}
 \end{equation*}
-Considering that $3 \gamma S = 3 \cdot \frac{55}{100} \cdot 1 = \frac{33}{20}$,
-we have that $a = 8 - \frac{33}{20} = \frac{127}{20}$, and 
-$b = -9 + \frac{33}{20} = -\frac{147}{20}$
+Considering that $12 \gamma S = 12 \cdot \frac{55}{100} \cdot 1 = \frac{66}{10}$,
+we have that $a = 8 - \frac{66}{10} = \frac{7}{5}$, and 
+$b = -9 + \frac{66}{10} = -\frac{12}{5}$.
