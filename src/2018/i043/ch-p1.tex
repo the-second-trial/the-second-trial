@@ -245,10 +245,17 @@ The function is a smooth curve which grows to infinity only when $x$ goes to
 infinity. Which means that in $x \in [0,1]$, because of Weierstrass'
 boundedness theorem, $f(x)$ has local max $M \in \mathbb{R}$ 
 and min $m \in \mathbb{R}$ values. However we already know by hypothesis that
-$f(0) = 1$ and $f(1) = 0$, and we want $0 \leq f(x) \leq 1$ for $0 \leq x \leq 1$:
+$f(0) = 1$ and $f(1) = 0$, and we want $0 \leq f(x) \leq 1$ for $0 \leq x \leq 1$;
+therefore we have the following:
 \begin{equation*}
 m \leq 0 \leq f(x) \leq 1 \leq M, \forall x : 0 \leq x \leq 1
 \end{equation*}
+%
+% Figure
+%-----------------------------------------------------------
+\input{fig-boundedness}
+%-----------------------------------------------------------
+%
 This means that $m=0$ and $M = 1$. So in $x\in[0,1]$, there can only be one
 relative min and one relative max. We need to prove this. Together
 with the fact that $f$ is continuous, we basically need to prove that $f$ is
