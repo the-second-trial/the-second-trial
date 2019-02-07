@@ -262,7 +262,22 @@ with the fact that $f$ is continuous, we basically need to prove that $f$ is
 monotonically decreasing inside $[0,1]$ like figure \ref{fig:fshape} shows. To
 prove this, we must study $f$'s monotonicity: the most classic way to do this
 is by considering its first-order derivative $f^\prime$ and verify that
-$f^\prime(x) < 0, \forall x \in ]0,1[$.
+$f^\prime(x) < 0, \forall x \in ]0,1[$:
+\begin{align*}
+&f^\prime(x) > 0 \implies = \frac{d}{dx}(ax^3+bx^2+1) > 0 \implies \notag\\
+&3ax^2+2bx > 0 \implies (3ax + 2b) x > 0
+\end{align*}
+By studying the sign of the derivative, we can see its monotonicity. Of course we will
+focus on $x\in]0,1[$ and we are going to check that $f < 0$ in that interval. The above
+inequality has been rearranged in the product of two expressions whose sign can be
+studied separately: $3ax + 2b > 0 \implies x > -\frac{2}{3}\frac{b}{a}$ and $x > 0$.
+%
+% Figure
+%-----------------------------------------------------------
+\input{fig-sign}
+%-----------------------------------------------------------
+%
+The results of the inequality depend on $\beta = -\frac{2}{3}\frac{b}{a}$.
 $\square$
 \end{proof}
 \end{proposition}
