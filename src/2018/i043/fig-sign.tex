@@ -6,108 +6,138 @@
 \tikzstyle{smallfig}=[scale=0.25]
    %
 \begin{tikzpicture}[style=smallfig]
-\draw[thin,->] (0,0) -- (10,0) node[right] {$x$};
+\tikzmath{
+	\X1 = 0; \X2 = 8;
+	\x1 = 2; \x2 = 2*\x1; \x3 = 3*\x1; 
+	\xv1 = 0.5*\x1; 
+	\xv2 = \x1 + 0.5*(\x2 - \x1); 
+	\xv3 = \x3;
+	\y1 = 1.5; \y2 = 2*\y1; \y3 = 4*\y1;
+	\ya = 5;
+}
 
-\draw[dotted,thin,-] (2,0) -- (2,6);
-\draw[dotted,thin,-] (5,0) -- (5,6);
+\draw[thin,->] (\X1,0) -- (\X2,0) node[right] {$x$};
 
-\draw[dashed,thin,-] (0,1.5) -- (5,1.5);
-\draw[thin,-] (5,1.5) -- (10,1.5);
-\draw[thin,-] (5,0) -- (5,1.5);
+\draw[dotted,thin,-] (\x1,0) -- (\x1,\y3);
+\draw[dotted,thin,-] (\x2,0) -- (\x2,\y3);
 
-\draw[dashed,thin,-] (0,3) -- (2,3);
-\draw[thin,-] (2,3) -- (10,3);
-\draw[thin,-] (2,0) -- (2,3);
+\draw[dashed,thin,-] (0,\y2) -- (\x1,\y2);
+\draw[thin,-] (\x1,\y2) -- (\X2,\y2);
+\draw[thin,-] (\x1,0) -- (\x1,\y2);
 
-\node[] at (1,0.75) {\tiny $-$};
-\node[] at (3.5,0.75) {\tiny $-$};
-\node[] at (6.5,0.75) {\tiny $+$};
+\draw[dashed,thin,-] (\X1,\y1) -- (\x2,\y1);
+\draw[thin,-] (\x2,\y1) -- (\X2,\y1);
+\draw[thin,-] (\x2,0) -- (\x2,\y1);
 
-\node[] at (1,2.25) {\tiny $-$};
-\node[] at (3.5,2.25) {\tiny $+$};
-\node[] at (6.5,2.25) {\tiny $+$};
+\node[] at (\xv1,0.5*\y1) {\tiny $-$};
+\node[] at (\xv2,0.5*\y1) {\tiny $-$};
+\node[] at (\xv3,0.5*\y1) {\tiny $+$};
 
-\node[red] at (1,3.75) {\tiny $-$};
-\node[red] at (3.5,3.75) {\tiny $-$};
-\node[blue] at (6.5,3.75) {\tiny $+$};
+\node[] at (\xv1,1.5*\y1) {\tiny $-$};
+\node[] at (\xv2,1.5*\y1) {\tiny $+$};
+\node[] at (\xv3,1.5*\y1) {\tiny $+$};
 
-\draw[thick,->, red] (0.5,5.5) -- (1.5,4.5);
-\draw[thick,->, red] (3,5.5) -- (4,4.5);
-\draw[thick,->, blue] (6,4.5) -- (7,5.5);
+\node[blue] at (\xv1,2.5*\y1) {\tiny $+$};
+\node[red] at (\xv2,2.5*\y1) {\tiny $-$};
+\node[blue] at (\xv3,2.5*\y1) {\tiny $+$};
 
-\fill (2,0) circle (5pt) node[below] {$\beta$};
-\fill (5,0) circle (5pt) node[below] {$0$};
-\fill (8,0) circle (5pt) node[below] {$1$};
+\node[blue] at (\xv1,\ya) {$\nearrow$};
+\node[red] at (\xv2,\ya) {$\searrow$};
+\node[blue] at (\xv3,\ya) {$\nearrow$};
+
+\fill (\x1,0) circle (5pt) node[below] {$\beta$};
+\fill (\x2,0) circle (5pt) node[below] {$0$};
+\fill (\x3,0) circle (5pt) node[below] {$1$};
 \end{tikzpicture}
 \quad
 \begin{tikzpicture}[style=smallfig]
-\draw[thin,->] (0,0) -- (10,0) node[right] {$x$};
+\tikzmath{
+	\X1 = 0; \X2 = 8;
+	\x1 = 2; \x2 = 2*\x1; \x3 = 3*\x1; 
+	\xv1 = 0.5*\x1; 
+	\xv2 = \x1 + 0.5*(\x2 - \x1); 
+	\xv3 = \x3;
+	\y1 = 1.5; \y2 = 2*\y1; \y3 = 4*\y1;
+	\ya = 5;
+}
 
-\draw[dotted,thin,-] (2,0) -- (2,6);
-\draw[dotted,thin,-] (5,0) -- (5,6);
+\draw[thin,->] (\X1,0) -- (\X2,0) node[right] {$x$};
 
-\draw[dashed,thin,-] (0,1.5) -- (5,1.5);
-\draw[thin,-] (5,1.5) -- (10,1.5);
-\draw[thin,-] (5,0) -- (5,1.5);
+\draw[dotted,thin,-] (\x1,0) -- (\x1,\y3);
+\draw[dotted,thin,-] (\x2,0) -- (\x2,\y3);
 
-\draw[dashed,thin,-] (0,3) -- (2,3);
-\draw[thin,-] (2,3) -- (10,3);
-\draw[thin,-] (2,0) -- (2,3);
+\draw[dashed,thin,-] (\X1,\y1) -- (\x1,\y1);
+\draw[thin,-] (\x1,\y1) -- (\X2,\y1);
+\draw[thin,-] (\x1,0) -- (\x1,\y1);
 
-\node[] at (1,0.75) {\tiny $-$};
-\node[] at (3.5,0.75) {\tiny $-$};
-\node[] at (6.5,0.75) {\tiny $+$};
+\draw[dashed,thin,-] (0,\y2) -- (\x2,\y2);
+\draw[thin,-] (\x2,\y2) -- (\X2,\y2);
+\draw[thin,-] (\x2,0) -- (\x2,\y2);
 
-\node[] at (1,2.25) {\tiny $-$};
-\node[] at (3.5,2.25) {\tiny $+$};
-\node[] at (6.5,2.25) {\tiny $+$};
+\node[] at (\xv1,0.5*\y1) {\tiny $-$};
+\node[] at (\xv2,0.5*\y1) {\tiny $+$};
+\node[] at (\xv3,0.5*\y1) {\tiny $+$};
 
-\node[red] at (1,3.75) {\tiny $-$};
-\node[red] at (3.5,3.75) {\tiny $-$};
-\node[blue] at (6.5,3.75) {\tiny $+$};
+\node[] at (\xv1,1.5*\y1) {\tiny $-$};
+\node[] at (\xv2,1.5*\y1) {\tiny $-$};
+\node[] at (\xv3,1.5*\y1) {\tiny $+$};
 
-\draw[thick,->, red] (0.5,5.5) -- (1.5,4.5);
-\draw[thick,->, red] (3,5.5) -- (4,4.5);
-\draw[thick,->, blue] (6,4.5) -- (7,5.5);
+\node[blue] at (\xv1,2.5*\y1) {\tiny $+$};
+\node[red] at (\xv2,2.5*\y1) {\tiny $-$};
+\node[blue] at (\xv3,2.5*\y1) {\tiny $+$};
 
-\fill (2,0) circle (5pt) node[below] {$\beta$};
-\fill (5,0) circle (5pt) node[below] {$0$};
-\fill (8,0) circle (5pt) node[below] {$1$};
+\node[blue] at (\xv1,\ya) {$\nearrow$};
+\node[red] at (\xv2,\ya) {$\searrow$};
+\node[blue] at (\xv3,\ya) {$\nearrow$};
+
+\fill (\x1,0) circle (5pt) node[below] {$0$};
+\fill (\x2,0) circle (5pt) node[below] {$\beta$};
+\fill (\x3,0) circle (5pt) node[below] {$1$};
 \end{tikzpicture}
 \quad
 \begin{tikzpicture}[style=smallfig]
-\draw[thin,->] (0,0) -- (10,0) node[right] {$x$};
+\tikzmath{
+	\X1 = 0; \X2 = 8;
+	\x1 = 2; \x2 = 2*\x1; \x3 = 3*\x1; 
+	\xv1 = 0.5*\x1; 
+	\xv2 = \x2; 
+	\xv3 = \x3 + 0.5*(\X2 - \x3);
+	\y1 = 1.5; \y2 = 2*\y1; \y3 = 4*\y1;
+	\ya = 5;
+}
 
-\draw[dotted,thin,-] (2,0) -- (2,6);
-\draw[dotted,thin,-] (5,0) -- (5,6);
+\draw[thin,->] (\X1,0) -- (\X2,0) node[right] {$x$};
 
-\draw[dashed,thin,-] (0,1.5) -- (5,1.5);
-\draw[thin,-] (5,1.5) -- (10,1.5);
-\draw[thin,-] (5,0) -- (5,1.5);
+\draw[dotted,thin,-] (\x1,0) -- (\x1,\y3);
+\draw[dotted,thin,-] (\x3,0) -- (\x3,\y3);
 
-\draw[dashed,thin,-] (0,3) -- (2,3);
-\draw[thin,-] (2,3) -- (10,3);
-\draw[thin,-] (2,0) -- (2,3);
+\draw[dashed,thin,-] (\X1,\y1) -- (\x1,\y1);
+\draw[thin,-] (\x1,\y1) -- (\X2,\y1);
+\draw[thin,-] (\x1,0) -- (\x1,\y1);
 
-\node[] at (1,0.75) {\tiny $-$};
-\node[] at (3.5,0.75) {\tiny $-$};
-\node[] at (6.5,0.75) {\tiny $+$};
+\draw[dashed,thin,-] (0,\y2) -- (\x3,\y2);
+\draw[thin,-] (\x3,\y2) -- (\X2,\y2);
+\draw[thin,-] (\x3,0) -- (\x3,\y2);
 
-\node[] at (1,2.25) {\tiny $-$};
-\node[] at (3.5,2.25) {\tiny $+$};
-\node[] at (6.5,2.25) {\tiny $+$};
+\node[] at (\xv1,0.5*\y1) {\tiny $-$};
+\node[] at (\xv2,0.5*\y1) {\tiny $-$};
+\node[] at (\xv3,0.5*\y1) {\tiny $+$};
 
-\node[red] at (1,3.75) {\tiny $-$};
-\node[red] at (3.5,3.75) {\tiny $-$};
-\node[blue] at (6.5,3.75) {\tiny $+$};
+\node[] at (\xv1,1.5*\y1) {\tiny $-$};
+\node[] at (\xv2,1.5*\y1) {\tiny $+$};
+\node[] at (\xv3,1.5*\y1) {\tiny $+$};
 
-\draw[thick,->, red] (0.5,5.5) -- (1.5,4.5);
-\draw[thick,->, red] (3,5.5) -- (4,4.5);
-\draw[thick,->, blue] (6,4.5) -- (7,5.5);
+\node[red] at (\xv1,2.5*\y1) {\tiny $-$};
+\node[red] at (\xv2,2.5*\y1) {\tiny $-$};
+\node[blue] at (\xv3,2.5*\y1) {\tiny $+$};
 
-\fill (2,0) circle (5pt) node[below] {$\beta$};
-\fill (5,0) circle (5pt) node[below] {$0$};
-\fill (8,0) circle (5pt) node[below] {$1$};
+\node[red] at (\xv1,\ya) {$\searrow$};
+\node[red] at (\xv2,\ya) {$\searrow$};
+\node[blue] at (\xv3,\ya) {$\nearrow$};
+
+\fill (\x1,0) circle (5pt) node[below] {$0$};
+\fill (\x2,0) circle (5pt) node[below] {$1$};
+\fill (\x3,0) circle (5pt) node[below] {$\beta$};
 \end{tikzpicture}
    %
    \caption{Showing the how the constraints on $f$ define its shape
