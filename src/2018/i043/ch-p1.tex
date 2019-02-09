@@ -20,7 +20,6 @@ Figure \ref{fig:symms} shows this simple calculation.
 \label{lem:lclosed}
 Let $f:[0,a] \mapsto [0,a]$, with $a > 0$, be a continuous function also satisfying:
 \begin{equation}
-\label{eq:fconds}
 f(0)=a \wedge f(a)=0 \wedge 0 \leq f(x) \leq a, \forall x \in [0,a]
 \end{equation}
 Then graph $\Lambda$, obtained by adjoining together $\Gamma$ ($f$'s graph) and
@@ -57,9 +56,12 @@ And that proves the thesis.
 $\square$
 \end{proof}
 \end{proposition}
-
 Proposition \ref{lem:lclosed} takes a generic case, but if we consider $a=1$, we
-successfully get back to our case \cite{exam1}.\\
+successfully get back to our case \cite{exam1}:
+\begin{equation}
+\label{eq:fconds}
+f(0)=1 \wedge f(1)=0 \wedge 0 \leq f(x) \leq 1, \forall x \in [0,1]
+\end{equation}
 
 The same problem later requires to find the definition of $f$ and its symetrical
 copies $f_k$ ($k = 1 \dots 3$). This task is very simple because $f$ is a line
@@ -82,7 +84,7 @@ f_3(x) = -f(x) \implies f_3(x) = x - 1 & \Gamma_3 \\
 This completes the first part of the problem.
 
 \subsection{Polynomial decorations and dimensioning}
-\label{sec:p1}
+\label{sec:c1p1}
 
 The next part of the problem concerns a \emph{dimensioning}\footnote{The
 process of calculating the values of the parameters of a system
@@ -397,3 +399,32 @@ is met to accept the solutions we have just found. We have:
 $\beta = -\frac{2}{3}\frac{b}{a} = -\frac{2}{3}\left(-\frac{12}{5}\right)\frac{5}{7} = 
  \frac{2}{3}\cdot\frac{12}{5}\cdot\frac{5}{7} = \frac{8}{7} > 1$ which proves
 the solutions we found are good.
+
+\subsection{Analyzing proposals}
+\label{sec:c1p2}
+The next part of the problem involves considering two classes of functions:
+$a_n$ and $b_n$. We are first asked to prove that $a_n$ and $b_n$
+meet certain conditions.
+\begin{proposition}[$a_n$ and $b_n$ satisfy equations \ref{eq:fconds}]
+Let $a_n(x) \doteq 1-x^n$ and $b_n(x) \doteq (1-x)^n$ be two classes of functions 
+defined in $0 \leq x \leq 1$ and having $n \in \mathbb{N}, n > 0$. Then
+$a_n$ and $b_n$ satisfy equations \ref{eq:fconds}.
+\begin{proof}
+Let's substitute $a_n$ and $b_n$ inside equations \ref{eq:fconds}.
+\begin{equation*}
+\begin{cases}
+a_n(0) = \left. 1-x^n \right|_{x=0} = 1\\
+a_n(1) = \left. 1-x^n \right|_{x=1} = 0\\
+0 < 1-x^n < 1, \forall x \in ]0,1[\\
+\end{cases}
+\wedge
+\begin{cases}
+b_n(0) = \left. (1-x)^n \right|_{x=0} = 1\\
+b_n(1) = \left. (1-x)^n \right|_{x=1} = 0\\
+0 < (1-x)^n < 1, \forall x \in ]0,1[\\
+\end{cases}
+\end{equation*}
+Both functions satisfy the first two conditions, we need to check their sign inside $]0,1[$.
+\end{proof}
+\end{proposition}
+dfdf
