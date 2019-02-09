@@ -277,9 +277,21 @@ studied separately: $3ax + 2b > 0 \implies x > -\frac{2}{3}\frac{b}{a}$ and $x >
 \input{fig-sign}
 %-----------------------------------------------------------
 %
-The results of the inequality depend on $\beta = -\frac{2}{3}\frac{b}{a}$.
+The results of the inequality depend on $\beta = -\frac{2}{3}\frac{b}{a}$: as shown
+in figure \ref{fig:fprimesignstudy}, we have three possible cases. It is evident that we
+can only accept the third case where $\beta \geq 1$ because it is the only one
+where $f$ is monotonically decreasing.
 $\square$
 \end{proof}
+\end{proposition}
+Proposition \ref{the:3degpoly} shows that 3-degree polynomials can be used
+to find a solution to equations \ref{eq:fconds} and \ref{eq:fconds2}, however we
+just discovered that this is true only if another condition is met.
+\begin{proposition}[Condition on 3-degree polynomials]
+\label{prop:3degpolyaccept}
+In order to have 3-degree polynomials $ax^3 + bx^2 + cx + d$ satosfy
+equations \ref{eq:fconds} and \ref{eq:fconds2}, it is necessary to have:
+$\beta = -\frac{2}{3}\frac{b}{a} \geq 1$.
 \end{proposition}
 We are asked to find the values of $a$, $b$, $c$ and $d$ though. Since $c=0$ and
 $d=1$, we need to calculate $a$ and $b$ from equation \ref{eq:3degsys}.
@@ -380,3 +392,8 @@ b
 Considering that $12 \gamma S = 12 \cdot \frac{55}{100} \cdot 1 = \frac{66}{10}$,
 we have that $a = 8 - \frac{66}{10} = \frac{7}{5}$, and 
 $b = -9 + \frac{66}{10} = -\frac{12}{5}$.
+However, we now must prove that condition in proposition \ref{prop:3degpolyaccept}
+is met to accept the solutions we have just found. We have: 
+$\beta = -\frac{2}{3}\frac{b}{a} = -\frac{2}{3}\left(-\frac{12}{5}\right)\frac{5}{7} = 
+ \frac{2}{3}\cdot\frac{12}{5}\cdot\frac{5}{7} = \frac{8}{7} > 1$ which proves
+the solutions we found are good.
