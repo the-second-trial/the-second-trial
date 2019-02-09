@@ -412,19 +412,46 @@ $a_n$ and $b_n$ satisfy equations \ref{eq:fconds}.
 \begin{proof}
 Let's substitute $a_n$ and $b_n$ inside equations \ref{eq:fconds}.
 \begin{equation*}
+\begin{matrix}
 \begin{cases}
 a_n(0) = \left. 1-x^n \right|_{x=0} = 1\\
 a_n(1) = \left. 1-x^n \right|_{x=1} = 0\\
 0 < 1-x^n < 1, \forall x \in ]0,1[\\
-\end{cases}
-\wedge
+\end{cases} &
 \begin{cases}
 b_n(0) = \left. (1-x)^n \right|_{x=0} = 1\\
 b_n(1) = \left. (1-x)^n \right|_{x=1} = 0\\
 0 < (1-x)^n < 1, \forall x \in ]0,1[\\
 \end{cases}
+\end{matrix}
 \end{equation*}
 Both functions satisfy the first two conditions, we need to check their sign inside $]0,1[$.
+Since each condition is a double inequality, we have to solve four inequalities, two for
+each function:
+\begin{equation*}
+\begin{cases}
+1-x^n > 0 \implies x^n < 1 \implies 
+\begin{cases}
+\begin{matrix}|x| < 1 & n = 2k\end{matrix}\\
+\begin{matrix}x < 1 & n = 2k+1\end{matrix}\\
+\end{cases}\\
+1-x^n < 1 \implies x^n > 0 \implies \forall x \neq 0\\
+\end{cases}
+\end{equation*}
+Having $k \in \mathbb{N}$. The first inequality in the system gets split into another
+system because we need to distinguish between $n$ being odd or even. If $n$ is even
+(first case), remember that $\left(\sqrt[n]{x}\right)^n = |x|$; the inequality then
+becomes $|x| < \pm 1$, however an absolute value is always positive, so we omitted
+the case $|x| < -1$ as giving no result.
+FInally, if $n$ is odd, then we can safely extract the $n$-th root, thus leading to the
+second branch in the first inequality. By summarizing together all results, we can
+clearly see that in $]0,1[$, $a_n$ is always in $]0,1[$ too. Now $b_n$:
+\begin{equation*}
+\begin{cases}
+(1-x)^n > 0 \implies \forall x \neq 1\\
+(1-x)^n < 1\\
+\end{cases}
+\end{equation*}
 \end{proof}
 \end{proposition}
 dfdf
