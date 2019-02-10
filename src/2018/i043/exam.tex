@@ -4,7 +4,13 @@
 
 \usepackage{amssymb}
 \usepackage{amsthm}
-%\theoremstyle{plain}
+\theoremstyle{definition}
+
+\usepackage{tikz}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{math}
 
 \newtheorem*{theorem*}{Theorem}
 %% this allows for theorems which are not automatically numbered
@@ -17,17 +23,21 @@
 \newtheorem{quest}{Question}
 \usepackage{lineno}
 
-%% The above lines are for formatting.  In general, you will not want to change these.
+\usepackage[shortlabels]{enumitem}
 
+%
+%
+%
 
-\title{Esame di Maturit\'a - Year 2018}
+\title{The Second Trial - Year 2018}
 
-\author{translated by Andrea Tino}
+\author{\emph{Esame di Maturit\'a} translated by Andrea Tino}
 
 \begin{document}
 
 \begin{abstract}
-English translation from the regular session of the National Exam, Mathematics, year 2018.
+English translation from the regular session of the Italian National Exam
+(LI02, EA02, LI03 and LI15), Mathematics, year 2018.
 \end{abstract}
 
 \maketitle
@@ -39,37 +49,183 @@ The student is required to solve one out of the two problems, and to answer 5 qu
 \begin{problem}
 You are required to program a machine employed in a factory for the production of floor tiles.
 Tiles are square-shaped of side $1$ (in a suitable unit of measure), the production stages are the following:
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item Function $y=f(x)$ is chosen, defined in interval $[0,1]$ and therein continuous; which meets the following
 conditions:
 \begin{itemize}
-\item $f(0) = 1$
-\item $f(1) = 0$
-\item $0 < f(x) < 1$ for $0 < x < 1$.
+\item \label{itm:1} $f(0) = 1$
+\item \label{itm:2} $f(1) = 0$
+\item \label{itm:3} $0 < f(x) < 1$ for $0 < x < 1$.
 \end{itemize}
-\item The machine
-\item sdsd
+\item The machine draws the plot $\Gamma$ of function $y=f(x)$ and the symmentric plots of $\Gamma$
+to axis $y$, axis $x$ and origin $O$, obtaining therefore a closed curve $\Lambda$ crossing points
+$(1,0)$, $(0,1)$, $(-1,0)$, $(0,-1)$, symmetric to the axes and the origin, contained inside square $Q$
+with vertices $(1,1)$, $(-1,1)$, $(-1,-1)$, $(1,-1)$.
+\item The machine builds one tile by colouring grey the inner area inside curve $\Lambda$ and leaving blank
+the remaining surface in square $Q$. On the screen, are then shown some tiles side by side, to provide an idea
+of the final look of the floor.
 \end{enumerate}
-dfdf
-\end{problem}
+The manual shows an example of the realization process of a simple tile (figure \ref{fig:fshape}). The
+final result is also shown in the manual as per figure x.
+%
+% Figure
+%-----------------------------------------------------------
+   \begin{figure}
+   \centering
+\tikzstyle{smallfig}=[scale=0.25]
+   %
+\begin{tikzpicture}[style=smallfig]
+\draw[thin,->] (-6,0) -- (6,0) node[right] {$\hat{x}$};
+\draw[thin,->] (0,-6) -- (0,6) node[above] {$\hat{y}$};
 
-Notice that for sets $A$ and $B$, if $A \not\subset B$, then there exists an element $x$ such that $x \in A$ and $x \notin B$.  That is,
-$$(A \not\subset B) \leftrightarrow \exists x ( x \in A \wedge x \notin B).$$
+\fill (0,4) circle (5pt) node[above left] {$1$};
+\fill (4,0) circle (5pt) node[below right] {$1$};
+\fill (-4,0) circle (5pt) node[below left] {$-1$};
+\fill (0,-4) circle (5pt) node[below left] {$-1$};
+
+\draw[thick] (0,4) -- (4,0);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[style=smallfig]
+\draw[thin,->] (-6,0) -- (6,0) node[right] {$\hat{x}$};
+\draw[thin,->] (0,-6) -- (0,6) node[above] {$\hat{y}$};
+
+\fill (0,4) circle (5pt) node[above left] {$1$};
+\fill (4,0) circle (5pt) node[below right] {$1$};
+\fill (-4,0) circle (5pt) node[below left] {$-1$};
+\fill (0,-4) circle (5pt) node[below left] {$-1$};
+
+\draw[thick] (0,4) -- (4,0);
+\draw[thick] (-4,0) -- (0,4);
+\draw[thick] (0,-4) -- (-4,0);
+\draw[thick] (0,-4) -- (4,0);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[style=smallfig]
+\path[fill=lightgray!40] (4,0) -- (0,4) -- (-4,0) -- (0,-4);
+
+\draw[thin,->] (-6,0) -- (6,0) node[right] {$\hat{x}$};
+\draw[thin,->] (0,-6) -- (0,6) node[above] {$\hat{y}$};
+
+\fill (0,4) circle (5pt) node[above left] {$1$};
+\fill (4,0) circle (5pt) node[below right] {$1$};
+\fill (-4,0) circle (5pt) node[below left] {$-1$};
+\fill (0,-4) circle (5pt) node[below left] {$-1$};
+
+\draw[thick] (0,4) -- (4,0);
+\draw[thick] (-4,0) -- (0,4);
+\draw[thick] (0,-4) -- (-4,0);
+\draw[thick] (0,-4) -- (4,0);
+
+\draw (4,4) -- (-4,4);
+\draw (-4,4) -- (-4,-4);
+\draw (-4,-4) -- (4,-4);
+\draw (4,-4) -- (4,4);
+\end{tikzpicture}
+   %
+   \caption{The three stages of production (from left to right) of a simple tile.}
+   \label{fig:fshape}
+   \end{figure}
+%-----------------------------------------------------------
+%
+\begin{enumerate}
+\item In relation to the example, determine the expression of function $y=f(x)$ and the equation of curve
+$\Lambda$, in order to verify the correct machine's functioning.
+\end{enumerate}
+You are asked to build a tile with a more elaborate decoration which, other than satisfying conditions \ref{itm:1},
+\ref{itm:2} and \ref{itm:3} introduced before, is such that $f^\prime(0) = 0$ and the coloured area occupy
+55 \% of the total tile's surface. On this regard, take into consideration polynomial functions of 2\textsuperscript{nd}
+and 3\textsuperscript{rd} degree.
+\begin{enumerate}[resume]
+\item After assessing that it is not possible to realize what's required by employing a polynomial function of
+2\textsuperscript{nd} degree, determine coefficients $a,b,c,d \in \mathbb{R}$ of 
+3\textsuperscript{rd} degree polynomial function $f(x)$ which satisfies the requirements. In the end, plot in
+a cartesian diagram the final tile.
+\end{enumerate}
+The client is offered two types of decorations, each respectively coming from functions $a_n(x)=1-x^n$
+and $b_n(x)=(1-x)^n$, both considered in $x\in[0,1]$ with $n$ being a positive integer.
+\begin{enumerate}[resume]
+\item Verify that, on varying of $n$, all these functions meet conditions \ref{itm:1},
+\ref{itm:2} and \ref{itm:3}. Said $A(n)$ and $B(n)$ be the areas of the coloured parts of the tiles by
+using functions $a_n$ and $b_n$, calculate $\lim\limits_{n \to +\infty} A(n)$ and 
+$\lim\limits_{n \to +\infty} B(n)$, and
+process the results from a geometric point of view.
+\end{enumerate}
+The client decides to order 5.000 tiles with decoration derived from $a_2(x)$ and 5.000 with the one derived from
+$b_2(x)$. Painting is performed by an automated mechanical arm which, after laying the color, returns to its
+initial position hovering the tile along its diagonal. Due to a malfunctioning, during the poroduction of the 10.000
+tiles, it occurs with a probability 20\% that the mechanical arm leaves a drop of colour on a casual point 
+along the diagonal, such that the produced tile gets dirty.
+\begin{enumerate}[resume]
+\item Provide a well motivated estimation of the number of tiles which, having a dirty spot on the non-coloured
+part, will be regarded as demaged at the end of the production cycle.
+\end{enumerate}
+\end{problem}
 
 \begin{problem}
-Let $A = \{ 1, 2, 3, 4, 5 \} $, $B = \{ 1, 2 \}$ and $C = \{ 1, 7 \}$.  We can see that every element in $B$ is an element of $A$.  Further, we can see that $C$ contains an element, namely $7$, which is not in $A$.  Thus, $B \subset A$ and $C \not\subset A.$
+Consider function $f_k: \mathbb{R} \mapsto \mathbb{R}$ defined as:
+\begin{equation}
+f_k(x)=-x^3+kx+9
+\end{equation}
+With $k\in\mathbb{Z}$.
+\begin{enumerate}
+\item Let $\Gamma_k$ be the function's plot, verify that, for every value of parameter $k$, line $r_k$ tangent
+$\Gamma_k$ on point of x-coordinate $0$ and line $s_k$ tangent $\Gamma_k$ on point of x-coordinate $1$ cross
+in point $M$ of x-coordinate $\frac{2}{3}$.
+\item After assessing that $k=1$ is the maximum positive integer such that the y-coordinate of point $M$ is
+lower than $10$, analyze the behavior of function $f_1(x)$, determining its stationary and inflection points by
+drawing its graph.
+\item Let $T$ be the triangle delimited by lines $r_1$, $s_1$ and the x-axis; calculate the probability that,
+for every random point $P(x_p,y_p)$ inside $T$, it is located above $\Gamma_1$ (that is $y_p > f_1(x)$ in said
+point $P$).
+\item Figure x shows a point $N \in \Gamma_1$ and a segment of graph $\Gamma_1$. The line normal to
+$\Gamma_1$ in $N$ (that is the perpendicular to the line tangent $\Gamma_1$ in such point) crosses the
+origin $O$. Graph $\Gamma_1$ includes three point with such property. Prove, more generally, that the graph
+of whatever polynomial of degree $n>0$ cannot include more than $2n-1$ points in which the normal line to the
+graph crosses the origin.
+\end{enumerate}
 \end{problem}
 
-We now prove theorem $2.1$.
+\section{Questionnaire}
 
-\begin{theorem*}[2.1]
+\begin{quest}
+Prove that the volume of a cylinder inscribed inside a cone is lower than half of the cone's volume.
+\end{quest}
+
+\begin{quest}
 For any set $A$, $\emptyset \subset A$.
-\end{theorem*}
+\end{quest}
 
-\begin{proof}
-By way of contradiction, suppose that the theorem fails.  Let $A$ be a set such that $\emptyset \not\subset A.$  From the above discussion, we can see that there exists an element $x$ such that $x \in \emptyset$ and $x \notin A$.  Let $x$ be such an element.  Since the emptyset has no elements, then $x \notin \emptyset$.  Thus, we have that $x \in \emptyset$ and $x \notin \emptyset.$ This contradiction proves that the theorem is true.
-\end{proof}
+\begin{quest}
+For any set $A$, $\emptyset \subset A$.
+\end{quest}
 
+\begin{quest}
+For any set $A$, $\emptyset \subset A$.
+\end{quest}
 
+\begin{quest}
+For any set $A$, $\emptyset \subset A$.
+\end{quest}
+
+\begin{quest}
+For any set $A$, $\emptyset \subset A$.
+\end{quest}
+
+\begin{quest}
+For any set $A$, $\emptyset \subset A$.
+\end{quest}
+
+\begin{quest}
+For any set $A$, $\emptyset \subset A$.
+\end{quest}
+
+\begin{quest}
+For any set $A$, $\emptyset \subset A$.
+\end{quest}
+
+\begin{quest}
+For any set $A$, $\emptyset \subset A$.
+\end{quest}
 
 \end{document}
