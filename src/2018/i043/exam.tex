@@ -25,6 +25,14 @@
 
 \usepackage[shortlabels]{enumitem}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=blue,      
+    urlcolor=blue,
+}
+
 %
 %
 %
@@ -36,11 +44,13 @@
 \begin{document}
 
 \begin{abstract}
-English translation from the regular session of the Italian National Exam
-(LI02, EA02, LI03 and LI15), Mathematics, year 2018.
+English adaptation of the regular session of the Italian National Exam
+(codes: LI02, EA02, LI03 and LI15), theme of Mathematics, year 2018 
+(\url{http://www.istruzione.it/esame_di_stato/201718/Licei/Ordinaria/I043\_ORD18.pdf}).
 \end{abstract}
 
 \maketitle
+\thispagestyle{empty}
 
 The student is required to solve one out of the two problems, and to answer 5 questions. 
 
@@ -52,11 +62,11 @@ Tiles are square-shaped of side $1$ (in a suitable unit of measure), the product
 \begin{enumerate}[(a)]
 \item Function $y=f(x)$ is chosen, defined in interval $[0,1]$ and therein continuous; which meets the following
 conditions:
-\begin{itemize}
+\begin{enumerate}[I.]
 \item \label{itm:1} $f(0) = 1$
 \item \label{itm:2} $f(1) = 0$
 \item \label{itm:3} $0 < f(x) < 1$ for $0 < x < 1$.
-\end{itemize}
+\end{enumerate}
 \item The machine draws the plot $\Gamma$ of function $y=f(x)$ and the symmentric plots of $\Gamma$
 to axis $y$, axis $x$ and origin $O$, obtaining therefore a closed curve $\Lambda$ crossing points
 $(1,0)$, $(0,1)$, $(-1,0)$, $(0,-1)$, symmetric to the axes and the origin, contained inside square $Q$
@@ -65,8 +75,7 @@ with vertices $(1,1)$, $(-1,1)$, $(-1,-1)$, $(1,-1)$.
 the remaining surface in square $Q$. On the screen, are then shown some tiles side by side, to provide an idea
 of the final look of the floor.
 \end{enumerate}
-The manual shows an example of the realization process of a simple tile (figure \ref{fig:fshape}). The
-final result is also shown in the manual as per figure x.
+The manual shows an example of the realization process of a simple tile (figure \ref{fig:fshape}).
 %
 % Figure
 %-----------------------------------------------------------
@@ -128,6 +137,40 @@ final result is also shown in the manual as per figure x.
    \end{figure}
 %-----------------------------------------------------------
 %
+The final result is also shown in the manual,
+%
+% Figure
+%-----------------------------------------------------------
+   \begin{figure}
+   \centering
+\tikzstyle{smallfig}=[scale=0.25]
+   %
+\begin{tikzpicture}[style=smallfig]
+\foreach \x in {-4,-2,0,2,4}
+\foreach \y in {-3,-1,1,3,5} {
+\path[fill=lightgray!40] (4*\x,4*\y) -- (4*\x+4,4*\y-4) -- (4*\x,4*\y-8) -- (4*\x-4,4*\y-4);
+
+\fill (4*\x,4*\y) circle (5pt) node[above left] {$\y$};
+\fill (4*\x+4,4*\y-4) circle (5pt) node[below right] {$\x+4$};
+\fill (4*\x-4,4*\y-4) circle (5pt) node[below left] {$\x-4$};
+\fill (4*\x,4*\y-8) circle (5pt) node[below left] {$\y-8$};
+
+\draw (4*\x,4*\y) -- (4*\x+4,4*\y-4);
+\draw (4*\x,4*\y) -- (4*\x-4,4*\y-4);
+\draw (4*\x,4*\y-8) -- (4*\x+4,4*\y-4);
+\draw (4*\x,4*\y-8) -- (4*\x-4,4*\y-4);
+}
+
+\draw[thin,->] (-22,0) -- (22,0) node[right] {$\hat{x}$};
+\draw[thin,->] (0,-22) -- (0,22) node[above] {$\hat{y}$};
+\end{tikzpicture}
+   %
+   \caption{Final result shown in manual's example.}
+   \label{fig:pattern}
+   \end{figure}
+%-----------------------------------------------------------
+%
+as per figure \ref{fig:pattern}.
 \begin{enumerate}
 \item In relation to the example, determine the expression of function $y=f(x)$ and the equation of curve
 $\Lambda$, in order to verify the correct machine's functioning.
@@ -193,39 +236,57 @@ Prove that the volume of a cylinder inscribed inside a cone is lower than half o
 \end{quest}
 
 \begin{quest}
-For any set $A$, $\emptyset \subset A$.
+You have two equal unbalanced dices having the shape of a regular tetrahedron with faces numbered from
+$1$ to $4$. By tossing each single dice, the probability to get $1$ is double the probability to get $2$, whose
+probability is also double the probability to get $3$, whose probability is again double the probability to
+get $4$. If both dices are tossed at the same time, what is the probability to get two equal numbers?
 \end{quest}
 
 \begin{quest}
-For any set $A$, $\emptyset \subset A$.
+Calculate the values of $k$ such that the line of equation $y=-4x+k$ be tangent the curve of equation
+$y=x^3-4x^2+5$.
 \end{quest}
 
 \begin{quest}
-For any set $A$, $\emptyset \subset A$.
+Consider function $f(x) = \frac{3x - e^{\sin x}}{5 + e^{-x}-\cos x}$, determine, if they exist, the values of
+$\lim\limits_{x \to +\infty} f(x)$, $\lim\limits_{x \to -\infty} f(x)$, justifying the answers.
 \end{quest}
 
 \begin{quest}
-For any set $A$, $\emptyset \subset A$.
+A fence $2$ meter long is employed to delimit a surface having the shape of a rectangle topped by a
+semicircumference as in figure x.
+Determine the dimensions of the sides of the rectangle which allow the delimiting of the maximum area.
 \end{quest}
 
 \begin{quest}
-For any set $A$, $\emptyset \subset A$.
+Find the equation of the spheric surface $S$, centered on line $r: (x=t, y=t, z=t)$, $t \in \mathbb{R}$
+tangent plane $\pi: 3x - y -2z + 14 = 0$ on point $T(-4,0,1)$.
 \end{quest}
 
 \begin{quest}
-For any set $A$, $\emptyset \subset A$.
+Find $a$ such that:
+\begin{equation*}
+\int_a^{a+1} \left(3x^2+3\right) \, \mathrm{d} x
+\end{equation*}
+be equal to $10$.
 \end{quest}
 
 \begin{quest}
-For any set $A$, $\emptyset \subset A$.
+In a two-player game, every won match grants $1$ point and the winner of the game is who first 
+reaches $10$ points.
+Two players, having both the same probability to win a single match, enter the challenge. What is
+the probability that one of the two players wins by a number of matches lower or equal to $12$?
 \end{quest}
 
 \begin{quest}
-For any set $A$, $\emptyset \subset A$.
+In the tridimensional space, are given points $A(3,1,0)$, $B(3,-1,2)$, $C(1,1,2)$. After assessing that
+$ABC$ is an equilateral triangle and that it is contained inside plane $\alpha$ of equation $x+y+z=0$,
+find points $P$ such that $ABCP$ is a regular tetrahedron.
 \end{quest}
 
 \begin{quest}
-For any set $A$, $\emptyset \subset A$.
+Find the values of parameter $k \in \mathbb{R}$ such that function $y(x)=2e^{kx+2}$ is the solution
+to differential equation: $y^{\prime\prime} -2y^\prime - 3y = 0$.
 \end{quest}
 
 \end{document}
