@@ -1,2 +1,2 @@
 # the-second-trial
-A repository for tracking Mathematical Problems
+A repository for educational animation videos on the Mathematics Italian National Exam.
