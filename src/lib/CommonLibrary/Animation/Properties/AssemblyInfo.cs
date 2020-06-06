@@ -4,8 +4,8 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle("Animation")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("TheSecondTrial.Animation")]
+[assembly: AssemblyDescription("Assembly defining classes to handle animations in Unity projects")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]

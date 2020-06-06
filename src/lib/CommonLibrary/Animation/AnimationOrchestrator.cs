@@ -2,7 +2,7 @@
 /// Andrea Tino - 2020
 /// </summary>
 
-namespace Animation
+namespace TheSecondTrial.Animation
 {
     using System;
 
