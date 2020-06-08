@@ -1,0 +1,390 @@
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <MacUnityBasePath>/Applications/Unity/Hub/Editor/2019.3.14f1/Unity.app/Contents/</MacUnityBasePath>
+        <WinUnityBasePath>C:/Program Files/Unity/Editor/Data/</WinUnityBasePath>
+    </PropertyGroup>
+    <PropertyGroup>
+        <!-- Defaults to Mac/Unix -->
+        <UnityBasePath>$(MacUnityBasePath)</UnityBasePath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+        <!-- Override if Windows -->
+        <UnityBasePath>$(WinUnityBasePath)</UnityBasePath>
+    </PropertyGroup>
+    <!-- Unity libraries -->
+    <ItemGroup>
+        <Reference Include="UnityEngineRoot">
+            <HintPath>$(UnityBasePath)Managed/UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>$(UnityBasePath)Managed/UnityEngine/UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngineCoreModule">
+            <HintPath>$(UnityBasePath)Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngineAnimationModule">
+            <HintPath>$(UnityBasePath)Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor">
+            <HintPath>$(UnityBasePath)Managed/UnityEditor.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <!-- Mono .NET API -->
+    <ItemGroup>
+        <Reference Include="mscorlib">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
+        </Reference>
+        <Reference Include="System">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/System.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Core">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Serialization">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml.Linq">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Numerics">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Numerics.Vectors">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Http">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/System.Net.Http.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.CSharp">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Microsoft.CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Data">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/System.Data.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Win32.Primitives">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.AppContext">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Collections.Concurrent">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Collections.NonGeneric">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Collections.Specialized">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Collections">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ComponentModel.Annotations">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ComponentModel.EventBasedAsync">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ComponentModel.Primitives">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ComponentModel.TypeConverter">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ComponentModel">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Console">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Data.Common">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Diagnostics.Contracts">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Diagnostics.Debug">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Diagnostics.FileVersionInfo">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Diagnostics.Process">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Diagnostics.StackTrace">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Diagnostics.TextWriterTraceListener">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Diagnostics.Tools">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Diagnostics.TraceSource">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Drawing.Primitives">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Dynamic.Runtime">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Globalization.Calendars">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Globalization.Extensions">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Globalization">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.Compression.ZipFile">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.FileSystem.DriveInfo">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.FileSystem.Primitives">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.FileSystem.Watcher">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.FileSystem">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.IsolatedStorage">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.MemoryMappedFiles">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.Pipes">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.UnmanagedMemoryStream">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Linq.Expressions">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Linq.Parallel">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Linq.Queryable">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Linq">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Http.Rtc">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.NameResolution">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.NetworkInformation">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Ping">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Primitives">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Requests">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Security">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Sockets">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.WebHeaderCollection">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.WebSockets.Client">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.WebSockets">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ObjectModel">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Reflection.Emit.ILGeneration">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Reflection.Emit.Lightweight">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Reflection.Emit">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Reflection.Extensions">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Reflection.Primitives">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Reflection">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Resources.Reader">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Resources.ResourceManager">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Resources.Writer">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.CompilerServices.VisualC">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Extensions">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Handles">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.InteropServices">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Numerics">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Serialization.Formatters">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Serialization.Json">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Serialization.Primitives">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Serialization.Xml">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Claims">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Cryptography.Algorithms">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Cryptography.Csp">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Cryptography.Encoding">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Cryptography.Primitives">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Cryptography.X509Certificates">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Principal">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.SecureString">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ServiceModel.Duplex">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ServiceModel.Http">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ServiceModel.NetTcp">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ServiceModel.Primitives">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ServiceModel.Security">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Encoding.Extensions">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Encoding">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.RegularExpressions">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Overlapped">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Tasks.Parallel">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Thread">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.ThreadPool">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Timer">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ValueTuple">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml.ReaderWriter">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml.XDocument">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml.XPath.XDocument">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml.XPath">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml.XmlDocument">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml.XmlSerializer">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll</HintPath>
+        </Reference>
+        <Reference Include="netstandard">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityScript">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/unityscript/UnityScript.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityScript.Lang">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/unityscript/UnityScript.Lang.dll</HintPath>
+        </Reference>
+        <Reference Include="Boo.Lang">
+            <HintPath>$(UnityBasePath)MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+</Project>
