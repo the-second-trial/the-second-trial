@@ -1,15 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Animation/MyClass.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Animation/Core/AnimationEventBroker.cs">
     <Files>
-      <File FileName="Animation/MyClass.cs" Line="9" Column="2" />
+      <File FileName="Animation/MyClass.cs" Line="55" Column="22" />
+      <File FileName="Animation/Animation/ComponentEventHooker.cs" Line="12" Column="46" />
+      <File FileName="Animation/Core/AnimationEventBroker.cs" Line="3" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Option id="ShowAllFiles" value="True" />
           <Node name="CommonLibrary" expanded="True">
             <Node name="Animation" expanded="True">
-              <Node name="MyClass.cs" selected="True" />
+              <Node name="Core" expanded="True">
+                <Node name="AnimationEventBroker.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -18,7 +21,6 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Animation FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
