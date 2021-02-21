@@ -1,2 +1,2 @@
 # the-second-trial
-A repository for educational animation videos on the Mathematics Italian National Exam.
+A repository for publications on the Italian State Exam's Mathematics Trial.
