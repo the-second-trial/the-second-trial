@@ -122,9 +122,13 @@
 \newcommand{\docfilehook}[2]{\texttt{#1}\index{file hooks!#2}\index{#1@\texttt{#1}}}
 \newcommand{\doccounter}[1]{\texttt{#1}\index{#1 counter@\texttt{#1} counter}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Generates the index
 \usepackage{makeidx}
 \makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -158,6 +162,8 @@ To view a copy of this license, visit
 \par\textit{First printing, \monthyear}
 \end{fullwidth}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Contents
 \tableofcontents
 %\listoffigures
@@ -167,62 +173,13 @@ To view a copy of this license, visit
 \cleardoublepage
 \input{intro}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%
-% Start the main matter (normal chapters)
 \mainmatter
 
+\input{problem_1_L}
 
-\chapter[On the Use of the tufte-book Document Class]{On the Use of the \texttt{tufte-book} Document Class}
-\label{ch:tufte-book}
-
-The document classes define a style similar to the
-style Edward Tufte uses in his books and handouts.  Tufte's style is known
-for its extensive use of sidenotes, tight integration of graphics with
-text, and well-set typography.  This document aims to be at once a
-demonstration of the features of the ocument classes
-and a style guide to their use.
-
-\section{Page Layout}\label{sec:page-layout}
-\subsection{Headings}\label{sec:headings}\index{headings}
-This style provides \textsc{a}- and \textsc{b}-heads (that is,
-\Verb|\section| and \Verb|\subsection|), demonstrated above.
-
-If you need more than two levels of section headings, you'll have to define
-them yourself at the moment; there are no pre-defined styles for anything below
-a \Verb|\subsection|.  As Bringhurst points out in \textit{The Elements of
-Typographic Style},\cite{Bringhurst2005} you should ``use as many levels of
-headings as you need: no more, and no fewer.''
-
-The lasses will emit an error if you try to use
-\linebreak\Verb|\subsubsection| and smaller headings.
-
-% let's start a new thought -- a new section
-\newthought{In his later books},\cite{Tufte2006} Tufte
-starts each section with a bit of vertical space, a non-indented paragraph,
-and sets the first few words of the sentence in \textsc{small caps}.  To
-accomplish this using this style, use the \doccmddef{newthought} command:
-\begin{docspec}
-  \doccmd{newthought}\{In his later books\}, Tufte starts\ldots
-\end{docspec}
-
-
-\section{Sidenotes}\label{sec:sidenotes}
-One of the most prominent and distinctive features of this style is the
-extensive use of sidenotes.  There is a wide margin to provide ample room
-for sidenotes and small figures.  Any \doccmd{footnote}s will automatically
-be converted to sidenotes.\footnote{This is a sidenote that was entered
-using the \texttt{\textbackslash footnote} command.}
-
-
-
-
-
-
-%%
-% The back matter
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \backmatter
 
@@ -233,4 +190,3 @@ using the \texttt{\textbackslash footnote} command.}
 \printindex
 
 \end{document}
-
