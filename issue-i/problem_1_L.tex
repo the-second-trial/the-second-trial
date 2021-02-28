@@ -75,7 +75,9 @@ That means $[a] = \unit{s}$, and the whole sum collapses into a single term: $s^
 Notice how we further simplified the expression by removing the square root and removing
 $\unit{s}$ terms. At this point, we have two choices: either we remember that
 $T=\unit{Kg} \cdot \unit{s}^{-1} \cdot \unit{C}^{-1}$, or we try to calculate it from
-Maxwell's equations. Either way, we end up with the following:
+Maxwell's
+equations\sidenote{You can use Maxwell's 4th equation as described at: \nameref{sec:maxwell}.}.
+Either way, we end up with:
 \begin{equation*}
     \frac{\unit{Kg}}{\unit{s} \cdot \unit{C}} = \frac{[k] \cdot \unit{m}}{\unit{s}^2} \implies
     \frac{\unit{Kg}}{\unit{C}} = \frac{[k] \cdot \unit{m}}{\unit{s}} \implies
@@ -86,12 +88,25 @@ Which means that $[k] = \unit{Kg} \cdot \unit{s} \cdot \unit{C}^{-1} \cdot \unit
 \paragraph{Why $B \neq 0$ in the capacitor even without magnets or currents?}
 \marginnote{\smallcaps{Problem from text}}
 The answer to this
-is given by either remembering some important concepts about Electromagnetism, or by
-remembering Maxwell's equations. You should remember that there a magnetic fields originates
-from two sources:
+is given by remembering that a magnetic field can originate from two possible sources:
 \begin{itemize}
-    \item dsfdfg
+    \item Electrical currents.
+    \item Variations of electrical fields.
 \end{itemize}
-sdfg
+If you remember Maxwell's 4th
+equation\sidenote{See \nameref{sec:maxwell}.},
+then you can actually have a confirmation of these
+two facts. In our problem, there are no magnets and there is no electrical current because a
+capacitor opens the circuit blocking any current from flowing. However a voltage is applied,
+that means an electrical field originates between the plates; and the voltage varies over
+time which means the electrical field varies too, and that causes a magnetic field to
+arise as per second point above.
 
-\paragraph{How do the directions of $\vec{E}$ and $\vec{B}$ relate together?} Todo.
+\paragraph{How do the directions of $\vec{E}$ and $\vec{B}$ relate together?}
+\marginnote{\smallcaps{Problem from text}}
+Here as well you should remember that inside an electromagnetic field, the electrical
+field $\vec{E}$ and the magnetic field $\vec{B}$ are always perpendicular to each other.
+If you didn't remember that, take Maxwell's either 3rd of 4th
+equation\sidenote{The proof that $\vec{E}$ and $\vec{B}$ are perpendicular can be
+found at: \nameref{sec:maxwell}.},
+and you will be able to check it is true.
