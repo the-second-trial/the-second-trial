@@ -4,43 +4,94 @@
 % http://creativecommons.org/licenses/by-nc-sa/4.0/                           %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter[On the Use of the tufte-book Document Class]{On the Use of the \texttt{tufte-book} Document Class}
+\chapter[Magnetism and capacitors]{Magnetic field inside a
+capacitor}
 \label{ch:tufte-book}
+\marginnote{Appears as \textit{second problem} in:
+LI02, EA02 – Scientific; LI03 - Scientific - Applied Sciences;
+LI15 - Scientific - Sport Sciences (standard session)}
 
-The document classes define a style similar to the
-style Edward Tufte uses in his books and handouts.  Tufte's style is known
-for its extensive use of sidenotes, tight integration of graphics with
-text, and well-set typography.  This document aims to be at once a
-demonstration of the features of the ocument classes
-and a style guide to their use.
+This problem introduces a flat capacitor to which
+a specific voltage is applied. The voltage (which is null at $t = 0$)
+varies over time and it causes a magnetic field $\vec{B}$ to originate,
+whose module\sidenote{Disregarding border effects.} is:
+\begin{equation}\label{eq:bdef}
+    B = \frac{k t}{\sqrt{\left( t^2 + a^2 \right)^3}} \cdot r
+\end{equation}
+Having the following
+quantities\sidenote[][0.17\textwidth]{The text does not mention what MU is
+assigned to $r$, but it is sensible to
+infer that it should be the same as $R$ because a constraint is present
+between them: $r \leq R \implies r - R \leq 0$, and since they sum together,
+they must have the same MU.}:
 
-\section{Page Layout}\label{sec:page-layout}
-\subsection{Headings}\label{sec:headings}\index{headings}
-This style provides \textsc{a}- and \textsc{b}-heads (that is,
-\Verb|\section| and \Verb|\subsection|), demonstrated above.
+\begin{table}[h]
+\begin{center}
+    \footnotesize%
+    \begin{tabular}{cccl}
+    \toprule
+    Quantity & UM & Constraints & Description \\
+    \midrule
+    $\vec{B}$ & \unit{T} & & Magnetic field \\
+    $R$ & \unit{m} & $R > 0$ & Capacitors plate's radius \\
+    $d$ & \unit{m} & $d > 0$ & Distance between plates \\
+    $r$ & \unit{m} & $r > 0 \wedge r \leq R$ & Distance from axis \\
+    $k$ & & $k > 0$ & Constant \\
+    $a$ & & $a > 0$ & Constant \\
+    $t$ & \unit{s} & $t \geq 0$ & Time \\
+    \bottomrule
+    \end{tabular}
+\end{center}
+\caption{Most important quantities in the problem.}
+\label{tab:quants}
+\end{table}
 
-If you need more than two levels of section headings, you'll have to define
-them yourself at the moment; there are no pre-defined styles for anything below
-a \Verb|\subsection|.  As Bringhurst points out in \textit{The Elements of
-Typographic Style},\cite{Bringhurst2005} you should ``use as many levels of
-headings as you need: no more, and no fewer.''
+\begin{figure}
+    \centering
+    \input{problem_1_L_overview.diag}
+    \caption[Problem representation.][0pt]{Problem representation: a 3D view and a 2D
+    simplified diagram.}
+    \label{fig:capacitorovervw}
+\end{figure}
 
-The lasses will emit an error if you try to use
-\linebreak\Verb|\subsubsection| and smaller headings.
+\paragraph{What is the UM of $a$ and $k$?}
+\marginnote{\smallcaps{Problem from text}}
+We start off with a question
+about \smallcaps{dimensionality}. By looking at equation \ref{eq:bdef}, we can
+easily set up a dimensional equation:
+\begin{equation*}
+    \left[ B \right] = \left[ \frac{k t}{\sqrt{\left( t^2 + a^2 \right)^3}} r \right] \implies
+    \unit{T} = \frac{[k] \cdot \unit{s} \cdot \unit{m}}{\sqrt{\left( \unit{s}^2 + [a]^2 \right)^3}}
+\end{equation*}
+Notice that, at denominator on the LHS, we have: $s^2 + [a]^2$. Since $[a]^2$
+appears in a sum with $s^2$, it must have the same UM: $[a]^2 = s^2$.
+That means $[a] = \unit{s}$, and the whole sum collapses into a single term: $s^2$:
+\begin{equation*}
+    \unit{T} = \frac{[k] \cdot \unit{s} \cdot \unit{m}}{\sqrt{\left( \unit{s}^2 \right)^3}} = 
+    \frac{[k] \cdot \unit{s} \cdot \unit{m}}{\sqrt{\left( \unit{s}^3 \right)^2}} = 
+    \frac{[k] \cdot \unit{s} \cdot \unit{m}}{\unit{s}^3} =
+    \frac{[k] \cdot \unit{m}}{\unit{s}^2}
+\end{equation*}
+Notice how we further simplified the expression by removing the square root and removing
+$\unit{s}$ terms. At this point, we have two choices: either we remember that
+$T=\unit{Kg} \cdot \unit{s}^{-1} \cdot \unit{C}^{-1}$, or we try to calculate it from
+Maxwell's equations. Either way, we end up with the following:
+\begin{equation*}
+    \frac{\unit{Kg}}{\unit{s} \cdot \unit{C}} = \frac{[k] \cdot \unit{m}}{\unit{s}^2} \implies
+    \frac{\unit{Kg}}{\unit{C}} = \frac{[k] \cdot \unit{m}}{\unit{s}} \implies
+    \frac{\unit{Kg} \cdot \unit{s}}{\unit{C} \cdot \unit{m}} = [k]
+\end{equation*}
+Which means that $[k] = \unit{Kg} \cdot \unit{s} \cdot \unit{C}^{-1} \cdot \unit{m}^{-1}$.
 
-% let's start a new thought -- a new section
-\newthought{In his later books},\cite{Tufte2006} Tufte
-starts each section with a bit of vertical space, a non-indented paragraph,
-and sets the first few words of the sentence in \textsc{small caps}.  To
-accomplish this using this style, use the \doccmddef{newthought} command:
-\begin{docspec}
-  \doccmd{newthought}\{In his later books\}, Tufte starts\ldots
-\end{docspec}
+\paragraph{Why $B \neq 0$ in the capacitor even without magnets or currents?}
+\marginnote{\smallcaps{Problem from text}}
+The answer to this
+is given by either remembering some important concepts about Electromagnetism, or by
+remembering Maxwell's equations. You should remember that there a magnetic fields originates
+from two sources:
+\begin{itemize}
+    \item dsfdfg
+\end{itemize}
+sdfg
 
-
-\section{Sidenotes}\label{sec:sidenotes}
-One of the most prominent and distinctive features of this style is the
-extensive use of sidenotes.  There is a wide margin to provide ample room
-for sidenotes and small figures.  Any \doccmd{footnote}s will automatically
-be converted to sidenotes.\footnote{This is a sidenote that was entered
-using the \texttt{\textbackslash footnote} command.}
+\paragraph{How do the directions of $\vec{E}$ and $\vec{B}$ relate together?} Todo.

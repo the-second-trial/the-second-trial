@@ -20,6 +20,15 @@
 % For nicely typeset tabular material
 \usepackage{booktabs}
 
+% TIKZ
+\usepackage{tikz}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{math}
+\usetikzlibrary{matrix}
+\usetikzlibrary{arrows,tikzmark,shadows,positioning}
+
 %%
 % For graphics / images
 \usepackage{graphicx}
@@ -44,6 +53,8 @@
 %%
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
+
+\newcommand{\TST}{The 2nd Trial\xspace}
 
 % Prints the month name (e.g., January) and the year (e.g., 2008)
 \newcommand{\monthyear}{%
@@ -122,6 +133,20 @@
 \newcommand{\docfilehook}[2]{\texttt{#1}\index{file hooks!#2}\index{#1@\texttt{#1}}}
 \newcommand{\doccounter}[1]{\texttt{#1}\index{#1 counter@\texttt{#1} counter}}
 
+% Math
+\usepackage{amsmath}  % extended mathematics
+\usepackage{amsfonts}  % extended mathematics
+\usepackage{amssymb}  % extended mathematics
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Generates the index
@@ -185,7 +210,6 @@ To view a copy of this license, visit
 
 \bibliography{biblio}
 \bibliographystyle{plainnat}
-
 
 \printindex
 
