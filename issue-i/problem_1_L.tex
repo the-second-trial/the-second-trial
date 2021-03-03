@@ -59,4 +59,64 @@ it has
 absolute extrema. Think about it: continuity means that you can draw
 $g$ without ever lifting your pen from the paper, the only thing
 which can prevent the existence of extrema is if
-$\lim_{x \to \infty} = \infty$.
+$\lim_{x \to \infty} g(x) = \infty$.
+
+Let's implement this strategy. Let's first check the domain of $g$
+to see whether it is continuous. As stated earlier, this is the product
+between two factors: a polynomial (always continuous in $\mathbb{R}$),
+and an exponential (also continuous in $\mathbb{R}$). The argument
+inside the exponential is another polynomial as well. Therefore
+$g$ is defined in all $\mathbb{R}$ without any discontinuities.
+We now need to prove $g$ is bounded, let's start on the left:
+\begin{equation*}
+    \lim_{x \to -\infty} g(x) = \lim_{x \to -\infty} (ax + b)e^{2x - x^2}
+\end{equation*}
+Remember that $a \neq 0$ which means tht the $x$ inside $ax + b$ is
+always gonna be there, hence $\lim_{x \to -\infty} (ax + b) = -\infty$.
+And of course the exponential will vanish as its argument tends
+to $-\infty$: $\lim_{x \to -\infty} e^{2x - x^2} = 0$. We reach
+an undecided form:
+\begin{equation*}
+    \lim_{x \to -\infty} (ax + b)e^{2x - x^2} =
+        [-\infty \cdot 0]
+\end{equation*}
+Solving this indeterminate form can be done quickly by turning it into
+a different one. Remember that every product $\alpha \beta$ can be
+rewritten as $\frac{\alpha}{\beta^{-1}}$. What's the gain you ask?
+If $\alpha \to \infty$ and $\beta \to 0$, then we have transformed a
+$[\infty \cdot 0]$ form into a $[\frac{\infty}{\infty}]$.
+\begin{equation*}
+    \lim_{x \to -\infty} (ax + b)e^{2x - x^2} =
+    \lim_{x \to -\infty} \frac{ax + b}{e^{x^2 - 2x}} =
+    \left[\frac{\infty}{\infty}\right]
+\end{equation*}
+What good is this for? Well, now we can use De L\^{o}pital's
+theorem\sidenote{When two differetiable
+functions $f$ and $g$ are
+such that:
+\begin{equation*}
+    \lim_{x \to c} \frac{f(x)}{g(x)} = \left[\frac{\infty}{\infty}\right]
+\end{equation*}
+Then the following holds:
+\begin{equation*}
+    \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f^\prime(x)}{g\prime(x)}
+\end{equation*}
+Note that $c$ can either be a number or $\infty$.}:
+\begin{equation*}
+    \lim_{x \to -\infty} \frac{ax + b}{e^{x^2 - 2x}} =
+    \lim_{x \to -\infty} \frac{(ax + b)^\prime}{\left( e^{x^2 - 2x} \right)^\prime} =
+    \lim_{x \to -\infty} \frac{a}{(2x - 2)e^{x^2 - 2x}} =
+    \left[\frac{1}{\infty}\right] = 0
+\end{equation*}
+When we move on to take the limit of $g$ to $+\infty$,
+the calculations are basically
+the same and so is the result: $\lim_{x \to +\infty} g(x) = 0$.
+That means the $g$ attains a maximum and a minimum because we just proved this
+function is continuous and bounded.
+
+\paragraph[Problem 2]{Parametric problem}
+\label{par:subp2_1}
+\marginnote{\smallcaps{\nameref{par:subp2_1}}}
+As second step, the problem asks us to find the values of $a$ and $b$ such that
+$f$ and $g$'s graphs intersect at point $A \equiv (2,1)$.
+
