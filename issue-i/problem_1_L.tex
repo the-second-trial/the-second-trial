@@ -173,4 +173,21 @@ the generic equation of a parabola: $p(x) = ax^2 + bx + c$ to
 find the generic coordinates of its vertex. We need to compute the first
 order derivative: $p^\prime(x) = 2ax + b$ and equate it to $0$ to find
 the extrema: $p^\prime(x) = 0$, which means: $2ax + b = 0$, which yields:
-$x = -\frac{b}{2a}$
+$x = -\frac{b}{2a}$. There is no need to study the sign of the derivative
+because this is a parabola, and it does not have an horizontal inflection
+point, so the $x$ we found is for sure an extremum.
+To get the y-coordinate of the vertex, we simply compute:
+\begin{equation*}
+    \begin{split}
+        p\left( -\frac{b}{2a} \right) &=
+        a \left( -\frac{b}{2a} \right)^2 + b \left( -\frac{b}{2a} \right) + c =
+        a \frac{b^2}{4a^2} - \frac{b^2}{2a} + c\\
+        &= \frac{b^2}{4a} - \frac{b^2}{2a} + c = \frac{b^2 - 2b^2 + 4ac}{4a} =
+        - \frac{b^2 - 4ac}{4a} = - \frac{\Delta}{4a}
+    \end{split}
+\end{equation*}
+So, even if you did not remember the coordinates of the vertex
+of a parabola, now you have
+it: $V \equiv \left( -\frac{b}{2a}, - \frac{\Delta}{4a} \right)$.
+After replacing $a$ and $b$ from the definition of $f$, we get its vertex:
+$V_g \equiv \left( \frac{1}{2}, - \frac{5}{4} \right)$.
