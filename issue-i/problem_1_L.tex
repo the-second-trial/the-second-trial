@@ -117,6 +117,60 @@ function is continuous and bounded.
 \paragraph[Problem 2]{Parametric problem}
 \label{par:subp2_1}
 \marginnote{\smallcaps{\nameref{par:subp2_1}}}
-As second step, the problem asks us to find the values of $a$ and $b$ such that
-$f$ and $g$'s graphs intersect at point $A \equiv (2,1)$.
+We now need to find the values of $a$ and $b$ such that
+$f$ and $g$'s graphs intersect at point $A \equiv (A_x, A_y) \equiv (2,1)$.
+This is nothing new, we know that by putting $f$ and $g$ in a system, we can
+find the values of $x$ such that the two functions will have the same value:
+\begin{equation*}
+    \begin{cases}
+        f(A_x) = A_y\\
+        g(A_x) = A_y
+    \end{cases}
+    \implies
+    \begin{cases}
+        aA_x^2 - A_x + b = A_y\\
+        (aA_x + b)e^{2A_x - A_x^2} = A_y
+    \end{cases}
+    \implies
+    \begin{cases}
+        4a + b = 3\\
+        2a + b = 1
+    \end{cases}
+\end{equation*}
+By subtracting the first equation to the second, we get $2a = 2$, so:
+$a = 1$ and, by substitution back in either two of the equations: $b = -1$.
 
+\paragraph[Problem 3]{Drawing functions}
+\label{par:subp3_1}
+\marginnote{\smallcaps{\nameref{par:subp3_1}}}
+Assuming $a = 1$ and $b = -1$, we want to draw $f$ and $g$ which become:
+\begin{equation*}
+    \begin{array}{cc}
+        f(x) = x^2 - x -1 & g(x) = (x - 1)e^{2x - x^2} \\
+    \end{array}
+\end{equation*}
+Let's start from $f$ which is very easy: it's a polynomial. Polynomials
+are great becase we already know so many things upfront: they are
+fully defined\sidenote{A function's \textit{definition} is another way
+of referring to its domain.} in $\mathbb{R}$, they are not
+bounded\sidenote{A function's \textit{boundedness} is a property related to
+its codomain. When a function is unbounded, it means its codomain has no
+restrictions, therefore the function takes values on the whole $y$ axis.},
+and they diverge at $\infty$. This means
+that: $g : \mathbb{R} \mapsto \mathbb{R}$, and that:
+$\lim_{x \to \infty} f = \infty$. Plus, we can see $f$ is of second order,
+which means it is a parabola with its concavity pointing
+upwards\sidenote{A parabola $ax^2 + bx + c$ points upwards
+when $a > 0$, downwards if $a < 0$.}. To draw a parabola, we only need
+to find out its vertex and its intersection points with the axes.
+To find the vertex you can either remember (from Geometry) its coordinates,
+or use pure Calculus and treat this as a
+minimization\sidenote[][0.05\textwidth]{Because the vertex
+of an upward parabola happens
+to also be the minimum.} problem (which means calculating the derivative
+and study its sign). We are going for the second approach, but we will use
+the generic equation of a parabola: $p(x) = ax^2 + bx + c$ to
+find the generic coordinates of its vertex. We need to compute the first
+order derivative: $p^\prime(x) = 2ax + b$ and equate it to $0$ to find
+the extrema: $p^\prime(x) = 0$, which means: $2ax + b = 0$, which yields:
+$x = -\frac{b}{2a}$
