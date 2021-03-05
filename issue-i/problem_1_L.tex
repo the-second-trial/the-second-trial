@@ -157,7 +157,7 @@ bounded\sidenote{A function's \textit{boundedness} is a property related to
 its codomain. When a function is unbounded, it means its codomain has no
 restrictions, therefore the function takes values on the whole $y$ axis.},
 and they diverge at $\infty$. This means
-that: $g : \mathbb{R} \mapsto \mathbb{R}$, and that:
+that: $f : \mathbb{R} \mapsto \mathbb{R}$, and that:
 $\lim_{x \to \infty} f = \infty$. Plus, we can see $f$ is of second order,
 which means it is a parabola with its concavity pointing
 upwards\sidenote{A parabola $ax^2 + bx + c$ points upwards
@@ -176,7 +176,8 @@ the extrema: $p^\prime(x) = 0$, which means: $2ax + b = 0$, which yields:
 $x = -\frac{b}{2a}$. There is no need to study the sign of the derivative
 because this is a parabola, and it does not have an horizontal inflection
 point, so the $x$ we found is for sure an extremum.
-To get the y-coordinate of the vertex, we simply compute:
+To get the y-coordinate of the vertex, we simply
+compute\marginnote[0.17\textwidth]{Do not forget that $\Delta = b^2 - 4ac$.}:
 \begin{equation*}
     \begin{split}
         p\left( -\frac{b}{2a} \right) &=
@@ -186,8 +187,148 @@ To get the y-coordinate of the vertex, we simply compute:
         - \frac{b^2 - 4ac}{4a} = - \frac{\Delta}{4a}
     \end{split}
 \end{equation*}
-So, even if you did not remember the coordinates of the vertex
+So, even if you did not remember
+the coordinates of the vertex
 of a parabola, now you have
 it: $V \equiv \left( -\frac{b}{2a}, - \frac{\Delta}{4a} \right)$.
-After replacing $a$ and $b$ from the definition of $f$, we get its vertex:
-$V_g \equiv \left( \frac{1}{2}, - \frac{5}{4} \right)$.
+After replacing\sidenote{From the definition of a
+generic plynomial: $p(x) = ax^2 + bx + c$, and since
+$f(x) = x^2 - x - 1$, we get that $a=1$, $b=-1$ and $c=-1$.}
+$a$, $b$ and $c$ from the definition of $f$, we get its vertex:
+$V_f \equiv \left( \frac{1}{2}, - \frac{5}{4} \right)$.
+Let's now find where $f$ intersects the axes so we can get a total of 3 points
+which is enough to draw the parabola. To find where $f$ crosses the x-axis,
+we must put $y = f(x)$ in a system with $y = 0$ (x-axis' graph), which leads to
+equation\marginnote[0.1\textwidth]{Note: $\sqrt{5} \approx 2.2$.}:
+\begin{equation*}
+    x^2 - x - 1 = 0 \implies x = \frac{-b \pm \sqrt{\Delta}}{2a} =
+    \frac{1 \pm \sqrt{5}}{2} \implies
+    \begin{cases}
+        x_1 \approx 1.6\\
+        x_2 \approx -0.6
+    \end{cases}
+\end{equation*}
+So now we know $f$ also passes through points $F_1 \equiv (-0.6,0)$ and
+$F_2 \equiv (1.6,0)$ other than $V_f$. It was expected to find two points
+where $f$ crosses the x-axis because the vertex $V_f$ is negative, therefore
+in the lower region of the Cartesian Plot. Note that we do not really need
+to find where the function crosses the y-axis, 3 points is
+enough\sidenote{Also remember that given 3 different points, there is only
+one parabola crossing them all. That is why 3 points are sufficient for drawing.}.
+
+\paragraph{}
+Let's move to function $g$, this is gonna take a little more time. As
+always, let's start from the domain: since $g$ is the product between
+a polynomial (always defined) and an exponential (also always defined),
+and considering that the argument of the exponential is another polynomial
+(same story: always defined), we can clearly see that
+$g : \mathbb{R} \mapsto \mathbb{R}$; there are no discontinuities.
+Let's move on and try to find any
+symmetries\sidenote{A function is \textit{even} when symmetric with
+respect to the y-axis (the function is mirrored). While a function
+is \textit{odd} when it is symmetric with respect to the plot's
+center $O \equiv (0,0)$.}.
+Why evaluating symmetry? Because it makes drawing a function quicker.
+If we find out that a function is symmetric,
+we just focus on half of the Cartesian Plot, the other half can be
+filled using symmetry rules.
+We must first compute $g(-x)$:
+\begin{equation}\label{eq:gminusx}
+    g(-x) = (-x - 1)e^{-2x - (-x)^2} = -(x + 1)e^{-2x - x^2}
+\end{equation}
+If $g$ is even, then $g(-x) = g(x)$. But we can see from equation
+\ref{eq:gminusx} that is not the case.
+If $g$ is odd, then $-g(-x) = g(x)$; let us compute $-g(-x)$:
+\begin{equation*}
+    -g(-x) = -(-x - 1)e^{-2x - (-x)^2} = (x + 1)e^{-2x - x^2}
+        = (x + 1)e^{-(2x + x^2)}
+\end{equation*}
+Unfortunately $g$ is not odd either. Too bad, bad at least our effort was
+still not in vain: we know something more about $g$ anyway.
+Let's continue getting more info on $g$: let's study its sign:
+\begin{equation}\label{eq:ggeqzero}
+    g(x) \geq 0 \implies (x - 1)e^{2x - x^2} \geq 0
+\end{equation}
+Let's focus on the points where $g(x) = 0$. From equation
+\ref{eq:ggeqzero} we see that the function is a product, and a
+product is null when either two of its factors is null. But one of the
+factors is an exponential which is never $0$, so we are left
+with the binomial $x-1$ which becomes null at $x = 1$. Now we know
+that $g$ crosses the x-axis in $x = 1$, which means it changes sign
+there, because we proved that $g$ is continuous. Back
+to equation \ref{eq:ggeqzero}, we can see that one of the factors
+is an exponential which is always (strictly) positive,
+therefore the sign of $g$
+is decided by $x-1$ which is positive when $x > 1$:
+\begin{equation*}
+    g(x) > 0 \iff \forall x > 1
+\end{equation*}
+Moving on, we want to study $g$'s monotonicity. However, before digging
+into calculations, remember that, in \nameref{par:subp1_1}, we have understood
+$g$ is bounded and has at least one maximum and one minimum. Let's find them. 
+We evaluate the first-order derivative:
+\begin{equation*}
+    \begin{split}
+        g^\prime(x) &= \frac{d}{dx} (x - 1) \cdot e^{2x - x^2} + (x - 1) \cdot \frac{d}{dx} e^{2x - x^2}\\
+            &= e^{2x - x^2} + (x - 1)  e^{2x - x^2} \cdot \frac{d}{dx} (2x - x^2)\\
+            &= e^{2x - x^2} + (x - 1) (2 - 2x) e^{2x - x^2}
+                = \left[ 1 + (x - 1) (2 - 2x) \right] e^{2x - x^2}\\
+            &= (-2x^2 + 4x - 1) e^{2x - x^2}
+    \end{split}
+\end{equation*}
+We can see $g^\prime$ is also the product between a polynomial and an exponential.
+As we study its sign:
+\begin{equation}\label{eq:gprimegeqzero}
+    g^\prime(x) \geq 0 \iff (-2x^2 + 4x - 1) e^{2x - x^2} \geq 0
+\end{equation}
+We first want to spot were possible maxima and minima are located: $g^\prime(x) = 0$.
+But, again, an exponential is never $0$, therefore we just need to focus on:
+\begin{equation}\label{eq:grpimenull}
+    \begin{split}
+        -2x^2 + 4x - 1 = 0 &\implies x = \frac{-b \pm \sqrt{\Delta}}{2a} =
+        \frac{-4 \pm \sqrt{8}}{-4} = \frac{4 \pm 2\sqrt{2}}{4}\\
+        &\implies
+        x = 1 \pm \frac{\sqrt{2}}{2} \implies
+        \begin{cases}
+            x_1 = 1 + \frac{\sqrt{2}}{2} \approx 1.7\\
+            x_2 = 1 - \frac{\sqrt{2}}{2} \approx 0.3
+        \end{cases}
+    \end{split}
+\end{equation}
+At this point we know that $g$ has possible\sidenote{Remember that when you find the
+values for which a function's derivative is $0$, you have not found extrema:
+you have found \smallcaps{candidate extrema}. You must study the derivative's sign
+in order to confirm whether those candidates are maxima, minima or horizontal
+inflections.} extrema in $x_1$ and $x_2$. Back to equation
+\ref{eq:gprimegeqzero}, let's study $g^\prime$'s sign.
+Since the exponential term is alway (strictly) positive, the overall sign is dictated
+by $-2x^2 + 4x - 1$. But, in equation \ref{eq:grpimenull}, we already studied
+this polynomial's zeroes\sidenote{Remember that when solving a
+second-order algebraic inequality $ax^2 + bx + c <> 0$,
+you must first evaluate the underlying equation: $ax^2 + bx + c = 0$.} in
+equation \ref{eq:gprimegeqzero}, so we just apply the well known
+rule\sidenote{For any given inequality $ax^2 + bx + c <> 0$, having
+$x_1$, $x_2$ (with $x_1 \leq x_2$) be
+the points such that $ax^2 + bx + c = 0$; the solution is
+$x < x_1 \wedge x > x_2$ if $a > 0$ and the sign is $>$ or if $a < 0$ and the sign is $<$;
+while the solution is $x_1 < x < x_2$
+if $a > 0$ and the sign is $<$ or if $a < 0$ and the sign is $>$.}
+for second-order algebraic inequalities and find out that: $g^\prime(x) > 0$ when
+$-2x^2 + 4x - 1 > 0$ which holds when:
+\begin{equation*}
+g^\prime(x) > 0 \iff \forall x: x_1 < x < x_2
+\end{equation*}
+This means that $g$ is monotonic incresing in between $x_1$ and $x_2$, decreasing
+elsewhere. This makes sense because $g$ is bounded as we discovered in
+\nameref{par:subp1_1}, which means it must go to $0$ when $x \to \pm\infty$:
+$g$ decreases while we move further away towards $\infty$.
+
+At this point, normally, we would move on studying
+the concavity by calcualting the second-order
+derivative $g^{\prime\prime}$, but that is not needed here.
+Since $g$ is continuous (as we proved at
+the beginning of the problem) and we know its maxima, minima and its behavior at
+$\infty$, concavities can be simply inferred by a visual
+analysis\sidenote{What makes this shortcut possible is continuity! If the function was not
+continuous, we would not be able to study concavity in such a quick way.}.
+We see
