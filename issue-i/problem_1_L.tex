@@ -208,6 +208,13 @@ equation\marginnote[0.1\textwidth]{Note: $\sqrt{5} \approx 2.2$.}:
         x_2 \approx -0.6
     \end{cases}
 \end{equation*}
+
+\begin{figure*}[h] % Full width figure
+    \input{problem_1_L_fplot.diag}%
+    \caption{This is the caption and much more to add come in here.}%
+    \label{fig:fplot}%
+\end{figure*}
+
 So now we know $f$ also passes through points $F_1 \equiv (-0.6,0)$ and
 $F_2 \equiv (1.6,0)$ other than $V_f$. It was expected to find two points
 where $f$ crosses the x-axis because the vertex $V_f$ is negative, therefore
@@ -358,7 +365,81 @@ both continuous functions, so $g^\prime$ is also continuous.
 What about $g^{\prime\prime}$? We don't need to compute it to see it is continuous.
 Look at $g^\prime$, differentiating it is the same process of
 differentiating $g$ in equation \ref{eq:gprimedef}: you always end up with polynomials and exponential.
-Therefore $g^{\prime\prime}$ is also continuous\sidenote{Fun fact: if you extend
+Therefore $g^{\prime\prime}$ is also
+continuous\sidenote[][-0.2\textwidth]{Fun fact: if you extend
 this line of thinking, you can prove that $g$ is $\mathcal{C}^2$ and above. Since every
 further derivative will always result is more polynomials and exponentials, basically all $g$'s derivatives
-are continuous. That is why $g \in \mathcal{C}^\infty$. Such functions are called \smallcaps{infinitely differentiable}.}.
+are continuous. That is why $g \in \mathcal{C}^\infty$. Such functions are
+called \smallcaps{infinitely differentiable}.}.
+
+\begin{figure*}[h] % Full width figure
+    \input{problem_1_L_gplot.diag}%
+    \caption{This is the caption and much more to add come in here.}%
+    \label{fig:fplot}%
+\end{figure*}
+
+\paragraph[Problem 4]{Symmetry of $g$}
+\label{par:subp4_1}
+\marginnote{\smallcaps{\nameref{par:subp4_1}}}
+By looking at $g$'s plot, we can assess the function had indeed a centre of symmetry
+in $S_g \equiv (1,0)$. This evidence alone is quite sufficient to move on, but if we really wanna
+solve the problem as asked, we have to prove $S_g$ is a centre of symmetry to $g$.
+If a function $\phi(x)$\sidenote{We cannot use symbol $f$ because it's already taken.}
+is symmetric with respect to a generic point whose x-coordinate is $x_S$, then the
+following holds:
+\begin{equation}\label{eq:fcsymm}
+    \phi(x_S + x) = - \phi(x_S - x)
+\end{equation}
+So let's impose $x_S = 1$ and rewrite
+equation \ref{eq:fcsymm}\sidenote{This equation and the technique
+to find a generic centre of symmetry is
+described at: \nameref{sec:fsymmcentre}.} as $g(1 + x) = - g(1 - x)$ and proceed:
+\begin{equation*}
+    \begin{split}
+        (1 + x - 1)e^{2(1 + x) - (1 + x)^2} &= - (1 - x - 1)e^{2(1 - x) - (1 - x)^2} \implies\\
+        xe^{2 + 2x - (1 + x^2 + 2x)} &= xe^{2 - 2x - (1 + x^2 - 2x)} \implies\\
+        xe^{2 + 2x - 1 - x^2 - 2x} &= xe^{2 - 2x - 1 - x^2 + 2x)} \implies\\
+        xe^{1 - x^2} &= xe^{1 - x^2)}
+    \end{split}
+\end{equation*}
+
+\paragraph[Problem 5]{Tangency between $f$ ad $g$}
+\label{par:subp5_1}
+\marginnote{\smallcaps{\nameref{par:subp5_1}}}
+From the plot of $f$ and $g$ we should see the two functions are tangent. We need to prove
+the tangent point exists and it is $B \equiv (B_x,B_y) \equiv (0,-1)$.
+The tangent point is a point that
+belongs to both functions, that is why to find it we must use a system:
+\begin{equation*}
+    \begin{cases}
+        y = f(x)\\
+        y = g(x)
+    \end{cases}
+    \implies
+    \begin{cases}
+        y = x^2 - x - 1\\
+        y = (x - 1)e^{2x - x^2}
+    \end{cases}
+\end{equation*}
+Which leads to equation:
+\begin{equation}\label{eq:tangeq}
+    x^2 - x - 1 = (x - 1)e^{2x - x^2}
+\end{equation}
+Equation \ref{eq:tangeq} is too complicated. Unknown $x$ appears as an algebraic term and
+also inside the argument of an exponential. It will
+take some advanced techniques to find the solutions.
+So we choose to leave it. But how do we solve
+the problem then?
+Remember that the problem has already told us the value of $B$, we
+only need to verify it. Here's a possible strategy:
+\begin{enumerate}
+    \item We substitute $B$ in both $f$ and $g$ verifying it belongs to both of them.
+    \item To prove that $f$ and $g$ are tangent in $B$, we calculate
+        both functions' derivatives in $B$ and assess they are the
+        same\sidenote{Remember that the derivtive of a function represents
+        the angular coefficient of the line tangent the function in each of its points.
+        If two functions are tangent in a point, their derivatives in that point
+        must be the same.}:
+        $f^\prime(B_x) = g^\prime(B_x)$.
+\end{enumerate}
+dfg
