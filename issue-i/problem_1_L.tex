@@ -267,22 +267,22 @@ Moving on, we want to study $g$'s monotonicity. However, before digging
 into calculations, remember that, in \nameref{par:subp1_1}, we have understood
 $g$ is bounded and has at least one maximum and one minimum. Let's find them. 
 We evaluate the first-order derivative:
-\begin{equation*}
+\begin{equation}\label{eq:gprimedef}
     \begin{split}
         g^\prime(x) &= \frac{d}{dx} (x - 1) \cdot e^{2x - x^2} + (x - 1) \cdot \frac{d}{dx} e^{2x - x^2}\\
             &= e^{2x - x^2} + (x - 1)  e^{2x - x^2} \cdot \frac{d}{dx} (2x - x^2)\\
-            &= e^{2x - x^2} + (x - 1) (2 - 2x) e^{2x - x^2}
-                = \left[ 1 + (x - 1) (2 - 2x) \right] e^{2x - x^2}\\
-            &= (-2x^2 + 4x - 1) e^{2x - x^2}
+            &= e^{2x - x^2} + (x - 1) (2 - 2x) e^{2x - x^2}\\
+            &= \left[ 1 + (x - 1) (2 - 2x) \right] e^{2x - x^2} = (-2x^2 + 4x - 1) e^{2x - x^2}
     \end{split}
-\end{equation*}
+\end{equation}
 We can see $g^\prime$ is also the product between a polynomial and an exponential.
 As we study its sign:
 \begin{equation}\label{eq:gprimegeqzero}
     g^\prime(x) \geq 0 \iff (-2x^2 + 4x - 1) e^{2x - x^2} \geq 0
 \end{equation}
 We first want to spot were possible maxima and minima are located: $g^\prime(x) = 0$.
-But, again, an exponential is never $0$, therefore we just need to focus on:
+But, again, an exponential is never $0$, therefore we just need to focus
+on\marginnote[0.1\textwidth]{Note: $\sqrt{2} \approx 1.4$.}:
 \begin{equation}\label{eq:grpimenull}
     \begin{split}
         -2x^2 + 4x - 1 = 0 &\implies x = \frac{-b \pm \sqrt{\Delta}}{2a} =
@@ -315,20 +315,50 @@ while the solution is $x_1 < x < x_2$
 if $a > 0$ and the sign is $<$ or if $a < 0$ and the sign is $>$.}
 for second-order algebraic inequalities and find out that: $g^\prime(x) > 0$ when
 $-2x^2 + 4x - 1 > 0$ which holds when:
-\begin{equation*}
+\begin{equation}\label{eq:gprimesignres}
 g^\prime(x) > 0 \iff \forall x: x_1 < x < x_2
-\end{equation*}
+\end{equation}
 This means that $g$ is monotonic incresing in between $x_1$ and $x_2$, decreasing
 elsewhere. This makes sense because $g$ is bounded as we discovered in
 \nameref{par:subp1_1}, which means it must go to $0$ when $x \to \pm\infty$:
 $g$ decreases while we move further away towards $\infty$.
+Becuase of equation \ref{eq:gprimesignres}, we can see that in $x_1$ and $x_2$ the sign
+of $g^\prime$ gets inverted, which means that those two points are
+extrema\sidenote{Whose existence we already proved earlier.}; let's calculate those:
+\begin{equation*}
+    \begin{cases}
+        g(x_1) = \frac{\sqrt{2}}{2} e^{2\left( 1 + \frac{\sqrt{2}}{2} \right) - \left( 1 + \frac{\sqrt{2}}{2} \right)^2}
+            = \sqrt{\frac{e}{2}} \approx 1.2\\
+        g(x_2) = - \frac{\sqrt{2}}{2} e^{2\left( 1 - \frac{\sqrt{2}}{2} \right) - \left( 1 - \frac{\sqrt{2}}{2} \right)^2}
+            = - \sqrt{\frac{e}{2}} \approx -1.2
+    \end{cases}
+\end{equation*}
+And we have found the maximum: $M_g \equiv \left( 1 + \frac{\sqrt{2}}{2}, \sqrt{\frac{e}{2}} \right)$ and
+the minimum: $m_g \equiv \left( 1 - \frac{\sqrt{2}}{2}, -\sqrt{\frac{e}{2}} \right)$.
 
 At this point, normally, we would move on studying
 the concavity by calcualting the second-order
-derivative $g^{\prime\prime}$, but that is not needed here.
-Since $g$ is continuous (as we proved at
-the beginning of the problem) and we know its maxima, minima and its behavior at
-$\infty$, concavities can be simply inferred by a visual
-analysis\sidenote{What makes this shortcut possible is continuity! If the function was not
-continuous, we would not be able to study concavity in such a quick way.}.
-We see
+derivative $g^{\prime\prime}$ and studying its sign;
+but we can be smart and avoid all that calculation.
+The key to this shortcut is understanding that $g$ is a
+\smallcaps{smooth}\sidenote{A function $f$ is said to
+be $n$-\textit{smooth}, and is written: $f \in \mathcal{C}^n$, when its $n$-th derivative is continuous. Now recall that
+if the $n$-th derivative exists, so must the $(n-1)$-th and so forth. Also remember that if a function is differentiable,
+then it is also continuous. It means that a $\mathcal{C}^n$ function has all its
+first $n$ derivatives and they are continuous.} function. Smooth functions are special functions that present
+no irregularities in their plot. If $g$ is at least 2-smooth, then its plot would be regular without
+criticalities, spikes or wedges.
+That means $g$ would start from $-\infty$ and decrease towards $m_g$ by changing
+concavity before reaching $x_1$; the same goes when we start from $+\infty$ and move left towards $x_2$:
+$g$ would change concavity before reaching $M_g$. Between $x_1$ and $x_2$ another concavity change would be
+necessary because $g$ would not allow wedges. This approach sounds quick, so let's try to
+prove $g$ is 2-smooth. We have already proved that $g$ is continuous; if we look at
+equation \ref{eq:gprimedef}, $g^\prime$ is always the product between a polynomial and an exponetial:
+both continuous functions, so $g^\prime$ is also continuous.
+What about $g^{\prime\prime}$? We don't need to compute it to see it is continuous.
+Look at $g^\prime$, differentiating it is the same process of
+differentiating $g$ in equation \ref{eq:gprimedef}: you always end up with polynomials and exponential.
+Therefore $g^{\prime\prime}$ is also continuous\sidenote{Fun fact: if you extend
+this line of thinking, you can prove that $g$ is $\mathcal{C}^2$ and above. Since every
+further derivative will always result is more polynomials and exponentials, basically all $g$'s derivatives
+are continuous. That is why $g \in \mathcal{C}^\infty$. Such functions are called \smallcaps{infinitely differentiable}.}.
