@@ -408,8 +408,41 @@ described at: \nameref{sec:fsymmcentre}.} as $g(1 + x) = - g(1 - x)$ and proceed
 \marginnote{\smallcaps{\nameref{par:subp5_1}}}
 From the plot of $f$ and $g$ we should see the two functions are tangent. We need to prove
 the tangent point exists and it is $B \equiv (B_x,B_y) \equiv (0,-1)$.
-The tangent point is a point that
-belongs to both functions, that is why to find it we must use a system:
+Here's the strategy:
+\begin{enumerate}
+    \item \label{it:binfg} We substitute $B$ in both $f$ and $g$ verifying it belongs to both of them.
+    \item \label{it:binderfg} To prove that $f$ and $g$ are tangent in $B$, we calculate
+        both functions' derivatives in $B$ and assess they are the
+        same\sidenote{Remember that the derivtive of a function represents
+        the angular coefficient of the line tangent the function in each of its points.
+        If two functions are tangent in a point, their derivatives in that point
+        must be the same.}:
+        $f^\prime(B_x) = g^\prime(B_x)$.
+\end{enumerate}
+Focusing on point \ref{it:binfg}, let's verify $B$ belongs to $f$:
+\begin{equation*}
+    B_y = f(B_x) \implies -1 = f(0) \implies (0)^2 - 0 - 1 \implies -1 = -1
+\end{equation*}
+That's ok. Let's check $B$ also belongs to $g$:
+\begin{equation*}
+    B_y = g(B_x) \implies -1 = g(0) \implies (-1)e^{0} \implies -1 = -1
+\end{equation*}
+Moving to point \ref{it:binderfg}, there's not much to do as we have already computed
+$g^\prime$ and $f^\prime$ is very easy to calculate:
+\begin{equation*}
+    f^\prime(B_x) = g^\prime(B_x) \implies f^\prime(0) = g^\prime(0)
+        \implies -1 = (-1) e^{0} \implies -1 = -1
+\end{equation*}
+And that proves $f$ and $g$ are tangent in $B$.
+
+\paragraph[Problem 6]{Area calculation}
+\label{par:subp6_1}
+\marginnote{\smallcaps{\nameref{par:subp6_1}}}
+We are now tasked with finding the value of the area between the two curves $f$ and $g$.
+We can clearly see from the plot we drew that they have two points in common;
+since we already know one of them
+is $B$, we need to find the other one which we will call $C = (C_x, C_y)$.
+So we can use a system:
 \begin{equation*}
     \begin{cases}
         y = f(x)\\
@@ -425,21 +458,37 @@ Which leads to equation:
 \begin{equation}\label{eq:tangeq}
     x^2 - x - 1 = (x - 1)e^{2x - x^2}
 \end{equation}
-Equation \ref{eq:tangeq} is too complicated. Unknown $x$ appears as an algebraic term and
-also inside the argument of an exponential. It will
-take some advanced techniques to find the solutions.
-So we choose to leave it. But how do we solve
-the problem then?
-Remember that the problem has already told us the value of $B$, we
-only need to verify it. Here's a possible strategy:
-\begin{enumerate}
-    \item We substitute $B$ in both $f$ and $g$ verifying it belongs to both of them.
-    \item To prove that $f$ and $g$ are tangent in $B$, we calculate
-        both functions' derivatives in $B$ and assess they are the
-        same\sidenote{Remember that the derivtive of a function represents
-        the angular coefficient of the line tangent the function in each of its points.
-        If two functions are tangent in a point, their derivatives in that point
-        must be the same.}:
-        $f^\prime(B_x) = g^\prime(B_x)$.
-\end{enumerate}
-dfg
+Equation \ref{eq:tangeq} will be able to give us two solutions: one is $B_x$ and
+the other one is $C_x$. But there is a problem: that is a
+\smallcaps{polynomial-exponential}\sidenote{A
+\textit{polynomial-exponential equation} is an equation where
+$x$ or any of its powers appear both
+inside and outside of one or more exponentials.} equation. Why it
+is a problem? Because calculating the value of $x$ in
+polynomial-exponential equations using symbolic calculus is
+impossible\sidenote{You can find the proof to why polynomial-exponential
+equations are impossible to solve analytically at: \nameref{sec:polyexpeqimp}.}!
+Yeah, just forget it, you simply cannot do it; but then it means that the problem
+of calculating $C$ is impossible as well? Of course not! If we cannot
+find out $C$ analytically, we can try to do that \textbf{numerically}.
+The numerical methods we know are all about finding zeroes of a function;
+to get that function, we can start from equation \ref{eq:tangeq}: $f(x) = g(x)$,
+and move all terms to the LHS: $f(x) - g(x) = 0$, and we can simply
+introduce a new function $\varepsilon(x) = f(x) - g(x)$; the equation we get
+is responsible for finding the zeroes of $\varepsilon$; one of those zeroes is
+exactly what we are looking for: $C_x$.
+The next step is choosing an interval $[x_1, x_2] \subset \mathbb{R}$: a range
+of values of $x$ inside which we are going to iteratively try to find $C_x$.
+We need to be sure that: $C_x \in [x_1, x_2]$.
+By looking at the plot we drew before, we can see that $C_x$ comes after the point
+where $f$ intersects the x-axis, so we can
+set $x_1 = \frac{1 + \sqrt{5}}{2}$\sidenote{We calculated that point 
+at: \nameref{par:subp3_1}.}. What about the other end of the interval?
+Well that is tricky because we do not really have a reference on the plot to
+guide us, so let's try to
+eyeball it: we can pick up a number $x_2 > x_1$ and then calculate $f(x_2)$ and
+$g(x_2)$, if $f(x_2) > g(x_2)$ then we know for sure we are after $C_x$ because
+that is exactly where $f$ and $g$ meet and then $f$ starts becoming
+greater than $g$. Let's try $x_2 = 3$: $f(3) = 3^2 - 3 - 1 = 5$, and
+$g(3) = 2e^{-3} = \frac{2}{e^3}$, it is clear that $5 > \frac{2}{e^3}$, so we
+can use $x_2 = 3$.
