@@ -79,6 +79,16 @@
 % Inserts a blank page
 \newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
+% Creates all needed for a new paragraph with side note marker
+% 1. The short caption
+% 2. The title
+% 3. The ref
+\newcommand{\newpar}[3]{%
+    \paragraph[#1]{#2}
+    \label{#3}
+    \marginnote{\smallcaps{\nameref{#3}}}
+}
+
 \usepackage{units}
 
 % Ensures side boxes are places on the correct side by tracking the page they fall in
