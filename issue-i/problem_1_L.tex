@@ -209,11 +209,11 @@ equation\marginnote[0.1\textwidth]{Note: $\sqrt{5} \approx 2.2$.}:
     \end{cases}
 \end{equation*}
 
-\begin{figure*}[h] % Full width figure
-    \input{problem_1_L_fplot.diag}%
+\begin{figure}[h] % Full width figure
+    \includegraphics[width=1\linewidth]{problem_1_L_fplot_diag.tikz}
     \caption{This is the caption and much more to add come in here.}%
     \label{fig:fplot}%
-\end{figure*}
+\end{figure}
 
 So now we know $f$ also passes through points $F_1 \equiv (-0.6,0)$ and
 $F_2 \equiv (1.6,0)$ other than $V_f$. It was expected to find two points
@@ -373,14 +373,12 @@ are continuous. That is why $g \in \mathcal{C}^\infty$. Such functions are
 called \smallcaps{infinitely differentiable}.}.
 
 \begin{figure*}[h] % Full width figure
-    \input{problem_1_L_gplot.diag}%
+    \includegraphics[width=1\linewidth]{problem_1_L_gplot_diag.tikz}
     \caption{This is the caption and much more to add come in here.}%
     \label{fig:fplot}%
 \end{figure*}
 
-\paragraph[Problem 4]{Symmetry of $g$}
-\label{par:subp4_1}
-\marginnote{\smallcaps{\nameref{par:subp4_1}}}
+\newpar[0.05\textwidth]{Problem 4}{Symmetry of $g$}{par:subp4_1}
 By looking at $g$'s plot, we can assess the function had indeed a centre of symmetry
 in $S_g \equiv (1,0)$. This evidence alone is quite sufficient to move on, but if we really wanna
 solve the problem as asked, we have to prove $S_g$ is a centre of symmetry to $g$.
@@ -403,9 +401,7 @@ described at: \nameref{sec:fsymmcentre}.} as $g(1 + x) = - g(1 - x)$ and proceed
     \end{split}
 \end{equation*}
 
-\paragraph[Problem 5]{Tangency between $f$ ad $g$}
-\label{par:subp5_1}
-\marginnote{\smallcaps{\nameref{par:subp5_1}}}
+\newpar{Problem 5}{Tangency between $f$ ad $g$}{par:subp5_1}
 From the plot of $f$ and $g$ we should see the two functions are tangent. We need to prove
 the tangent point exists and it is $B \equiv (B_x,B_y) \equiv (0,-1)$.
 Here's the strategy:
@@ -489,4 +485,42 @@ $g(x_2)$, if $f(x_2) > g(x_2)$ then we know for sure we are after $C_x$ because
 that is exactly where $f$ and $g$ meet and then $f$ starts becoming
 greater than $g$. Let's try $x_2 = 3$: $f(3) = 3^2 - 3 - 1 = 5$, and
 $g(3) = 2e^{-3} = \frac{2}{e^3}$, it is clear that $5 > \frac{2}{e^3}$, so we
-can use $x_2 = 3$.
+can use $x_2 = 3$. At this point we are left to chose the numerical method to use:
+typically in high school the following 3 methods are studied:
+
+\begin{table}[h]
+    \begin{center}
+        \footnotesize%
+        \begin{tabular}{lcl}
+        \toprule
+        Method & Requirements & Strategy \\
+        \midrule
+        Bisection & $\varepsilon \in \mathcal{C}$, $\text{sign}(\varepsilon(x_1)) = -\text{sign}(\varepsilon(x_2))$ & Binary search
+            in $[x_1, x_2] \subseteq D(\varepsilon)$.\\
+        Secants & & Sequence of secants, $\varepsilon(x_i)$.\\
+        Newton's & $\varepsilon^\prime$ & Tangent lines, $\varepsilon(x_i)$ and $\varepsilon^\prime(x_i)$.\\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{Most common numerical methods for finding the roots of a function $\varepsilon$ sorted by complexity
+    (lowest to highest number of calculations).}
+    \label{tab:nummethroots}
+\end{table}
+
+Bisection is the simplest although the most demainding (there are some conditions
+to satisfy before using it), while the Secants Method has no requirements but involves more
+calculations. Newton's even requires the first-order derivative. We are going to use Bisection
+because it turns out all the conditions to use it are met.
+For starters, $\varepsilon$ is indeed
+continuous\sidenote{Remember that, actually, in \nameref{par:subp3_1}, we proved
+that $\varepsilon$ is infinitely differentiable:
+$\varepsilon \in \mathcal{C}^\infty$, which of course
+implies that $\varepsilon$ is also continuous: $\varepsilon \in \mathcal{C}$.},
+and we can also prove that $\varepsilon(x_1)$ has the
+opposite sign of $\varepsilon(x_2)$. We have that $f(x_1) = 0$ and
+$g(x_1) > 0$\sidenote{Obvious because, in interval $x > 1$, $g(x) > 0$ (we assessed this when
+studying $g$'s sign in \nameref{par:subp3_1}).}; and, since $\varepsilon(x_1) = f(x_1) - g(x_1)$, we
+can conclude that $\varepsilon(x_1) < 0$. Remember we proved a moment ago that, in $x_2$,
+$f$ is higher than $g$ (that's exactly why we chose $x_2$);
+since $\varepsilon(x_2) = f(x_2) - g(x_2)$, we have that $\varepsilon(x_2) > 0$.
+Now we have verified we can use the Bisection Method, let's use it.

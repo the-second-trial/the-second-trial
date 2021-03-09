@@ -28,6 +28,7 @@
 \usetikzlibrary{math}
 \usetikzlibrary{matrix}
 \usetikzlibrary{arrows,tikzmark,shadows,positioning}
+\usepackage{tikzscale}
 
 %%
 % For graphics / images
@@ -83,10 +84,10 @@
 % 1. The short caption
 % 2. The title
 % 3. The ref
-\newcommand{\newpar}[3]{%
-    \paragraph[#1]{#2}
-    \label{#3}
-    \marginnote{\smallcaps{\nameref{#3}}}
+\newcommand{\newpar}[4][0pt]{%
+    \paragraph[#2]{#3}
+    \label{#4}
+    \marginnote[#1]{\smallcaps{\nameref{#4}}}
 }
 
 \usepackage{units}
