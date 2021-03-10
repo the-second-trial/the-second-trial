@@ -524,3 +524,26 @@ can conclude that $\varepsilon(x_1) < 0$. Remember we proved a moment ago that, 
 $f$ is higher than $g$ (that's exactly why we chose $x_2$);
 since $\varepsilon(x_2) = f(x_2) - g(x_2)$, we have that $\varepsilon(x_2) > 0$.
 Now we have verified we can use the Bisection Method, let's use it.
+
+\begin{margintable}
+    \begin{center}
+        \footnotesize%
+        \begin{tabular}{ll}
+        \toprule
+        x-coord. $x_k$ & y-coord. $\varepsilon(x_k)$\\
+        \midrule
+        $x_a = \frac{x_1 + x_2}{2} \approx 2.31$ & $\varepsilon(x_a) \approx 1.38 $\\
+        $x_b = \frac{x_1 + x_a}{2} \approx 1.96$ & $\varepsilon(x_b) \approx -0.16 $\\
+        $x_c = \frac{x_b + x_a}{2} \approx 2.13$ & $\varepsilon(x_c) \approx 0.55 $\\
+        $x_d = \frac{x_b + x_c}{2} \approx 2.04$ & $\varepsilon(x_d) \approx 0.16 $\\
+        $x_e = \frac{x_b + x_d}{2} \approx 2$ & $\varepsilon(x_e) = 0 $\\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{Calculated values for every iteration while applying the Bisection method to get
+    $\varepsilon$'s zero in $[x_1, x_2]$. Decimal approximation done by rounding up to
+    second decimal digit.}
+    \label{tab:aaa}
+\end{margintable}
+
+dfg
