@@ -431,7 +431,7 @@ $g^\prime$ and $f^\prime$ is very easy to calculate:
 \end{equation*}
 And that proves $f$ and $g$ are tangent in $B$.
 
-\newpar{Problem 6}{Area calculation}{par:subp6_1}
+\newpar{Problem 6 part 1}{Meeting point}{par:subp6par1_1}
 We are now tasked with finding the value of the area between the two curves $f$ and $g$.
 We can clearly see from the plot we drew that they have two points in common;
 since we already know one of them
@@ -525,7 +525,13 @@ $f$ is higher than $g$ (that's exactly why we chose $x_2$);
 since $\varepsilon(x_2) = f(x_2) - g(x_2)$, we have that $\varepsilon(x_2) > 0$.
 Now we have verified we can use the Bisection Method, let's use it.
 
-\begin{margintable}
+\begin{figure}[h] % Full width figure
+    \includegraphics[width=1\linewidth]{problem_1_L_bisect_diag.tikz}
+    \caption{Bisection method.}%
+    \label{fig:bisect}%
+\end{figure}
+
+\begin{margintable}[-0.8\textwidth]
     \begin{center}
         \footnotesize%
         \begin{tabular}{ll}
@@ -543,7 +549,13 @@ Now we have verified we can use the Bisection Method, let's use it.
     \caption{Calculated values for every iteration while applying the Bisection method to get
     $\varepsilon$'s zero in $[x_1, x_2]$. Decimal approximation done by rounding up to
     second decimal digit.}
-    \label{tab:aaa}
+    \label{tab:bisectcalc}
 \end{margintable}
 
-dfg
+Thanks to the Bisection Method, we now know that $\varepsilon(2) = 0$, which means that
+$f(2) - g(2) = 0$, leading to: $f(2) = g(2)$. Exactly as we planned, we found the point where
+$f$ and $g$ meet: $C_x = 2$ and $C_y = f(C_x) = g(C_x) = 1$; therefore: $C \equiv (2,1)$.
+
+\newpar{Problem 6 part 2}{Area calculation}{par:subp6par2_1}
+Now that we know where $f$ and $g$ meet, we can go ahead and
+caculate the area of the surface enclosed by the two curves from point $B$ to $C$.
