@@ -1,0 +1,145 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The 2nd Trial by Andrea Tino is licensed under CC BY-NC-SA 4.0. To view a   %
+% copy of this license, visit                                                 %
+% http://creativecommons.org/licenses/by-nc-sa/4.0/                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter[Questions]{Questions}
+\label{ch:qs}
+
+In this year's exams we can see a nice variaty of topics in the questions
+ranging from the main theme: Magnetism to Probability and Linear Algebra.
+
+\section{Extrema finding}
+\label{sec:extremafind}
+\marginnote{Appears as problem 1 in L 06.}
+Let $p(x)$ be a polynomial, the following function is provided:
+\begin{equation*}
+    f(x) = \frac{p(x)}{x^2 + d}
+\end{equation*}
+Where $d \in \mathbb{R}$. $f$'s plot intersects the x-axis at $x_1 = 0$ and
+$x_2 = \frac{12}{5}$, and has these lines as asymptotes: $x=3$, $x=-3$ and
+$y=5$. We need to calculate the points of relative maximum and minimum.
+
+\paragraph{}
+The first thing important noticing is that $f$ is the ratio between two
+polynomials. How much do we know about these two polynomials? The
+denominator is a second-degree polynomial, while we do not have much
+information about the numerator. We need to know a few things more about
+$p$. From what the problem tells us, we know that
+$\lim_{x \to \infty} f(x) \neq \infty$. That is a very important piece
+of data because we know that the ratio between two polynomials tends
+to a finite value (as the variable tends to infinity) only when they
+have the same
+degree\sidenote{The full theorem actually states that:
+\begin{equation*}
+    \lim_{x \to \infty} \frac{N(x)}{D(x)} = l \neq \infty
+        \iff n = m
+\end{equation*}
+Where $N(x)$ and $D(x)$ are two polynomials with
+degrees $n$ and $m$ respectively. And we also have that:
+\begin{equation}
+    l = \frac{a_N}{a_D}
+\end{equation}
+Where $a_N$ id $N$'s highest power's coefficient, and
+$a_D$ id $D$'s highest power's coefficient.}.
+Thanks to it, we can rewrite $f$ as:
+\begin{equation}\label{eq:fracinfty}
+    f(x) = \frac{ax^2 + bx + c}{x^2 + d}
+\end{equation}
+Because of equation \ref{eq:fracinfty}, we have that:
+\begin{equation*}
+    \lim_{x \to \infty} f(x) = \lim_{x \to \infty} \frac{ax^2 + bx + c}{x^2 + d}
+        = \frac{a}{1} = 5
+        \implies a = 5
+\end{equation*}
+As we unveil the values of coefficients, we know more and more the final form
+of $f$, and this is important because we will need to compute its derivative and
+then study its sign: the less parameters in the derivative, the easier our job.
+Now $f$ is:
+\begin{equation*}
+    f(x) = \frac{5x^2 + bx + c}{x^2 + d}
+\end{equation*}
+We still have 3 parameters.
+Let's use the info about intersections with the x-axis to find the values of some
+of those:
+\begin{equation*}
+    \begin{split}
+        &\begin{cases}
+            f(0) = 0\\
+            f\left( \frac{12}{5} \right) = 0
+        \end{cases}
+        \implies
+        \begin{cases}
+            \frac{c}{d} = 0\\
+            \frac{5\frac{12^2}{5^2} + b\frac{12}{5} + c}{\frac{12^2}{5^2} + d} = 0
+        \end{cases}
+        \implies
+        \begin{cases}
+            c = 0\\
+            \frac{\frac{12^2}{5} + b\frac{12}{5}}{\frac{12^2}{5^2} + d} = 0
+        \end{cases}
+        \implies\\
+        &\frac{12^2 + 12b}{5} = 0 \implies
+        12 + b = 0 \implies
+        b = -12
+    \end{split}
+\end{equation*}
+Which means now $f$ can be written as:
+\begin{equation*}
+    f(x) = \frac{5x^2 - 12x}{x^2 + d}
+\end{equation*}
+We only have $d$ left to find out, and for that we can use the information about
+the two vertical asymptotes. Remember that $f$ is a ratio, when the denominator
+tends to 0, the whole ratio tends to infinity; it means that if we find the
+values of $x$ for which $x^2 + d = 0$, we will find the exact points where
+the asymptots are: $x^2 + d = 0 \implies x = \pm \sqrt{-d}$. At this point
+it becomes clear that $d < 0$ because otherwise we would have no asymptotes as
+we would need to extract the square root of a negative number which is not a
+real number.
+Also notice that $d \neq 0$, otherwise we would not have two different
+asymptotes, but only one. Since we know that the two aymptotes are $x = \pm 3$,
+we can conclude that: $\pm 3 = \sqrt{-d} \implies d = -9$, and:
+\begin{equation*}
+    f(x) = \frac{5x^2 - 12x}{x^2 - 9}
+\end{equation*}
+Now we can compute $f^\prime$:
+\begin{equation*}
+    f^\prime(x) = \frac{10x - 12}{x^2 - 9} - \frac{5x^2 - 12x}{(x^2 - 9)^2}
+\end{equation*}
+sdf
+
+\section{A big polynomial}
+\label{sec:bigpoly}
+\marginnote{Appears as problem 1 in L 06.}
+Something
+
+\section{Parallelepipeds}
+\label{sec:paralpyd}
+\marginnote{Appears as problem 1 in L 06.}
+Something
+
+\section{Spheres}
+\label{sec:speheres}
+\marginnote{Appears as problem 1 in L 06.}
+Something
+
+\section{Tossing dices}
+\label{sec:dices}
+\marginnote{Appears as problem 1 in L 06.}
+Something
+
+\section{Magnetic fields and amperian loops}
+\label{sec:magnamp}
+\marginnote{Appears as problem 1 in L 06.}
+Something
+
+\section{Spaceships}
+\label{sec:spaceship}
+\marginnote{Appears as problem 1 in L 06.}
+Something
+
+\section{Protons in motion}
+\label{sec:protons}
+\marginnote{Appears as problem 1 in L 06.}
+Something
