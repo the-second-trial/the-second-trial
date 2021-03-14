@@ -218,7 +218,82 @@ If we run the above process for $N=1010$, we get the result.
 \section{Parallelepipeds}
 \label{sec:paralpyd}
 \marginnote{Appears as problem 1 in L 06.}
-Something
+We must find, among all square-base parallelepipeds with total surface $S$, the one
+which minimizes the sum of all sides.
+%
+\begin{marginfigure}
+    \includegraphics[width=1\linewidth]{qs_3_parapip_diag.tikz}
+    \caption{Characteristics of the parallelepiped.}%
+    \label{fig:pr3parapip}%
+\end{marginfigure}
+%
+
+\paragraph{}
+This problem is very short but absolutely non-trivial. That doesn't mean it is
+very difficult; however, requires a good setup at the beginning.
+As every minimization scenario, we must formulate the problem into an
+equation. Let's start by writing down the formulas for the total surface
+and the sum of all sides:
+\begin{equation*}
+    \begin{array}{cc}
+        S = 2l^2 + 4lh & L = 8l + 4h \\
+    \end{array}
+\end{equation*}
+Here, $l$ is the length of one side of the square base, $h$ is the height of
+the solid, and $L$ is the sum of all sides.
+Now let's try to think a little. We want to impose a certain surface $S$,
+it is clear that we can play with $l$ and $h$ to generate many different
+parallelepipeds that will keep $S$ unchanged. In this scenario, if we, for example,
+try to increase $h$, we will see the solid getting taller, but the base will
+probably shrink ($l$ will decrease) because we want to keep $S$ constant.
+So let's take the equation for $S$, there are 3 variables therein: $S$, $l$ and $h$.
+Let's consider $S$ fixed from now on; it means that $S$ will be a known value that we
+choose. So now we have only 2 variables: $l$ and $h$: let's calculate one as function of
+the other. We choose (of course) to
+write $h = f(l)$\sidenote{Because the equation is linear in
+$h$ and we can quickly isolate that term. If we chose to isolate $l$ instead,
+we would need to solve a quadratic equation which is more difficult.}:
+\begin{equation}\label{eq:hasfofl}
+    h = \frac{S}{4} \cdot \frac{1}{l} - \frac{l}{2}
+\end{equation}
+Equation \ref{eq:hasfofl} sets a contraint on $h$ based on the values of $l$. If
+we respect equation \ref{eq:hasfofl}, the values of $h$ and $l$ will cause
+the total surface of the solid to be $S$.
+Let's now substitute $h$ from equation \ref{eq:hasfofl} into the equation of
+$L$:
+\begin{equation}\label{eq:Lasf}
+    L(l) = 8l + 4h = 8l + 4\left( \frac{S}{4} \cdot \frac{1}{l} - \frac{l}{2} \right)
+        = \dots = 6l + \frac{S}{l}
+\end{equation}
+In equation \ref{eq:Lasf} $L$ is purposely indicated as a function of $l$. Now that we
+have the total sum depending on $l$, we can find the extrema by following the normal
+minimization process: compute the derivative, find its zeros and study the sign.
+\begin{equation}\label{eq:Lfder}
+    L^\prime(l) = \frac{d}{dl} \left( 6l + \frac{S}{l} \right) = 6 - \frac{S}{l^2}
+\end{equation}
+Let's impose $L^\prime(l) = 0$:
+\begin{equation}\label{eq:Lroots}
+    6 - \frac{S}{l^2} = 0 \implies \frac{6l^2 - S}{l^2} = 0 \implies
+        6l^2 - S = 0 \implies l = \pm \sqrt{\frac{S}{6}}
+\end{equation}
+Value $\frac{S}{6}$ is positive so we can actually extract its square
+root\sidenote{We must always check that all values make sense, this means
+that equation \ref{eq:Lroots} is legit.}. We get 2 values
+for $l$: one positive and one negative.
+Since $l$ must be positive (it is a length), we must discard the negative one and
+only accept $l = +\sqrt{\frac{S}{6}}$. But we still must make sure this value is
+an extremum and a point of minimum.
+To check that, we look at equation \ref{eq:Lfder}: $6l^2 - S$ is a parabola
+pointing upwards\sidenote{The leading coefficient is $6 > 0$.}. The root
+we have taken is the greatest one: it is where the parabola crosses the x-axis
+from the vertex to infinity; therefore we pass from negative values to positive values,
+hence we found a point of minimum. Now that we have $l$, we can calculate the minimum sum of all
+sides $L^\ast$ to have surface $S$, by substituting in equation \ref{eq:Lasf}:
+\begin{equation*}
+    L^\ast =  6 \left( \frac{S}{6} \right)^{\frac{1}{2}} + S \left( \frac{S}{6} \right)^{-\frac{1}{2}}
+\end{equation*}
+Note that we must add $L^\ast > 0$
+as a legit condition.
 
 \section{Spheres}
 \label{sec:speheres}
