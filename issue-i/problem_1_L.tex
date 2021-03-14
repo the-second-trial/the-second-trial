@@ -91,17 +91,7 @@ $[\infty \cdot 0]$ form into a $[\frac{\infty}{\infty}]$.
     \left[\frac{\infty}{\infty}\right]
 \end{equation*}
 What good is this for? Well, now we can use De L\^{o}pital's
-theorem\sidenote{When two differetiable
-functions $f$ and $g$ are
-such that:
-\begin{equation*}
-    \lim_{x \to c} \frac{f(x)}{g(x)} = \left[\frac{\infty}{\infty}\right]
-\end{equation*}
-Then the following holds:
-\begin{equation*}
-    \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f^\prime(x)}{g\prime(x)}
-\end{equation*}
-Note that $c$ can either be a number or $\infty$.}:
+theorem\sidenote{\label{sn:dehopital}\snippetdelopitaltheorem}:
 \begin{equation*}
     \lim_{x \to -\infty} \frac{ax + b}{e^{x^2 - 2x}} =
     \lim_{x \to -\infty} \frac{(ax + b)^\prime}{\left( e^{x^2 - 2x} \right)^\prime} =
@@ -314,12 +304,7 @@ this polynomial's zeroes\sidenote{Remember that when solving a
 second-order algebraic inequality $ax^2 + bx + c <> 0$,
 you must first evaluate the underlying equation: $ax^2 + bx + c = 0$.} in
 equation \ref{eq:gprimegeqzero}, so we just apply the well known
-rule\sidenote{For any given inequality $ax^2 + bx + c <> 0$, having
-$x_1$, $x_2$ (with $x_1 \leq x_2$) be
-the points such that $ax^2 + bx + c = 0$; the solution is
-$x < x_1 \wedge x > x_2$ if $a > 0$ and the sign is $>$ or if $a < 0$ and the sign is $<$;
-while the solution is $x_1 < x < x_2$
-if $a > 0$ and the sign is $<$ or if $a < 0$ and the sign is $>$.}
+rule\sidenote{\label{sn:dice}\snippetquadraticdicerule}
 for second-order algebraic inequalities and find out that: $g^\prime(x) > 0$ when
 $-2x^2 + 4x - 1 > 0$ which holds when:
 \begin{equation}\label{eq:gprimesignres}

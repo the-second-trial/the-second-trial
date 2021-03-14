@@ -105,43 +105,108 @@ we can conclude that: $\pm 3 = \sqrt{-d} \implies d = -9$, and:
 \end{equation*}
 Now we can compute $f^\prime$:
 \begin{equation*}
-    f^\prime(x) = \frac{10x - 12}{x^2 - 9} - \frac{5x^2 - 12x}{(x^2 - 9)^2} =
-        \frac{10x^3 - 17x^2 - 78x + 108}{(x^2 - 9)^2}
+    f^\prime(x) = \frac{10x - 12}{x^2 - 9} - \frac{5x^2 - 12x}{(x^2 - 9)^2} 2x = \dots =
+        6\frac{2x^2 - 15x + 18}{(x^2 - 9)^2}
 \end{equation*}
 We first need to find the zeros\sidenote{Remember that the zeros
 of a fraction $\frac{N(x)}{D(X)}$ can be found by finding the zeros of the numerator $N(x)$.}
 of $f^\prime$:
-\begin{equation}\label{eq:pol3roots}
-    f^\prime(x) = 0 \implies 10x^3 - 17x^2 - 78x + 108 = 0
-\end{equation}
-Here's the bad news: $f^\prime$ is a complete\sidenote{A cubic
-polynomial $ax^3 + bx^2 + cx + d$ is \textit{complete} when all coefficients are
-present: $a,b,c,d \neq 0$.} cubic polynomial; the methods for finding its exact roots
-are quite advanced and also very calculation-intensive. We don't wanna go down that road.
-Here's the good news, we notice that all coefficients are integer numbers; this is
-good because we could use the
-\smallcaps{Rational Root Theorem}\sidenote[][-0.05\textwidth]{The \textit{Rational Root Theorem} states that
-if an $n$-order polynomial $P(x)$:
 \begin{equation*}
-    P(x) = a_x x^n + a_{n-1}x^{n-1} + \dots + a_0
+    \begin{split}
+        2x^2 - 15x + 18 = 0 &\implies x = \frac{-b \pm \sqrt{\Delta}}{2a} =
+        \frac{15 \pm \sqrt{81}}{4} = \frac{15 \pm 9}{4}\\
+        &\implies
+        \begin{cases}
+            x_1 = \frac{15 + 9}{4} = \frac{24}{4} = 6\\
+            x_2 = \frac{15 - 9}{4} = \frac{6}{4} = \frac{3}{2}
+        \end{cases}
+    \end{split}
 \end{equation*}
-has a rational root $x^\ast$:
-\begin{equation*}
-    P(x^\ast) = 0 \wedge x^\ast = \frac{p}{q} \wedge p,q \in \mathbb{N}
-\end{equation*}
-Then that root can be found inside $\Omega_P$:
-\begin{equation*}
-    \Omega_P \equiv \left\{ \frac{p_i}{q_j} : p_i \in \text{m}(a_0) \wedge q_j \in \text{m}(a_n) \right\}
-\end{equation*}
-Where $\text{m}(\alpha)$ indicates all the prime factors of integer $\alpha$.}.
-If you haven't studied such theorem,
-the only feasible way to solve \ref{eq:pol3roots} is using numerical methods like
-we did in \nameref{par:subp6par1_1}.
+Switching to the corresponding inequality: $2x^2 - 15x + 18 > 0$, we see that
+the leading coefficient is positive and the inequality's sign is $>$; as
+already stated in \ref{sn:dice}, we have
+that: $f^\prime(x) > 0 \iff x < \frac{3}{2} \vee x > 6$.
+This confirms that $x_1$ and $x_2$ are extrema (since around them $f^\prime$ changes sign),
+and gives us the final result: $x_1$ is a point of relative maximum, while $x_2$ is
+a point of relative minimum.
 
 \section{A big polynomial}
 \label{sec:bigpoly}
 \marginnote{Appears as problem 1 in L 06.}
-Something
+Let $g(x)$ be the following polynomial:
+\begin{equation*}
+    g(x) = \sum_{n = 1}^{1010} x^{2n-1} = x + x^3 + x^5 + \dot + x^{2017} + x^{2019}
+\end{equation*}
+We must prove that $g$ has a single real root. We also need to compute:
+\begin{equation}\label{eq:limfracpolyexp}
+    \lim_{x \to +\infty} \frac{g(x)}{1.1^x}
+\end{equation}
+
+\paragraph{}
+The first part of the problem is about proving the \textbf{existence} and \textbf{uniqueness}
+of $g$'s real root. In mathematical terms, this is what we need to prove:
+\marginnote{You might see logical operator $\exists!$ for the first time: it
+simply means: \textit{"there exists only one..."}.}
+\begin{equation*}
+    \exists! x_0 \in \mathbb{R} : g(x_0) = 0
+\end{equation*}
+The proof is actually much easier than you can expect. $g$ looks very scary because it's big,
+but if we pay attention, we can see that the polynomial is missing the contant term $x^0$.
+So we can actually rewrite $g$ by extracting $x$ as:
+\begin{equation*}
+    g(x) = x \cdot \left(1 + x^2 + x^4 + \dot + x^{2016} + x^{2018} \right)
+\end{equation*}
+Look now, we have basically applied the following transformation:
+\begin{equation*}
+    g(x) = \sum_{n = 1}^{1010} x^{2n-1} = x \cdot \sum_{n = 1}^{1009} x^{2n} 
+\end{equation*}
+At this point it's easy to see there exists only a single real root to $g$:
+\begin{equation}\label{eq:gsumprodzero}
+    g(x) = 0 \implies x \cdot \sum_{n = 1}^{1009} x^{2n} = 0
+\end{equation}
+And that is $x_0 = 0$:
+\begin{enumerate}
+    \item As equation \ref{eq:gsumprodzero} shows, $g$ is the product of two factors: $g$ is
+        null when either one of them is null. One of these terms is expression $x$:
+        therefore $x = 0$ is a real root. This proves the existence of $x_0$.
+    \item The second factor in $g$'s definition as per equation \ref{eq:gsumprodzero},
+        is a complete polynomial where all its coefficients are positive and all powers
+        are even\sidenote{Expression $2n$ for $n = 1, 2, 3, \dots$ describes an even number.}.
+        This means that the sum we see as second factor is a sum of squares, and
+        we know that a sum of squares is never null (for real values). This proves the uniqueness
+        of $x_0$.
+\end{enumerate}
+
+\paragraph{}
+As for the second part of the problem, the limit in equation \ref{eq:limfracpolyexp} involves
+a ratio between a polynomial and an exponential term. It is easy to prove that ratio tends
+to $0$ when $x \to +\infty$:
+\begin{enumerate}
+    \item We know that an exponential term $a^x$ tends to $+\infty$ as the variable tends
+        to $+\infty$ when $a > 1$. Therefore $1.1^x \to +\infty$.
+    \item We know that polynomials always tend to $\infty$ when the variable tends to $\infty$.
+        In this case, as $x \to +\infty$, $g(x) \to +\infty$ because the leading coefficient
+        is positive.
+    \item The ratio $\frac{g(x)}{1.1^x}$ tends to $0$ as $x \to +\infty$ because the exponential
+        appears as the denominator. An exponential grows to $+\infty$ with an incredible speed.
+        A polynomial cannot match that speed. Therefore the denominator grows much more than
+        the numerator causing the whole fraction to tend towards $0$.
+\end{enumerate}
+If we want to be very precise and provide a proof to the last point, we can apply De L\^{o}pital's
+theorem\textsuperscript{\ref{sn:dehopital}}. Both functions are
+differentiable\sidenote{Actually they are both $\mathcal{C}^\infty$: indefinitely differentiable.},
+and they both tend towards $\infty$; so we get the indeterminate
+form $\left[ \frac{\infty}{\infty} \right]$. As we apply the rule once, we notice that the
+indeterminate form still remains but the polynomial has dropped its order by 1; so we re-apply
+the rule (as many time as the original order of the polynomial: $1010$) until we get $0$:
+\marginnote{Each arrow indicates an iteration where we take the derivative of the numerator and
+the denominator. Also note that $p^{[N]}(x)$ indicates a generic $N$-degree polynomial.}
+\begin{equation*}
+    \frac{p^{[N]}(x)}{1.1^x} \rightarrow \frac{p^{[N-1]}(x)}{\log(1.1)1.1^x}
+        \rightarrow \frac{p^{[N-2]}(x)}{\log^2(1.1)1.1^x} \rightarrow \dots \rightarrow
+        \frac{0}{\log^N(1.1)1.1^x} = 0
+\end{equation*}
+If we run the above process for $N=1010$, we get the result.
 
 \section{Parallelepipeds}
 \label{sec:paralpyd}
