@@ -298,7 +298,97 @@ as a legit condition.
 \section{Spheres}
 \label{sec:speheres}
 \marginnote{Appears as problem 1 in L 06.}
-Something
+We are asked to
+prove that the geometric locus of points $P$ \textbf{in space} such that the ratio
+of the distances between them and two arbitrary points $A$ and $B$ (with $A \neq B$)
+is always $\sqrt{2}$, is actually a sphere. The problem poses $A \equiv (2,0,-1)$ and
+$B \equiv (-2,2,1)$.
+
+\paragraph{}
+I have to admit that this problem really puzzled me, as I never heard of this alternative
+definition of the sphere. So when I wrote down my calculations and actually found out it
+is true, I was very surprised. Let's start with the classic
+definition\sidenote{A sphere is the geometric locus of points $P$ such that they all
+have the same distance from one special point called \textit{center}: $C$.} of
+the sphere we all know:
+\marginnote{We are indicating a generic point on the sphere as
+$P \equiv (x,y,z)$, and the center of the sphere as
+point: $C \equiv (x_0,y_0,z_0)$.}
+\begin{equation*}
+    d(P,C) = R \implies \sqrt{(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2} = R
+\end{equation*}
+If we raise to the second power\sidenote{Always remember that
+when raising a square root to the second power you get the absolute value of the operand:
+\begin{equation*}
+    \sqrt{x^2} = \left( \sqrt{x} \right)^2 = |x|
+\end{equation*}
+If we can guarantee that the operand is always positive, then we can remove the
+absolute value. That is the reason why we do it here: the quantity inside the
+square root is a sum of squares.} both hands of the equation, we get:
+\begin{equation}\label{eq:sphereq}
+    (x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2 = R^2
+\end{equation}
+Equation \ref{eq:sphereq} is the classic equation of a sphere.
+Let's now have a look at the definition of sphere that the problem gives us.
+If we define $A \equiv(x_1,y_1,z_1)$ and $B \equiv(x_2,y_2,z_2)$, we see that
+such definition can be translates as: $\frac{d(P,A)}{d(P,B)} = \sqrt{2}$, which
+becomes:
+\begin{equation}\label{eq:sphereqalt}
+    \frac{\sqrt{(x-x_1)^2 + (y-y_1)^2 + (z-z_1)^2}}{\sqrt{(x-x_2)^2 + (y-y_2)^2 + (z-z_0)^2}} = \sqrt{2}
+\end{equation} 
+Our strategy is simple: let's try to transform\sidenote{By \textit{transform} we mean
+rearranging one equation to have the same \smallcaps{structure} of another.} equation \ref{eq:sphereqalt}
+into equation \ref{eq:sphereq}; if we are successful, then we would solve the problem.
+Let's start by raising both sides of the equation to the second power\sidenote{Here as well,
+no need for the absolute value as the quantities under square root are all positive}:
+\begin{equation}\label{eq:sphereqalt2}
+    \frac{(x-x_1)^2 + (y-y_1)^2 + (z-z_1)^2}{(x-x_2)^2 + (y-y_2)^2 + (z-z_0)^2} = 2
+\end{equation}
+Let's have a look at equation \ref{eq:sphereq}: in there, each variable ($x$, $y$ and $z$)
+is summed to a constant ($x_0$, $y_0$ and $z_0$); while in equation \ref{eq:sphereqalt2}, each
+variable is summed to two constants ($x_1$, $y_1$, $z_1$, $x_2$, $y_2$ and $z_2$). We
+need to reduce the number of constants. Let's change variables: instead of $x$, $y$ and $z$,
+we are going to use $\alpha$, $\beta$ and $\gamma$ by using the following substitutions:
+\begin{equation}\label{eq:sphereqaltsub}
+    \begin{cases}
+        \alpha = x - x_1\\
+        \beta = y - y_1\\
+        \gamma = z - z_1
+    \end{cases}
+    \implies
+    \begin{cases}
+        x - x_2 = x - x_1 + x_1 - x_2 = \alpha  + (x_1 - x_2)\\
+        y - y_2 = y - y_1 + y_1 - y_2 = \beta + (y_1 - y_2)\\
+        z - z_2 = z - z_1 + z_1 - z_2 = \gamma + (z_1 - z_2)
+    \end{cases}
+\end{equation}
+This is the difficult part to understand!
+In equation \ref{eq:sphereqaltsub}, the substitutions on the left let us replace
+the original variables at the numerator of equation \ref{eq:sphereqalt2}; the
+calculations on the right are needed so that we can also get rid of the old variables
+at the denominator and make the new variables appear:
+\begin{equation}\label{eq:sphereqalt3}
+    \frac{\alpha^2 + \beta^2 + \gamma^2}{[\alpha  + (x_1 - x_2)]^2 + [\beta + (y_1 - y_2)]^2 + [\gamma + (z_1 - z_2)]^2} = 2
+\end{equation}
+Now we have a new equation operating on variables $\alpha$, $\beta$ and $\gamma$. Notice that
+$x_1 - x_2$, $y_1 - y_2$ and $z_1 - z_2$ are just constants because they are the sum of two
+constants. We can introduce another
+substitution\sidenote[][-0.29\textwidth]{Notice that we decide to make this
+substitution $\Delta_x = x_2 - x_1$ instead of $\Delta_x = x_1 - x_2$ so that, when replacing
+in equation \ref{eq:sphereqalt3}, we get $\alpha - \Delta_x$ instead of $\alpha + \Delta_x$.
+This will give us a closer result to equation \ref{eq:sphereq}.
+However, it is important to point out that both substitutions are fine, even if the final signs will not match
+in equation \ref{eq:sphereq}, as long as each variable is summed to a constant that's fine.}:
+\begin{equation}\label{eq:sphereqaltsub2}
+    \begin{array}{ccc}
+        \Delta_x = x_2 - x_1 & \Delta_y = y_2 - y_1 & \Delta_z = z_2 - z_1 \\
+    \end{array}
+\end{equation}
+Which makes equation \ref{eq:sphereqalt3} become:
+\begin{equation}\label{eq:sphereqalt4}
+    \frac{\alpha^2 + \beta^2 + \gamma^2}{(\alpha  - \Delta_x)^2 + (\beta - \Delta_y)^2 + (\gamma - \Delta_z)^2} = 2
+\end{equation}
+sdf
 
 \section{Tossing dices}
 \label{sec:dices}
