@@ -388,7 +388,58 @@ Which makes equation \ref{eq:sphereqalt3} become:
 \begin{equation}\label{eq:sphereqalt4}
     \frac{\alpha^2 + \beta^2 + \gamma^2}{(\alpha  - \Delta_x)^2 + (\beta - \Delta_y)^2 + (\gamma - \Delta_z)^2} = 2
 \end{equation}
-sdf
+Clearly, equation \ref{eq:sphereqalt4} has not the same shape as equation \ref{eq:sphereq}.
+One thing we need to do for sure, is getting rid of the fraction, which we can
+do by multiplying both sides by the denominator:
+\begin{equation*}
+    \alpha^2 + \beta^2 + \gamma^2 = 2(\alpha  - \Delta_x)^2 + 2(\beta - \Delta_y)^2 + 2(\gamma - \Delta_z)^2
+\end{equation*}
+Then we can expand each of the 3 squares:
+\begin{equation*}
+    \alpha^2 + \beta^2 + \gamma^2 =
+        2\alpha^2  + 2\Delta^2_x - 4\alpha\Delta_x +
+        2\beta^2  + 2\Delta^2_y - 4\beta\Delta_y +
+        2\gamma^2  + 2\Delta^2_z - 4\gamma\Delta_z
+\end{equation*}
+Let's sum up all terms where we can:
+\begin{equation}\label{eq:sphereqalt5}
+    0 =
+        \alpha^2 + \beta^2 + \gamma^2 +
+        2\Delta^2_x - 4\alpha\Delta_x +
+        2\Delta^2_y - 4\beta\Delta_y +
+        2\Delta^2_z - 4\gamma\Delta_z
+\end{equation}
+Look again at equation \ref{eq:sphereq}, we need to create terms in the
+form $(\alpha - c)^2$ ($c$ is just a constant). Looking at equation \ref{eq:sphereqalt5},
+we will try now to create\sidenote{To do that, we add and subtract the same quantity.
+For example, focusing on the $\alpha$ term only, we make the following quantity:
+\begin{equation*}
+    \alpha^2 + 2\Delta^2_x - 4\alpha\Delta_x
+\end{equation*}
+Become:
+\begin{equation*}
+    \alpha^2 + 2\Delta^2_x - 4\alpha\Delta_x + 2\Delta^2_x - 2\Delta^2_x
+\end{equation*}
+Which is totally legal. Now, thanks to it, we can create the square:
+\begin{equation*}
+    (\alpha - 2\Delta_x)^2 - 2\Delta^2_x
+\end{equation*}
+Which is our aim.} such squared binomals:
+\begin{equation*}
+    \begin{split}
+        0 = &(\alpha^2 + 4\Delta^2_x - 4\alpha\Delta_x) +
+            (\beta^2 + 4\Delta^2_y - 4\beta\Delta_y) +
+            (\gamma^2 + 4\Delta^2_z - 4\gamma\Delta_z) +\\
+            &- 2\Delta^2_x - 2\Delta^2_y - 2\Delta^2_z
+    \end{split}
+\end{equation*}
+We have created the squares, so let's collapse them:
+\begin{equation*}
+    (\alpha - 2\Delta_x)^2 + (\beta - 2\Delta_y)^2 + (\gamma - 2\Delta_z)^2 =
+        2\Delta^2_x + 2\Delta^2_y + 2\Delta^2_z
+\end{equation*}
+And the equation above is the classic representation of a sphere as in
+equation \ref{eq:sphereq}.
 
 \section{Tossing dices}
 \label{sec:dices}
