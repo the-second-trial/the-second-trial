@@ -444,7 +444,64 @@ equation \ref{eq:sphereq}.
 \section{Tossing dices}
 \label{sec:dices}
 \marginnote{Appears as problem 1 in L 06.}
-Something
+This is a classic problem involving dices. We have 4
+dices\sidenote{Since the problem does not say anything more about them, we are
+going to assume the dices to be \smallcaps{fair}: meaning
+they are not loaded and the probability
+that one face shows up is the same for all faces.} with faces numbered from
+1 to 6, and we toss them.
+
+\paragraph{}
+We need to calculate the probability that the sum of all faces
+is not higher than 5.
+For each dice $k$, we can introduce $X_k$ as its face after the toss: $1 \leq X_k \leq 6$.
+We can indicate a full toss of all 4 dices with
+this quadruple: $(X_1,X_2,X_3,X_4)$, so we can see that the only possible cases where
+$\sum_{k=1}^4 X_k \leq 5$ are: $(1,1,1,1)$, $(2,1,1,1)$, $(1,2,1,1)$, $(1,1,2,1)$, and $(1,1,1,2)$.
+What is the total number of cases? How many possible combinations of $(X_1,X_2,X_3,X_4)$
+can we have? Think of it as a number expressed in base-6 with 4 digits: $N=6^4$, which means:
+\begin{equation*}
+    \text{Pr}\left\{ \sum_{k=1}^4 X_k \leq 5 \right\} = \frac{5}{6^4}
+\end{equation*}
+We can get to the same result also by taking advantage of the fact that
+all dice tosses are \smallcaps{independent}\sidenote{Two events are
+\textit{statistically independent} when the occurrance of one does not influence
+the occurrence of the second (and vice-versa).} events, and
+that all 4 tosses are exactly the same event:
+all dices are identical objects, and the conditions under which they are tossed are also the same.
+This means that tossing 4 dices at the same time and getting 4 faces is the
+same thing as tossing one single dice 4 consecutive times and recording the face each time.
+Now quadruple $X_k$ represents the face of the $k$-th time the single dice is tossed,
+and we can record the 4 tosses by still using the same quadruple $(X_1,X_2,X_3,X_4)$.
+Here as well, the cases where we have the sum to be $4$ or $5$ are the described by
+the same quadruples that we listed before. If we take one round of 4 tossings
+$(X_1,X_2,X_3,X_4)$, its probability is:
+\begin{enumerate}
+    \item The probability that the first toss $k=1$ is $X_1$, and,
+    \item The probability that the second toss $k=2$ is $X_2$, and,
+    \item The probability that the third toss $k=3$ is $X_3$, and,
+    \item The probability that the fourth toss $k=4$ is $X_4$.
+\end{enumerate}
+Which means:
+\begin{equation*}
+    \text{Pr}\left\{ (X_1,X_2,X_3,X_4) \right\} = \text{Pr}\left\{ X_1 \right\} \cdot
+        \text{Pr}\left\{ X_2 \right\} \cdot
+        \text{Pr}\left\{ X_3 \right\} \cdot
+        \text{Pr}\left\{ X_4 \right\}
+\end{equation*}
+But remember that all events are equal:
+$\text{Pr}\left\{ X_1 \right\} = \dots = \text{Pr}\left\{ X_4 \right\} = p$,
+where $p=\frac{1}{6}$ is the probability of one single dice toss.
+So we get:
+\begin{equation*}
+    \text{Pr}\left\{ (X_1,X_2,X_3,X_4) \right\} = p^4
+\end{equation*}
+There are 5 possible quadruples, it means that it is either one, or the other, or the other
+until the last one:
+\begin{equation*}
+    \text{Pr}\left\{ \sum_{k=1}^4 X_k \leq 5 \right\} = 5 \cdot p^4 = 5 \cdot \left( \frac{1}{6} \right)^4
+\end{equation*}
+Which gives the same result.
 
 \section{Magnetic fields and amperian loops}
 \label{sec:magnamp}
