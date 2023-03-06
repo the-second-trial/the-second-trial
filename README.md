@@ -1,5 +1,5 @@
-# the-second-trial
-A repository for publications on the Italian State Exam's Mathematics Trial.
+# The 2nd Trial
+A repository for the publications of The 2nd Trial blog.
 
 ---
 

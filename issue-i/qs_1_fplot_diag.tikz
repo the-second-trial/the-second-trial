@@ -1,3 +1,0 @@
-\begin{tikzpicture}
-    \fill[Gray] (0,0) rectangle (4,8);
-\end{tikzpicture}
