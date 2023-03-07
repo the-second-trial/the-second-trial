@@ -17,3 +17,6 @@ sphinx-build --version
 # Install the theme
 # https://sphinx-book-theme.readthedocs.io/en/stable/tutorials/get-started.html
 pip install sphinx-book-theme
+
+# Install required extensions
+pip install myst-parser
