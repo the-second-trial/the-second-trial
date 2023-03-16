@@ -1,0 +1,21 @@
+.. the-2nd-trial documentation section file.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Articles
+========
+
+This is where you can find al articles.
+
+Articles are, generally, longer posts where I like to cover specific topics and conduct deeper investigations or research. Think of them like some kind of independent research efforts aimed at share some insights and collect feedback.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

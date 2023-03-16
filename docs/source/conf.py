@@ -30,6 +30,9 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
+    "sphinxemoji.sphinxemoji",
+    "sphinxcontrib.jquery",
+    "sphinx_disqus.disqus",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -39,6 +42,26 @@ templates_path = ["_templates"]
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+
+
+# -- Options for MyST --------------------------------------------------------
+# https://myst-parser.readthedocs.io/en/stable/syntax/optional.html#math-shortcuts
+
+myst_enable_extensions = [
+    "amsmath",
+    "attrs_inline",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "html_admonition",
+    "html_image",
+    #"linkify",
+    "replacements",
+    "smartquotes",
+    "strikethrough",
+    "substitution",
+]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -54,3 +77,8 @@ html_theme_options = {
     "use_sidenotes": True,
     #"announcement": "<b>v0.19</b> is now out! See the Changelog for details",
 }
+
+
+# -- Options for Disqus ------------------------------------------------------
+# https://sphinx-disqus.readthedocs.io/en/v1.2.0/install.html
+disqus_shortname = "the2ndtrial"

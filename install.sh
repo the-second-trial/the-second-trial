@@ -19,4 +19,8 @@ sphinx-build --version
 pip install sphinx-book-theme
 
 # Install required extensions
-pip install myst-parser
+pip install myst-parser             # MyST parser
+pip install sphinxemoji             # Emoji
+pip install sphinxcontrib.jquery    # Sphinx newer versions do not add jQuery, this ensures the library is available, following extensions need it>
+                                    # - sphinx-disqus
+pip install sphinx-disqus           # Commenting
