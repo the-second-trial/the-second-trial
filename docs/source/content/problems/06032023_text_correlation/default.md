@@ -18,10 +18,6 @@ What we need to do, is translating this problem into an _optimization problem_, 
 
 And that basically got me thinking about an exact way to mathematically solve this cookie-baking challenge which can be resumed as such:
 
-:::{tip}
-How to place the cookies on the tray to maximize the distance between each opther
-:::
-
 Something to do.
 Here's my sentence and a sidenote[^sn2].
 
@@ -40,6 +36,57 @@ On wider screens, this content will pop out to the side!
 ```
 
 Praesent sit amet leo blandit, auctor mi vel, interdum enim. Aenean gravida eros et erat auctor pretium. Praesent suscipit eros et risus convallis, eget viverra mi placerat. Maecenas nec ligula sed ipsum tristique volutpat. Sed facilisis laoreet dui, vel pretium nisi tempus sit amet. Nunc sollicitudin nisl quis mi sollicitudin, a consequat nulla commodo. Aliquam vestibulum nibh id leo sagittis auctor. Curabitur varius nisl arcu, sit amet facilisis lacus volutpat sed. In ornare quam sed vulputate semper. Nulla sodales erat ut nunc lacinia, sit amet viverra libero consequat. Pellentesque at massa scelerisque, congue turpis eu, tincidunt neque. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+Something more in here and more.
+
+````{prf:definition}
+:label: my-definition
+
+The *economical expansion problem* (EEP) for
+$(A,B)$ is to find a semi-positive $n$-vector $p>0$
+and a number $\beta\in\mathbb{R}$, such that
+
+$$
+&\min_{\beta} \hspace{2mm} \beta \\
+&\text{s.t. }\hspace{2mm}Bp \leq \beta Ap
+$$
+````
+
+And here as well.
+
+````{prf:theorem} Orthogonal-Projection-Theorem
+:label: my-theorem
+
+Given $y \in \mathbb R^n$ and linear subspace $S \subset \mathbb R^n$,
+there exists a unique solution to the minimization problem
+
+```{math}
+\hat y := \argmin_{z \in S} \|y - z\|
+```
+
+The minimizer $\hat y$ is the unique vector in $\mathbb R^n$ that satisfies
+
+* $\hat y \in S$
+
+* $y - \hat y \perp S$
+
+
+The vector $\hat y$ is called the **orthogonal projection** of $y$ onto $S$.
+````
+
+And how about this:
+
+````{prf:lemma}
+:label: my-lemma
+
+If $\hat P$ is the fixed point of the map $\mathcal B \circ \mathcal D$ and $\hat F$ is the robust policy as given in [(7)](https://python-advanced.quantecon.org/robustness.html#equation-rb-oc-ih), then
+
+```{math}
+:label: rb_kft
+
+K(\hat F, \theta) = (\theta I - C'\hat P C)^{-1} C' \hat P  (A - B \hat F)
+```
+````
 
 Something more in here and more.
 

@@ -13,7 +13,7 @@ Articles are, generally, longer posts where I like to cover specific topics and 
    :maxdepth: 2
    :caption: Contents:
 
-   16032023_cambridge_trim/default
+   16032023_step2_june2022/default
 
 Indices and tables
 ------------------

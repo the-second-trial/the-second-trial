@@ -24,3 +24,4 @@ pip install sphinxemoji             # Emoji
 pip install sphinxcontrib.jquery    # Sphinx newer versions do not add jQuery, this ensures the library is available, following extensions need it>
                                     # - sphinx-disqus
 pip install sphinx-disqus           # Commenting
+pip install sphinx-proof            # Proof environments

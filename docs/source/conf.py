@@ -33,6 +33,7 @@ extensions = [
     "sphinxemoji.sphinxemoji",
     "sphinxcontrib.jquery",
     "sphinx_disqus.disqus",
+    "sphinx_proof",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -68,8 +69,12 @@ myst_enable_extensions = [
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_book_theme"
-html_static_path = ["_static"]
 html_title = "The 2nd Trial"
+
+html_static_path = ["_static"]
+html_css_files = [
+    "css/theme_overrides.css",
+]
 
 html_theme_options = {
     "repository_url": "https://github.com/the-second-trial/the-second-trial",

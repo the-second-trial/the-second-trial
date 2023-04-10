@@ -1,0 +1,6 @@
+/* Overrides for theme */
+
+.admonition > .admonition-title:after,
+div.admonition > .admonition-title:after {
+    content: unset !important;
+}
