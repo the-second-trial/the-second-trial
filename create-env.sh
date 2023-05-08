@@ -3,7 +3,7 @@
 ##############
 
 # Create a Python env
-python -m venv .venv
+python3 -m venv .venv
 
-# Activate the env
-source .venv/bin/activate
+# Activate the env (do it in shell separately in your dev env)
+# source .venv/bin/activate

@@ -21,6 +21,12 @@ $$
 \int \left( 2\sqrt{1+x^3} + \frac{3x^3}{\sqrt{1+x^3}} \right) dx
 $$ (eq001)
 
+And:
+
+$$
+\int \left( 2\sqrt{1+x^2} + \frac{3x^4}{\sqrt{1+x^3}} \right) dx
+$$ (eq005)
+
 Proin ligula diam equation {eq}`eq001`, fringilla vel erat id, finibus interdum odio.
 
 Suspendisse dapibus nulla et justo sodales laoreet. Vestibulum accumsan, ipsum et mattis congue, sapien enim consequat ex, ut eleifend ipsum felis non nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis at euismod arcu. Nulla euismod, nulla eget congue rutrum, sapien nisl tincidunt urna, imperdiet euismod metus ante nec magna. Pellentesque sed lacinia tortor.
