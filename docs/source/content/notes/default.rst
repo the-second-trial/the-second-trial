@@ -2,16 +2,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Articles
-========
+Notes
+=====
 
-This is where you can find al articles.
-
-Articles are, generally, longer posts where I like to cover specific topics and conduct deeper investigations or research. Think of them like some kind of independent research efforts aimed at share some insights and collect feedback.
+This is where you can find all my *notes*: posts I write about specific topics I learn about and that I like to share.
+Since they are very well scoped content, I usually organize them in series when they encompass large chunk of knowledge material.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   queuing/default
 
 Indices and tables
 ------------------

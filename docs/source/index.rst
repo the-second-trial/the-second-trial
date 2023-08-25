@@ -8,7 +8,7 @@ Welcome to The 2nd Trial!
 
 My name is *Andrea*. I am a Software Engineer with a strong background in Applied Mathematics and an equally big interest in solving problems.
 
-I created this project to share knowledge and engage on different topics covering **Science**, **Mathematics**, **Physics**, **Computer Science**, and other branches of **Knowledge**.
+I created this project to share **Knowledge** and engage on different topics covering **Science**, **Mathematics**, **Physics**, **Computer Science**, and other topics.
 Its purpose can be summarized by my motto:
 
 .. epigraph::
@@ -16,8 +16,8 @@ Its purpose can be summarized by my motto:
    To stay curious,
    To explore,
    To learn,
-   And discover that the whole universe,
-   can be reduced to one single equation.
+   And discover, hopefully, one day,
+   that it all can be reduced to one single equation.
 
    -- Andrea Tino
 
@@ -31,7 +31,7 @@ The whole project is open source, feel free to engage with me on anything I publ
 
    content/exams_tests/default
    content/problems/default
-   content/articles/default
+   content/notes/default
 
 Indices and tables
 ------------------

@@ -25,9 +25,10 @@ Let us translate the problem in mathematical terms. Since we are asked to comput
 
 The quantity whose average we want to find is the horizontal projection of $L$: $\Lambda \in [0, L]$, and it is related to $L$ by:
 
-$$
+```{math}
+:label: eq-proj
 \Lambda = L \cdot \cos \Theta
-$$ (eq-proj)
+```
 
 Since $\Lambda$ depends on $\Theta$ by the relation: $\Lambda = g(\Theta)$, we have that $\Lambda$ itself is a random variable. Its distribution depends on the distribution of $\Theta$, and we can use this fact to draw our strategy to solve the problem:
 
@@ -48,15 +49,17 @@ In this case, we are asked to consider all distinct values a certain variable ca
 Function $\Pi(x) = \Pi_{[-\frac{1}{2}, \frac{1}{2}]}(x)$ is the [Boxcar Function](https://mathworld.wolfram.com/BoxcarFunction.html).
 ```
 
-$$
+```{math}
+:label: eq-thetadist
 f_\Theta(\theta) = \frac{1}{\pi} \Pi\left(\frac{\theta}{\pi} - \frac{1}{2}\right)
-$$ (eq-thetadist)
+```
 
 We are now ready to move on to {prf:ref}`solve-strategy`'s second point. Knowing $f_\Theta$, as per equation {eq}`eq-thetadist`, is essential to compute $f_\Lambda$. The next job is computing the inverse of $g(\theta)$, that is: $g^{-1}(\lambda)$. From equation {eq}`eq-proj`, we can express $\Lambda$ as a function of $\Theta$ getting:
 
-$$
+```{math}
+:label: eq-invg
 g^{-1}(\lambda) = \arccos\left(\frac{\lambda}{L}\right)
-$$ (eq-invg)
+```
 
 We have inverted the cosine function, which introduces a range validity[^sn-cosinv] we need to check. Given that $\arccos x : [-1, 1] \mapsto [0, \pi]$, and that $\lambda \in [-L, L]$[^sn-lambdarange]; we have that: $\frac{\lambda}{L} \in [-1, 1] \equiv [-1, 1]$. All is good and we can apply the main result of random variable transformation which allows us to compute $f_\Lambda$ given $f_\Theta$ and $g^{-1}$:
 
@@ -64,13 +67,14 @@ We have inverted the cosine function, which introduces a range validity[^sn-cosi
 
 [^sn-lambdarange]: Given equation {eq}`eq-proj`, we can see that when $L$' starts tilting backwards ($\Theta > \frac{\pi}{2}$), the projection $\Lambda$ becomes negative.
 
-$$
+```{math}
+:label: eq-rvftrans
 f_\Lambda(\lambda) = f_\Theta \left[ g^{-1}(\lambda) \right] \cdot \left| \frac{\mathrm d}{\mathrm d \lambda} g^{-1}(\lambda) \right|
-$$ (eq-rvftrans)
+```
 
 Having equation {eq}`eq-rvftrans` in mind, let us plug in it all the quantities we now have ready:
 
-$$
+```{math}
 \begin{align}
   f_\Lambda(\lambda) &= f_\Theta \left[ \arccos\left(\frac{\lambda}{L}\right) \right] \cdot \left| \frac{\mathrm d}{\mathrm d \lambda} \arccos\left(\frac{\lambda}{L}\right) \right| \nonumber \\
                      &= f_\Theta \left[ \arccos\left(\frac{\lambda}{L}\right) \right] \cdot \left| -\frac{L^{-1}}{\sqrt{1 - L^{-2}\lambda^2}} \right| \nonumber \\
@@ -78,19 +82,21 @@ $$
                      &= \Pi_{[-L, L]}(\lambda) \frac{1}{\pi} \frac{L^{-1}}{\sqrt{1 - L^{-2}\lambda^2}}
                       = \frac{\Pi_{[-L, L]}(\lambda)}{\pi L} \frac{1}{\sqrt{1 - L^{-2}\lambda^2}}
 \end{align}
-$$
+```
 
 Assuming, from now on, that $\lambda \in [-L, L]$, we have $\Lambda$'s PDF:
 
-$$
+```{math}
+:label: eq-lambdapdf
 f_\Lambda(\lambda) = \frac{1}{\pi L} \frac{1}{\sqrt{1 - L^{-2}\lambda^2}} \qquad {} -L \leq \lambda \leq L
-$$ (eq-lambdapdf)
+```
 
 So, now we can jump to the last point of {prf:ref}`solve-strategy`. We can get the desired average by computing $\Lambda$'s mean $\mu_\Lambda$:
 
-$$
+```{math}
+:label: eq-lambdamu
 \mu_\Lambda = E[\Lambda] = \int_{-L}^L \lambda f_\Lambda(\lambda) \cdot \mathrm d \lambda = \frac{1}{\pi L} \int_{-L}^L \frac{\lambda}{\sqrt{1 - L^{-2}\lambda^2}} \cdot \mathrm d \lambda
-$$ (eq-lambdamu)
+```
 
 However we can immediately tell that **integral is zero** because the integration horizon is symmetric to the origin and the integrand is an odd function[^sn-integrandisodd], therefore: $\mu_\Lambda = 0$.
 
@@ -103,9 +109,10 @@ We could probably see something more interesting, if we considered all negative 
 
 This way, we only need to adjust $f_\Theta(\theta)$, and {eq}`eq-thetadist` now becomes:
 
-$$
+```{math}
+:label: eq-thetadist2
 f_\Theta(\theta) = \frac{2}{\pi} \Pi\left(\frac{2}{\pi} \theta - \frac{1}{2}\right)
-$$ (eq-thetadist2)
+```
 
 ## Comments
 
